@@ -22,8 +22,8 @@ class SwampDragon(object):
     description = ("Will eat and drink anything that can be used as fuel for fire-breathing")
 
 
-class Basillisk(object):
-    name = "Basillisk"
+class Basilisk(object):
+    name = "Basilisk"
     health = 80
     strength = 25
     magic = 16

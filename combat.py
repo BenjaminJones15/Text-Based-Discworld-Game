@@ -18,12 +18,16 @@ def print_battle(enemy):
 def execute_attack(enemy):
     enemy.health = enemy.health - random.randrange((player.strength)/2, player.strength, 1)
     print("the enemy lost " + player.strength + " health")
+    global strength_check
+    if strength_check:
+        player.strength = player.strength/3
+        strength_check = False
 
 
 def execute_mana(enemy):
     enemy.health = enemy.health - 15
     player.mana = player.mana - 20
-    print("the enemy lost 50 health")
+    print("the enemy lost 15 health")
     print("you used up 20 mana")
 
 
@@ -40,6 +44,10 @@ def execute_item(player):
         player.mana = player.mana + 50
         if player.mana > player.MaxMana:
             player.mana = player.MaxMana
+    elif item == "strength potion":
+        player.strength = player.strength*3
+        global strength_check
+        strength_check = True
 
 
 def execute_inspect(enemy):
@@ -48,9 +56,10 @@ def execute_inspect(enemy):
     print("enemy strength " + enemy.description)
     print("enemy magic " + enemy.description)
 
-def execute_run(battle):
+def execute_run():
     run = random.randrange(1,2,1)
     if run == 1:
+        global battle
         battle = False
         print("You ran away!")
     else:
@@ -70,7 +79,7 @@ def execute_battle_choice(choice):
     elif choice == "inspects":
         execute_inspect(enemy)
     elif choice == "run":
-        execute_run(battle)
+        execute_run()
     else:
         print("incorrect command")
 
@@ -98,10 +107,13 @@ def enemy_attack():
         player.health = player.health - enemy.strength
 
 
-while battle == True:
-    print("your turn")
-    options = print_battle(enemy)
-    execute_battle_choice(options)
-    health_check(enemy)
-    print("enemy turn")
-    enemy_attack()
+def start_battle():
+    global strength_check
+    strength_check = False
+    while battle:
+        print("your turn")
+        options = print_battle(enemy)
+        execute_battle_choice(options)
+        health_check(enemy)
+        print("enemy turn")
+        enemy_attack()

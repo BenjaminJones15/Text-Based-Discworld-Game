@@ -3,7 +3,7 @@ class Johnathan(object):
     health = 100
     strength = 5
     magic = 0
-    description = ("Most hated in Ankh-Morpork")
+    description = ("Most annoying in Ankh-Morpork")
 
 class CarcerDun(object):
     name = "Carcer Dun"

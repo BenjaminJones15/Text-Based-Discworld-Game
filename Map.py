@@ -154,13 +154,13 @@ The_Pink_Pussycat_Club = Location
 The_Pink_Pussycat_Club.name = "The Pink Pussycat Club"
 The_Pink_Pussycat_Club.NPC = ["Professor Flead"]
 The_Pink_Pussycat_Club.exits = {"the shades":"The Shades", 
-"dragon sanctuary":"The Morpork Sunshine Sanctuary for Lost Dragons"}
+"dragon sanctuary":"The Sanctuary for Lost Dragons"}
 The_Pink_Pussycat_Club.POI = []        
 The_Pink_Pussycat_Club.boss = False
 The_Pink_Pussycat_Club.sprite = False
 
 Dragon_Sanctuary = Location
-Dragon_Sanctuary.name = "The Morpork Sunshine Sanctuary for Lost Dragons"
+Dragon_Sanctuary.name = "The Sanctuary for Lost Dragons"
 Dragon_Sanctuary.NPC = ["Lady Sybil Ramkin"]
 Dragon_Sanctuary.exits = {"pseudopolis yard":"Pseudopolis Yard", "pink pussycat club":"The Pink Pussycat Club"} 
 Dragon_Sanctuary.POI = ["Return dragons"]        

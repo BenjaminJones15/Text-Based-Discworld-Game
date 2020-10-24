@@ -32,14 +32,6 @@ def choose_class():  # Takes user's class input and checks if it is valid. It wi
     return picked_class
 
 
-def menu():  # Where the program begins. Can change when everything is implemented
-    print("Enter your name")
-    user_name = input("> ")  # Prompts user to enter a name for the character
-    print_descriptions()  # Calls print_descriptions function, which prints each class description
-    user_class = choose_class()  # Calls function choose_class
-    player = Player(user_name, user_class)  # Creating the player using an instance of the Player class
-    player.inventory = starting_inventory(player)  # Gives the player starting items depending on their class
-
 def starting_inventory(player):  # Gives the player starting items depending on their chosen class
     if player.class_chosen == "Wizard":  # If wizard was chosen, add 2 mana pies to inventory
         player.inventory["Mana Pie"] += 2
@@ -50,6 +42,15 @@ def starting_inventory(player):  # Gives the player starting items depending on 
         player.inventory["Strength Pie"] += 2  # If undead was chosen, add 2 strength pie to inventory
 
     return player.inventory  # Return updated player inventory
+
+
+def menu():  # Where the program begins. Can change when everything is implemented
+    print("Enter your name")
+    user_name = input("> ")  # Prompts user to enter a name for the character
+    print_descriptions()  # Calls print_descriptions function, which prints each class description
+    user_class = choose_class()  # Calls function choose_class
+    player = Player(user_name, user_class)  # Creating the player using an instance of the Player class
+    player.inventory = starting_inventory(player)  # Gives the player starting items depending on their class
 
 
 class Player:  # Player Class

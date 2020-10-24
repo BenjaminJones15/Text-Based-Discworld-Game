@@ -149,5 +149,5 @@ def start_battle():
         enemy_health_check(enemy)
         print("enemy turn")
         enemy_attack()
-        health_check(player)
+        health_check(player) #badoof
 

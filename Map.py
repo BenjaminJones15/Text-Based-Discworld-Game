@@ -16,6 +16,14 @@ Pseudopolis_Yard_Inside.POI = ["Talk to Fred and Nobby"]
 Pseudopolis_Yard_Inside.boss = False
 Pseudopolis_Yard_Inside.sprite = False
 
+Pseudopolis_Yard_Upstairs = Location
+Pseudopolis_Yard_Upstairs.name = "The locker room of the watch house"
+Pseudopolis_Yard_Upstairs.NPC = ["Fred Colon", "Nobby Nobs"]
+Pseudopolis_Yard_Upstairs.exits = {"upstairs":"Locker Room", "outside": "Outside the watch house"}
+Pseudopolis_Yard_Upstairs.POI = ["Talk to Fred and Nobby"]
+Pseudopolis_Yard_Upstairs.boss = False
+Pseudopolis_Yard_Upstairs.sprite = False
+
 Pseudopolis_Yard_Outside = Location
 Pseudopolis_Yard_Outside.name = "The outside of Pseudopolis Yard Watch house"
 Pseudopolis_Yard_Outside.NPC = ["Captain Carrot"]

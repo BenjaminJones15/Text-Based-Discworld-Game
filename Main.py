@@ -4,11 +4,14 @@ from enemies import *
 from Map import *
 from normalise import *
 
+CurrentLocation = Pseudopolis_Yard_Inside
 
 def main():
+    
 
     #commenting
 
-def RndEncounter():
-    
+def RndEncounter(location):
+    if location.name = "The Library":
+        
 

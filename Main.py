@@ -21,6 +21,7 @@ def RndEncounter(location):
         if EnChance == 0:
             return()
         else:
-            print_battle()
+            CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
+            print_battle(CurEnemy)
 
 

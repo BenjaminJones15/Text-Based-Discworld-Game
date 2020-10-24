@@ -19,6 +19,8 @@ inventory = {  # User inventory. Starts empty
     "HP Pie": 0,
     "Mana Pie": 0,
     "Strength Pie": 0,
+    "Money": 0,
+    "Key Piece": 0,
     "Arms": 0,
     "Swamp Dragons": 0
 }

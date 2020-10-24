@@ -50,4 +50,4 @@ class Mugger(object):
     health = 25
     strength = 7
     magic = 0
-    description = ("Armed with a shiv and a licence to steal")
+    description = ("Armed with a shiv and a licence to steal.")

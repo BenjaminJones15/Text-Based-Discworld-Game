@@ -62,6 +62,8 @@ class Player:  # Player Class
         self.mana = Classes[self.class_chosen]["mana"]
         self.strength = Classes[self.class_chosen]["strength"]
         self.inventory = inventory  # Inventory added from inventory dictionary
+        self.maxHealth = Classes[self.class_chosen]["health"]
+        self.maxMana = Classes[self.class_chosen]["mana"]
 
 
 if __name__ == "__main__":  # Sets the main to menu()

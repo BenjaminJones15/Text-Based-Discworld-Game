@@ -44,3 +44,10 @@ class ShadowingLemma(object):
     strength = 19
     magic = 25
     description = ("A curious creature that exists in only two dimensions, and eats mathematicians.")
+
+class Mugger(object):
+    name = "Mugger"
+    health = 25
+    strength = 7
+    magic = 0
+    description = ("Armed with a shiv and a licence to steal")

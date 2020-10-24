@@ -8,6 +8,7 @@ class enemy(object):
         self.description = descrption  #
         self.exp = exp #
 
+EnemyList = ["Mugger", "Gnome", "Werewolf", "Swamp Dragon", "Shadowing Lemma"]
 
 Mugger = enemy
 Mugger.name = "Mugger"

@@ -36,3 +36,11 @@ if stringinput == "throne room ":
 
     else:
         print("You cannot go there.")
+
+elif is_valid_exit(current_room["exits"], direction):
+    updated_room = move(current_room["exits"], direction)
+    current_room = updated_room
+    return current_room
+
+else:
+    print("You cannot go there.")

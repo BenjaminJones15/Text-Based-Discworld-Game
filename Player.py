@@ -1,6 +1,6 @@
 import time
 
-from characterClass import *
+from character_class import *
 from inventory import *
 
 

@@ -44,6 +44,8 @@ class Character(object):
             self.strength = strength
             self.description = description
 
+ClassList = ["Wizard", "Warrior", "Undead"]
+
 Wizard = Character
 Wizard.name = "Wizard"
 Wizard.health = 100

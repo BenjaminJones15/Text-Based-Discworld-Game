@@ -1,103 +1,113 @@
 # ordered enemies from weakest to strongest
-class Mugger(object):
-    name = "Mugger"
-    health = 25
-    strength = 8
-    magic = 0
-    description = ("Armed with a shiv and a licence to steal.")
-    exp = 8
+class enemy(object):
+    def _init_(self, name, health, strength, magic, descrption, exp):
+        self.name = name  #
+        self.health = health  #
+        self.strength = strength #
+        self.magic = magic  #
+        self.description = descrption  #
+        self.exp = exp #
 
 
-class Gnome(object):
-    name = "Gnome"
-    health = 40
-    strength = 12
-    magic = 10
-    description = ("Gnomes are the smallest form of humanoids")
-    exp = 18
+Mugger = enemy
+Mugger.name = "Mugger"
+Mugger.health = 25
+Mugger.strength = 8
+Mugger.magic = 0
+Mugger.description = ("Armed with a shiv and a licence to steal.")
+Mugger.exp = 8
 
 
-class Werewolf(object):
-    name = "Werewolf"
-    health = 30
-    strength = 30
-    magic = 0
-    description = ("Physcially powerful and hard to kill")
-    exp = 20
+Gnome = enemy
+Gnome.name = "Gnome"
+Gnome.health = 40
+Gnome.strength = 12
+Gnome.magic = 10
+Gnome.description = ("Gnomes are the smallest form of humanoids")
+Gnome.exp = 18
 
 
-class SwampDragon(object):
-    name = "Swamp Dragon"
-    health = 100
-    strength = 14
-    magic = 20
-    description = ("Will eat and drink anything that can be used as fuel for fire-breathing")
-    exp = 25
+Werewolf = enemy
+Werewolf.name = "Werewolf"
+Werewolf.health = 30
+Werewolf.strength = 30
+Werewolf.magic = 0
+Werewolf.description = ("Physcially powerful and hard to kill")
+Werewolf.exp = 20
 
 
-class ShadowingLemma(object):
-    name = "Shadowing Lemma"
-    health = 50
-    strength = 14
-    magic = 28
-    description = ("A curious creature that exists in only two dimensions, and eats mathematicians.")
-    exp = 28
+SwampDragon = enemy
+SwampDragon.name = "Swamp Dragon"
+SwampDragon.health = 100
+SwampDragon.strength = 14
+SwampDragon.magic = 20
+SwampDragon.description = ("Will eat and drink anything that can be used as fuel for fire-breathing")
+SwampDragon.exp = 25
 
 
-class Basilisk(object):
-    name = "Basilisk"
-    health = 80
-    strength = 24
-    magic = 28
-    description = ("Powerful and giant snake")
-    exp = 36
+ShadowingLemma = enemy
+ShadowingLemma.name = "Shadowing Lemma"
+ShadowingLemma.health = 50
+ShadowingLemma.strength = 14
+ShadowingLemma.magic = 28
+ShadowingLemma.description = ("A curious creature that exists in only two dimensions, and eats mathematicians.")
+ShadowingLemma.exp = 28
 
 
-class Chimera(object):
-    name = "Chimera"
-    health = 70
-    strength = 25
-    magic = 25
-    description = ("Native to Klatch, incredibly rare species")
-    exp = 40
+Basilisk = enemy
+Basilisk.name = "Basilisk"
+Basilisk.health = 80
+Basilisk.strength = 24
+Basilisk.magic = 28
+Basilisk.description = ("Powerful and giant snake")
+Basilisk.exp = 36
+
+
+Chimera = enemy
+Chimera.name = "Chimera"
+Chimera.health = 70
+Chimera.strength = 25
+Chimera.magic = 25
+Chimera.description = ("Native to Klatch, incredibly rare species")
+Chimera.exp = 40
 
 
 # these are the bosses
-class Johnathan(object):
-    name = "Johnathan"
-    health = 100
-    strength = 5
-    magic = 0
-    description = ("Most annoying in Ankh-Morpork")
+Johnathan = enemy
+Johnathan.name = "Johnathan"
+Johnathan.health = 100
+Johnathan.strength = 5
+Johnathan.magic = 0
+Johnathan.description = ("Most annoying in Ankh-Morpork")
 
 
-class CarcerDun(object):
-    name = "Carcer Dun"
-    health = 150
-    strength = 40
-    magic = 20
-    description = ("Stone-cold killer")
+CarcerDun = enemy
+CarcerDun.name = "Carcer Dun"
+CarcerDun.health = 150
+CarcerDun.strength = 40
+CarcerDun.magic = 20
+CarcerDun.description = ("Stone-cold killer")
 
 
-class Gitlab(object):
-    name = "Gitlab"
-    health = 250
-    strength = 30
-    magic = 35
-    description = ("Why do we even use this?")
+Gitlab = enemy
+Gitlab.name = "Gitlab"
+Gitlab.health = 250
+Gitlab.strength = 30
+Gitlab.magic = 35
+Gitlab.description = ("Why do we even use this?")
 
 
-class MrGryle(object):
-    name = "Mr Gryle"
-    health = 200
-    strength = 20
-    magic = 60
-    description = ("Powerful Banshee")
+MrGryle = enemy
+MrGryle.name = "Mr Gryle"
+MrGryle.health = 200
+MrGryle.strength = 20
+MrGryle.magic = 60
+MrGryle.description = ("Powerful Banshee")
 
 
-class Kirill(object):
-    name = "Kirill"
-    health = 400
-    strength = 35
-    magic = 50
-    description = ("Biggest badass in Ankh-Morpork")
+Kiril = enemy
+Kiril.name = "Kirill"
+Kiril.health = 400
+Kiril.strength = 35
+Kiril.magic = 50
+Kiril.description = ("Biggest badass in Ankh-Morpork")

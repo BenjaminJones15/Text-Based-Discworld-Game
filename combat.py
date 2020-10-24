@@ -169,5 +169,5 @@ def start_battle():  # how the battle will be carried out each turn
         print("enemy turn")  # and then the enemies
         time.sleep(2)
         enemy_attack()
-        health_check(player)  # checks player health at the end of each turn
+        health_check(player)
 

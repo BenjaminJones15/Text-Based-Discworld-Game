@@ -1,24 +1,19 @@
 # Contain items and amount of them
 # This dictionary is not currently being used
-hp_potion = {
-    "name": "HP Potion",
+hp_pie = {
+    "name": "HP Pie",
     "amount": 0,
-    "Description": "A potion that refills your health bar",
+    "Description": "A pie that refills part of your health bar"}
 
-}
-mana_potion = {
-    "name": "Mana Potion",
+mana_pie = {
+    "name": "Mana Pie",
     "amount": 0,
-    "description": "A potion that refills your mana bar",
+    "description": "A pie that refills part of your mana bar"}
 
-}
-
-strength_potion = {
-    "name": "Strength Potion",
+strength_pie = {
+    "name": "Strength Pie",
     "amount": 0,
-    "description": "A potion that increases your strength",
-
-}
+    "description": "A pie that temporarily increases your strength"}
 
 inventory = {  # User inventory. Starts empty
     "HP Pie": 0,

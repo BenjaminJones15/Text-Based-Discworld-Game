@@ -8,7 +8,7 @@ CurrentLocation = Pseudopolis_Yard_Inside
 
 def main():
     print()
-
+ 
     #commenting
 
 def RndEncounter(location):

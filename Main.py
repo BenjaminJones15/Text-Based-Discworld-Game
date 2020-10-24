@@ -1,4 +1,3 @@
-from boss import *
 from combat import *
 from enemies import *
 from Map import *

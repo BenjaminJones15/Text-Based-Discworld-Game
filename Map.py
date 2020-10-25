@@ -21,9 +21,9 @@ Pseudopolis_Yard_Inside.sprite = False
 
 Pseudopolis_Yard_Upstairs = Location
 Pseudopolis_Yard_Upstairs.name = "The locker room of the watch house"
-Pseudopolis_Yard_Upstairs.NPC = ["Fred Colon", "Nobby Nobs"]
-Pseudopolis_Yard_Upstairs.exits = {"upstairs":"Locker Room", "outside": "Outside the watch house"}
-Pseudopolis_Yard_Upstairs.POI = ["Talk to Fred and Nobby"]
+Pseudopolis_Yard_Upstairs.NPC = []
+Pseudopolis_Yard_Upstairs.exits = {"downstairs":"Watch House Reception"}
+Pseudopolis_Yard_Upstairs.POI = []
 Pseudopolis_Yard_Upstairs.Items = []
 Pseudopolis_Yard_Upstairs.boss = False
 Pseudopolis_Yard_Upstairs.sprite = False

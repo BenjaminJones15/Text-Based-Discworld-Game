@@ -1,5 +1,4 @@
 # just need to connect the checkpoints to finish
-from Main import *
 from normalise import *
 from Map import *
 from Player import *

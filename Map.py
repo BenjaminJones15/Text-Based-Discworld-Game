@@ -1,6 +1,7 @@
 class Location(object):
-    def _init_(self, name, NPC, exits, Items, POI, boss, sprite):
+    def _init_(self, name, description, NPC, exits, Items, POI, boss, sprite):
         self.name = name     #name of the location
+        self.description = description    #description of the location
         self.NPC = NPC       #list of all NPCs in that location
         self.exits = exits   #dictionary of exits from the location
         self.POI = POI       #list of things to do around the location
@@ -13,7 +14,7 @@ Pseudopolis_Yard_Inside = Location
 Pseudopolis_Yard_Inside.name = "The Inside of Pseudopolis Yard Watch house"
 Pseudopolis_Yard_Inside.NPC = ["Fred Colon", "Nobby Nobs"]
 Pseudopolis_Yard_Inside.exits = {"upstairs":"Locker Room", "outside": "Outside the watch house"}
-Pseudopolis_Yard_Inside.POI = ["Talk to Fred and Nobby"]
+Pseudopolis_Yard_Inside.POI = {"Talk to Fred and Nobby": '''insert dialogue var here'''}
 Pseudopolis_Yard_Inside.Items = []
 Pseudopolis_Yard_Inside.boss = False
 Pseudopolis_Yard_Inside.sprite = False

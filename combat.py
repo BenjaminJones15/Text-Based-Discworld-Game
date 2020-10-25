@@ -24,7 +24,7 @@ def print_battle():  # prints your battle options each turn
 def execute_attack():  # deals damage to the enemy
     enemy.health = enemy.health - random.randrange(Player.strength / 2, Player.strength, 1)
     # takes a random number based on strength to attack
-    print("the enemy lost " + Player.strength + " health")
+    print("The enemy lost " + Player.strength + " health")
     global strength_check  # used to check if a strength potion has been used
     if strength_check:
         Player.strength = Player.strength/3
@@ -34,18 +34,18 @@ def execute_attack():  # deals damage to the enemy
 def execute_mana():  # mana is set damage and shows your mana falling
     enemy.health = enemy.health - 20
     Player.mana = Player.mana - 20
-    print("the enemy lost 20 health")
-    print("you used up 20 mana")
+    print("The enemy lost 20 health")
+    print("You used up 20 mana")
 
 
 def execute_item():  # brings up a item selection menu
-    print("what item do you want to use: ")
+    print("What item do you want to use: ")
     for i in inventory:  # prints items in your inventory
         print(i)
     item = normalise_input(input("> "))
     if item == "hp pie":
         if inventory["HP Pie"] == 0:
-            print("You do not have enough HP Pie's")
+            print("You do not have enough HP Pies")
         else:
             Player.health = Player.health + 50
             if Player.health > Player.maxHealth:  # checks to see health doesn't go over the max
@@ -53,7 +53,7 @@ def execute_item():  # brings up a item selection menu
             inventory["HP Pie"] -= 1
     elif item == "mana pie":
         if inventory["Mana Pie"] == 0:
-            print("You do not have enough Mana Pie's")
+            print("You do not have enough Mana Pies")
         else:
             Player.mana = Player.mana + 50
             if Player.mana > Player.maxMana:  # checks to see mana doesn't go over the max
@@ -61,7 +61,7 @@ def execute_item():  # brings up a item selection menu
             inventory["Mana Pie"] -= 1
     elif item == "strength pie":
         if inventory["Strength Pie"] == 0:
-            print("You do not have enough Strength Pie's")
+            print("You do not have enough Strength Pies")
         else:
             Player.strength = Player.strength*3  # increases the players strength for one turn
             global strength_check
@@ -73,9 +73,9 @@ def execute_item():  # brings up a item selection menu
 
 def execute_inspect():  # views the enemies stats
     print(enemy.description)
-    print("the enemy has " + enemy.health)
-    print("enemy strength " + enemy.strength)
-    print("enemy magic " + enemy.magic)
+    print("The enemy has " + enemy.health)
+    print("Enemy strength " + enemy.strength)
+    print("Enemy magic " + enemy.magic)
 
 
 def execute_run():  # try to run from the fight
@@ -84,12 +84,12 @@ def execute_run():  # try to run from the fight
             print("Really?")
             game_over()
         else:  # not allowed to run from a boss fight
-            print("you can't run from this battle")
+            print("You can't run from this battle")
     else:
         run = random.randrange(1, 2, 1)  # random chance to run from the battle
         if run == 1:
             Player.health = Player.health - 10  # still take damage for running away
-            health_check(Player)
+            health_check()
             global battle
             battle = False
             print("You ran away!")
@@ -104,7 +104,7 @@ def execute_battle_choice(choice):  # used to pick which battle action should oc
         if Player.mana >= 20:  # see's if the player has enough mana to use a spell
             execute_mana()
         else:
-            print("not enough mana")
+            print("Not enough mana")
     elif choice == "items":
         execute_item()
     elif choice == "inspects":
@@ -112,7 +112,7 @@ def execute_battle_choice(choice):  # used to pick which battle action should oc
     elif choice == "run":
         execute_run()
     else:
-        print("incorrect command")  # used to make sure the user knows they entered the wrong value
+        print("Incorrect command")  # used to make sure the user knows they entered the wrong value
 
 
 def enemy_health_check():  # checks the enemy's health each turn to see if the battle has ended
@@ -135,18 +135,18 @@ def enemy_attack():
     attack = random.randrange(1, 3, 1)   # randomly decides what attack enemies should use
     if attack == 3:
         print(enemy.name + " uses magic")
-        print("you took " + enemy.magic + " damage")
+        print("You took " + enemy.magic + " damage")
         Player.health = Player.health - enemy.magic
     else:  # enemies are more likely to attack than use magic
         print(enemy.name + " attacks")
-        print("you took " + enemy.strength + " damage")
+        print("You took " + enemy.strength + " damage")
         Player.health = Player.health - enemy.strength
 
 
 def health_check():  # checks the players health each turn to check they haven't died
     if Player.health <= 0:  # if they have it does the game over screen
         game_over()
-
+ 
 
 def exp_check():  # checks to see if the player should level up
     if Player.exp >= 100:
@@ -172,11 +172,11 @@ def start_battle():  # how the battle will be carried out each turn
     strength_check = False
     print(enemy.name + " has appeared")  # gets enemy name from what was called in the random encounter
     while battle:
-        print("your turn")  # with your turn is occurring
+        print("Your turn")  # with your turn is occurring
         options = print_battle()
         execute_battle_choice(options)
         enemy_health_check()
-        print("enemy turn")  # and then the enemies
+        print("Enemy's turn")  # and then the enemies
         time.sleep(2)
         enemy_attack()
         health_check()

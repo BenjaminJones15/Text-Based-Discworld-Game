@@ -3,8 +3,9 @@ from normalise import *
 from Map import *
 from Player import *
 from enemies import *
-from Main import save_checkpoint
-from Main import load_checkpoint
+from Main import save_checkpoint           #can remove if save and load moved here.
+from Main import load_checkpoint           #    look up.
+from Main import CurEnemy
 import random
 import time
 
@@ -24,7 +25,7 @@ def print_battle():  # prints your battle options each turn
 
 
 def execute_attack():  # deals damage to the enemy
-    enemy.health = enemy.health - random.randrange(Player.strength / 2, Player.strength, 1)
+    CurEnemy.health = CurEnemy.health - random.randrange(Player.strength / 2, Player.strength, 1)
     # takes a random number based on strength to attack
     print("The enemy lost " + Player.strength + " health")
     global strength_check  # used to check if a strength potion has been used
@@ -34,7 +35,7 @@ def execute_attack():  # deals damage to the enemy
 
 
 def execute_mana():  # mana is set damage and shows your mana falling
-    enemy.health = enemy.health - 20
+    CurEnemy.health = CurEnemy.health - 20
     Player.mana = Player.mana - 20
     print("The enemy lost 20 health")
     print("You used up 20 mana")
@@ -75,16 +76,15 @@ def execute_item():  # brings up a item selection menu
 
 def execute_inspect():  # views the enemies stats
     print(enemy.description)
-    print("The enemy has " + enemy.health)
-    print("Enemy strength " + enemy.strength)
-    print("Enemy magic " + enemy.magic)
-
+    print("The enemy has " + CurEnemy.health)
+    print("Enemy strength " + CurEnemy.strength)
+    print("Enemy magic " + CurEnemy.magic)
 
 def execute_run():  # try to run from the fight
     if Location.boss:  # checks if the fight is a boss battle
-        if enemy.name == "Jonathan":  # easter egg with the first boss
+        if CurEnemy.name == "Jonathan":  # easter egg with the first boss
             print("Really?")
-            game_over()
+            game_over()  #nice touch
         else:  # not allowed to run from a boss fight
             print("You can't run from this battle")
     else:
@@ -129,23 +129,23 @@ def enemy_health_check():  # checks the enemy's health each turn to see if the b
         else:  # otherwise a random amount of gold and exp
             drop = random.randrange(0, 5, 1)
             inventory["Money"] += drop
-            ex = random.randrange(enemy.exp / 2, enemy.exp, 1)  # random amount of experience after regular fights
+            ex = random.randrange(CurEnemy.exp / 2, CurEnemy.exp, 1)  # random amount of experience after regular fights
             Player.exp = Player.exp + ex
 
 
 def enemy_attack():
     attack = random.randrange(1, 3, 1)   # randomly decides what attack enemies should use
     if attack == 3:
-        print(enemy.name + " uses magic")
-        print("You took " + enemy.magic + " damage")
+        print(CurEnemy.name + " uses magic")
+        print("You took " + CurEnemy.magic + " damage")
         Player.health = Player.health - enemy.magic
     else:  # enemies are more likely to attack than use magic
-        print(enemy.name + " attacks")
-        print("You took " + enemy.strength + " damage")
-        Player.health = Player.health - enemy.strength
+        print(CurEnemy.name + " attacks")
+        print("You took " + CurEnemy.strength + " damage")
+        Player.health = Player.health - CurEnemy.strength
 
 
-def health_check():  # checks the players health each turn to check they haven't died
+def health_check():  # checks the player's health each turn to check they haven't died
     if Player.health <= 0:  # if they have it does the game over screen
         game_over()
  
@@ -159,7 +159,7 @@ def exp_check():  # checks to see if the player should level up
 
 def game_over():  # game over screen asking if they wish to continue
     print("You lose")
-    time.sleep(10)  # time to reflect on loosing
+    time.sleep(10)  # time to reflect on losing
     print()
     print("Do you wish to continue? yes/no")  # option to continue
     choice = normalise_input(input())
@@ -172,7 +172,7 @@ def game_over():  # game over screen asking if they wish to continue
 def start_battle():  # how the battle will be carried out each turn
     global strength_check
     strength_check = False
-    print(enemy.name + " has appeared")  # gets enemy name from what was called in the random encounter
+    print(CurEnemy.name + " has appeared")  # gets enemy name from what was called in the random encounter
     while battle:
         print("Your turn")  # with your turn is occurring
         options = print_battle()

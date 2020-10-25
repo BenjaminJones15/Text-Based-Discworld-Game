@@ -44,7 +44,7 @@ def starting_inventory(player):  # Gives the player starting items depending on 
     return player.inventory  # Return updated player inventory
 
 
-def menu():  # Where the program begins. Can change when everything is implemented
+def StartMenu():  # Where the program begins. Can change when everything is implemented
     print("Enter your name")
     user_name = input("> ")  # Prompts user to enter a name for the character
     print_descriptions()  # Calls print_descriptions function, which prints each class description
@@ -61,12 +61,11 @@ class Player:  # Player Class
         self.health = Classes[self.class_chosen]["health"]  # health, mana, strength added from Classes dictionary
         self.mana = Classes[self.class_chosen]["mana"]
         self.strength = Classes[self.class_chosen]["strength"]
-        self.inventory = inventory  # Inventory added from inventory dictionary
         self.maxHealth = Classes[self.class_chosen]["health"]
         self.maxMana = Classes[self.class_chosen]["mana"]
+        self.inventory = inventory  # Inventory added from inventory dictionary
 
-
-if __name__ == "__main__":  # Sets the main to menu()
-    menu()
+if __name__ == "__main__":  # Sets the main to StartMenu()
+    StartMenu()
 
 # inventory as a dictionary

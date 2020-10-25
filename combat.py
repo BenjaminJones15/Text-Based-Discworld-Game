@@ -1,4 +1,5 @@
 # just need to connect the checkpoints to finish
+from Main import *
 from normalise import *
 from Map import *
 from Player import *
@@ -7,7 +8,7 @@ import random
 import time
 
 
-def print_battle():
+def print_battle():  # prints your battle options each turn
     print("You can: ")
     print("Attack")
     print("Use Mana")
@@ -21,7 +22,7 @@ def print_battle():
     return choice
 
 
-def execute_attack():
+def execute_attack():  # deals damage to the enemy
     enemy.health = enemy.health - random.randrange(Player.strength / 2, Player.strength, 1)
     # takes a random number based on strength to attack
     print("the enemy lost " + Player.strength + " health")
@@ -38,7 +39,7 @@ def execute_mana():  # mana is set damage and shows your mana falling
     print("you used up 20 mana")
 
 
-def execute_item():
+def execute_item():  # brings up a item selection menu
     print("what item do you want to use: ")
     for i in inventory:  # prints items in your inventory
         print(i)
@@ -67,18 +68,18 @@ def execute_item():
             global strength_check
             strength_check = True  # check used to turn it back the next attack
             inventory["Strength Pie"] -= 1
-    else:
+    else:  # incase the user try's to select another item
         print("Please select a potion")
 
 
-def execute_inspect():
+def execute_inspect():  # views the enemies stats
     print(enemy.description)
     print("the enemy has " + enemy.health)
     print("enemy strength " + enemy.strength)
     print("enemy magic " + enemy.magic)
 
 
-def execute_run():
+def execute_run():  # try to run from the fight
     if Location.boss:  # checks if the fight is a boss battle
         if enemy.name == "Jonathan":  # easter egg with the first boss
             print("Really?")
@@ -123,10 +124,11 @@ def enemy_health_check():  # checks the enemy's health each turn to see if the b
             inventory["Money"] += 100
             inventory["Key Piece"] += 1
             Player.exp = Player.exp + 100  # level up after a fight
-        else:  # otherwise a random amount of gold
+            save_checkpoint()  # saves the players progress after beating a boss
+        else:  # otherwise a random amount of gold and exp
             drop = random.randrange(0, 5, 1)
             inventory["Money"] += drop
-            ex = random.randrange(enemy.exp /2, enemy.exp, 1)  # random amount of experience after regular fights
+            ex = random.randrange(enemy.exp / 2, enemy.exp, 1)  # random amount of experience after regular fights
             Player.exp = Player.exp + ex
 
 
@@ -143,11 +145,11 @@ def enemy_attack():
 
 
 def health_check():  # checks the players health each turn to check they haven't died
-    if Player.health <= 0:
+    if Player.health <= 0:  # if they have it does the game over screen
         game_over()
 
 
-def exp_check():
+def exp_check():  # checks to see if the player should level up
     if Player.exp >= 100:
         Player.health = Player.maxHealth
         Player.mana = Player.maxMana
@@ -156,9 +158,9 @@ def exp_check():
 
 def game_over():  # game over screen asking if they wish to continue
     print("You lose")
-    time.sleep(10)
+    time.sleep(10)  # time to reflect on loosing
     print()
-    print("Do you wish to continue? yes/no")
+    print("Do you wish to continue? yes/no")  # option to continue
     choice = normalise_input(input())
     if choice == "yes":  # if yes it loads a checkpoint otherwise the game quits
         load_checkpoint()
@@ -171,7 +173,7 @@ def start_battle():  # how the battle will be carried out each turn
     strength_check = False
     print(enemy.name + " has appeared")  # gets enemy name from what was called in the random encounter
     while battle:
-        print("your turn")  # with your turn occuring
+        print("your turn")  # with your turn is occurring
         options = print_battle()
         execute_battle_choice(options)
         enemy_health_check()

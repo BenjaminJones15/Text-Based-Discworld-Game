@@ -1,10 +1,15 @@
 from combat import *
 from enemies import *
 from Map import *
-from normalise import *
+from Player import *
 import random
 
 CurrentLocation = Pseudopolis_Yard_Inside
+saveHealth = 0
+saveMana = 0
+saveExp = 0
+saveInventory = ""
+saveLocation = ""
 
 def main():
     print()
@@ -25,3 +30,19 @@ def RndEncounter(location):
             print_battle(CurEnemy)
 
 
+def save_checkpoint():  # saves all the players stats after reaching a checkpoint
+    global saveHealth, saveMana, saveExp, saveInventory, saveLocation
+    # global used so that the variables can be accessed in other functions e.g. load_checkpoint
+    saveHealth = Player.health
+    saveMana = Player.mana
+    saveExp = Player.exp
+    saveInventory = Player.inventory
+    saveLocation = Location
+
+
+def load_checkpoint():  # loads last saved checkpoint after loosing a game
+    Player.health = saveHealth
+    Player.mana = saveMana
+    Player.exp = saveExp
+    Player.inventory = saveInventory
+    Location = saveLocation

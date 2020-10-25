@@ -3,6 +3,8 @@ from normalise import *
 from Map import *
 from Player import *
 from enemies import *
+from Main import save_checkpoint
+from Main import load_checkpoint
 import random
 import time
 

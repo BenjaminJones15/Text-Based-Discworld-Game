@@ -5,8 +5,8 @@ from Player import *
 from enemies import *
 '''from Main import save_checkpoint           #can remove if save and load moved here.
 from Main import load_checkpoint           #    look up.
-from Main import CurEnemy '''
-from Main import *
+from Main import CurEnemy '''    #would still need this one
+from Main import *      #can remove if save and load moved here.
 
 import random
 import time

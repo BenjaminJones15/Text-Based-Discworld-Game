@@ -1,4 +1,4 @@
-#from combat import *
+#from combat import *        #can add back in if save and load moved.
 from enemies import *
 from Map import *
 from Player import *

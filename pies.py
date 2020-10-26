@@ -1,8 +1,8 @@
-class healthpie(object):
+class Health_Pie(object):
     name = "Health Pie"
 
-class manapie(object):
+class Mana_Pie(object):
     name = "Mana Pie"
 
-class strengthpie(object):
+class Strength_Pie(object):
     name = "Strength Pie"

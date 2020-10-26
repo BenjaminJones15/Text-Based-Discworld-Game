@@ -1,7 +1,8 @@
 from Map import *
 from normalise import *
 from inventory import *
-from Main import CurrentLocation
+CurrentLocation = Location
+
 
 def print_location(location):
     # Display room name
@@ -29,14 +30,14 @@ def print_menu(exits, location_items, inv_items):
         print("TAKE " + i["id"].upper() + " to take " + i["name"] + ".")
 
     for i in inv_items:
-        print("DROP " + i["id"].upper() + " to drop your " + i["id"] + ".")
+        print("DROP " + i.upper() + " to drop your " + i + ".")
     
     print("What do you want to do?")
 
 def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
-def execute_go(direction):
+def execute_go(direction):    
     if is_valid_exit(CurrentLocation.exits,direction) == True:
         CurrentLocation = move(CurrentLocation.exits, direction)
         print(CurrentLocation.name)

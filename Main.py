@@ -5,15 +5,13 @@ from Player import *
 from Move import *
 import random
 CurEnemy = enemy
-CurrentLocation = Pseudopolis_Yard_Reception
 
 def main():
     StartMenu()
-
-    while True:
-        print("You must free the city and defeat Kirill!")
+    CurrentLocation = Pseudopolis_Yard_Outside
+    print("You must free the city and defeat Kirill!")
+    while True:        
         print_location(CurrentLocation)
-
         command = menu(CurrentLocation.exits, CurrentLocation.Items, inventory)
         execute_command(command)
         

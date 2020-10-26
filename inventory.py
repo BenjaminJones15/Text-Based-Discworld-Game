@@ -15,6 +15,7 @@ Strength_Pie = {
     "amount": 0,
     "description": "A pie that temporarily increases your strength"}
 
+
 inventory = {  # User inventory. Starts empty
     "Health Pie": 0,
     "Mana Pie": 0,
@@ -24,3 +25,20 @@ inventory = {  # User inventory. Starts empty
     "Arms": 0,
     "Swamp Dragons": 0
 }
+
+'''    #possible use if each item became an object.
+class Item(object):
+    def _init_(self, id, name, description, amount):
+        self.id = id
+        self.name = name
+        self.description = description
+        self.amount = amount
+
+Strength_Pie = Item
+Strength_Pie.id = "strength"
+Strength_Pie.name = "Strength Pie"
+Strength_Pie.description = "A pie that refills part of your health bar"
+Strength_Pie.amount = 0  '''
+
+
+

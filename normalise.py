@@ -33,7 +33,6 @@ def normalise_input(user_input):
     user_input = remove_punct(user_input.lower()) #removes punct
     user_input = remove_spaces(user_input)  #removes spaces
     words = user_input.split()  #splits user input into list
-    words = filter_words(words, skip_words)
-    final = " ".join(words)
-    return final
+    words = filter_words(words, skip_words)    
+    return words
     

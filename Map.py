@@ -14,7 +14,7 @@ Pseudopolis_Yard_Reception = Location
 Pseudopolis_Yard_Reception.name = "The reception of Pseudopolis Yard Watch house"
 Pseudopolis_Yard_Reception.description = ""  #insert roshan here
 Pseudopolis_Yard_Reception.NPC = ["Fred Colon", "Nobby Nobs"]
-Pseudopolis_Yard_Reception.exits = {"upstairs":"Locker Room", "outside": "Outside the watch house"}
+Pseudopolis_Yard_Reception.exits = {"pseudopolis yard upstairs":"Locker Room", "pseudopolis yard outside": "Outside"}
 Pseudopolis_Yard_Reception.POI = {"Talk to Fred and Nobby": '''insert dialogue var here'''}
 Pseudopolis_Yard_Reception.Items = []
 Pseudopolis_Yard_Reception.boss = False
@@ -24,7 +24,7 @@ Pseudopolis_Yard_Upstairs = Location
 Pseudopolis_Yard_Upstairs.name = "The locker room of the watch house"
 Pseudopolis_Yard_Upstairs.description = ""  #insert roshan here
 Pseudopolis_Yard_Upstairs.NPC = []
-Pseudopolis_Yard_Upstairs.exits = {"downstairs":"Watch House Reception"}
+Pseudopolis_Yard_Upstairs.exits = {"pseudopolis yard reception":"Reception"}
 Pseudopolis_Yard_Upstairs.POI = {}
 Pseudopolis_Yard_Upstairs.Items = []
 Pseudopolis_Yard_Upstairs.boss = False
@@ -34,8 +34,8 @@ Pseudopolis_Yard_Outside = Location
 Pseudopolis_Yard_Outside.name = "The outside of Pseudopolis Yard Watch house"
 Pseudopolis_Yard_Outside.description = ""  #insert roshan here
 Pseudopolis_Yard_Outside.NPC = ["Captain Carrot"]
-Pseudopolis_Yard_Outside.exits = {"reception":"Watch House Reception", "tower of art": "The Tower of Art",
-"palace": "The Palace", "gimlet's restaurant": "Gimlet the Dwarf's Delicatessen"}
+Pseudopolis_Yard_Outside.exits = {"pseudopolis yard reception":"Reception", "tower of art": "Tower","palace entrance": "Entrance",
+"gimlet's restaurant": "Restaurant"}
 Pseudopolis_Yard_Outside.POI = {"Talk to Captain Carrot.": '''insert dialogue here'''}
 Pseudopolis_Yard_Outside.Items = []
 Pseudopolis_Yard_Outside.boss = False
@@ -45,7 +45,7 @@ Tower_of_Art = Location
 Tower_of_Art.name = "The Tower of Art"
 Tower_of_Art.description = ""  #insert roshan here
 Tower_of_Art.NPC = ["Mustrum Ridcully"]
-Tower_of_Art.exits = {"pseudopolis yard":"Pseudopolis Yard", "library":"Library"}
+Tower_of_Art.exits = {"pseudopolis yard outside":"Outside", "library":"Library"}
 Tower_of_Art.POI = {"Talk to Mustrum Ridcully": '''insert dialogue'''}
 Tower_of_Art.Items = []
 Tower_of_Art.boss = False
@@ -55,7 +55,7 @@ Library = Location
 Library.name = "The Library"
 Library.description = ""  #insert roshan here
 Library.NPC = ["Ponder Stibbons", "The Librarian"]
-Library.exits = {"tower of art":"The Tower of Art", "library roof":"The Library Roof", "sator square":"Sator Square"}
+Library.exits = {"tower of art":"Tower", "library roof":"Roof", "sator square":"Square"}
 Library.POI = {"Talk to Ponder and the Librarian": '''insert dialogue here'''}
 Library.Items = []
 Library.boss = False
@@ -85,8 +85,7 @@ Palace_Entrance = Location
 Palace_Entrance.name = "Palace Entrance"
 Palace_Entrance.description = ""  #insert roshan here
 Palace_Entrance.NPC = ["Vetinari"]
-Palace_Entrance.exits = {"sator square":"Sator Square", "pseudopolis yard outside":"Pseudopolis Yard Outside",
-"post office":"Post Office"}
+Palace_Entrance.exits = {"sator square":"Square", "pseudopolis yard outside":"Outside", "post office":"Post Office"}
 Palace_Entrance.POI = {"Enter the throne room to battle Kirill": '''insert dialogue here'''}
 Palace_Entrance.Items = []
 Palace_Entrance.boss = False
@@ -96,7 +95,7 @@ Palace = Location
 Palace.name = "Throne Room"
 Palace.description = ""  #insert roshan here
 Palace.NPC = []
-Palace.exits = {"palace entrance":"Palace Entrance"}
+Palace.exits = {"palace entrance":"Entrance"}
 Palace.POI = {}
 Palace.Items = []
 Palace.boss = True
@@ -106,8 +105,7 @@ Post_Office = Location
 Post_Office.name = "Post Office"
 Post_Office.description = ""  #insert roshan here
 Post_Office.NPC = []
-Post_Office.exits = {"palace entrance":"Palace Entrance", "mended drum":"The Mended Drum",
-"post office basement":"Post Office Basement"}
+Post_Office.exits = {"palace entrance":"Entrance", "mended drum":"Mended Drum", "post office basement":"Basement"}
 Post_Office.POI = {}
 Post_Office.Items = []
 Post_Office.boss = False
@@ -127,7 +125,7 @@ Mended_Drum = Location
 Mended_Drum.name = "The Mended Drum"
 Mended_Drum.description = ""  #insert roshan here
 Mended_Drum.NPC = ["Librarian", "Conan the Barbarian"]
-Mended_Drum.exits = {"post office":"Post Office", "hospital":"Lady Sybil Free Hospital",
+Mended_Drum.exits = {"post office":"Post Office", "hospital":"Hospital",
 "temple of anoia":"Temple of Anoia"}
 Mended_Drum.POI = {}        #maybe?
 Mended_Drum.Items = []
@@ -138,7 +136,7 @@ Lady_Sybil_Free_Hospital = Location
 Lady_Sybil_Free_Hospital.name = "Lady Sybil Free Hospital"
 Lady_Sybil_Free_Hospital.description = ""  #insert roshan here
 Lady_Sybil_Free_Hospital.NPC = ["Igor"]
-Lady_Sybil_Free_Hospital.exits = {"mended drum":" The Mended Drum", "temple of anoia":"Temple of Anoia"}
+Lady_Sybil_Free_Hospital.exits = {"mended drum":"Mended Drum", "temple of anoia":"Temple"}
 Lady_Sybil_Free_Hospital.POI = {}    
 Lady_Sybil_Free_Hospital.Items = []    
 Lady_Sybil_Free_Hospital.boss = False
@@ -148,8 +146,8 @@ Temple_of_Anoia = Location
 Temple_of_Anoia.name = "Temple of Anoia"
 Temple_of_Anoia.description = ""  #insert roshan here
 Temple_of_Anoia.NPC = ["Prietess?"]
-Temple_of_Anoia.exits = {"mended drum":"The Mended Drum", "hospital":"Lady Sybil Free Hospital",
-"gimlet's restaurant":"Gimlet the Dwarf's Delicatessen", "inner temple":"Inner Shrine of Anoia"}
+Temple_of_Anoia.exits = {"mended drum":"Mended Drum", "hospital":"Hospital","gimlet's restaurant":"Restaurant", 
+"inner temple":"Inner"}
 Temple_of_Anoia.POI = {}    
 Temple_of_Anoia.Items = []    
 Temple_of_Anoia.boss = False
@@ -159,7 +157,7 @@ Temple_of_Anoia_Inner = Location
 Temple_of_Anoia_Inner.name = "Inner Shrine of Anoia"
 Temple_of_Anoia.description = ""  #insert roshan here
 Temple_of_Anoia_Inner.NPC = []
-Temple_of_Anoia_Inner.exits = {"temple of anoia":"Temple of Anoia"}
+Temple_of_Anoia_Inner.exits = {"temple of anoia":"Temple"}
 Temple_of_Anoia_Inner.POI = {}
 Temple_of_Anoia_Inner.Items = []        
 Temple_of_Anoia_Inner.boss = True
@@ -169,7 +167,7 @@ Gimlets_Restaurant = Location
 Gimlets_Restaurant.name = "Gimlet the Dwarf's Delicatessen"
 Gimlets_Restaurant.description = ""  #insert roshan here
 Gimlets_Restaurant.NPC = ["Gimlet", "Captain Carrot"]
-Gimlets_Restaurant.exits = {"temple of anoia":"Temple of Anoia", "shades":"The Shades"}
+Gimlets_Restaurant.exits = {"temple of anoia":"Temple", "shades":"Shades"}
 Gimlets_Restaurant.POI = {}    
 Gimlets_Restaurant.Items = []    
 Gimlets_Restaurant.boss = False
@@ -179,8 +177,7 @@ The_Shades = Location
 The_Shades.name = "The Shades"
 The_Shades.description = ""  #insert roshan here
 The_Shades.NPC = []
-The_Shades.exits = {"pink pussycat club":"The Pink Pussycat Club", 
-"gimlet's restaurant":"Gimlet the Dwarf's Delicatessen"}
+The_Shades.exits = {"pink pussycat club":"Club", "gimlet's restaurant":"Restaurant"}
 The_Shades.POI = {}  
 The_Shades.Items = []     
 The_Shades.boss = False
@@ -190,8 +187,7 @@ The_Pink_Pussycat_Club = Location
 The_Pink_Pussycat_Club.name = "The Pink Pussycat Club"
 The_Pink_Pussycat_Club.description = ""  #insert roshan here
 The_Pink_Pussycat_Club.NPC = ["Professor Flead"]
-The_Pink_Pussycat_Club.exits = {"the shades":"The Shades", 
-"dragon sanctuary":"The Sanctuary for Lost Dragons"}
+The_Pink_Pussycat_Club.exits = {"the shades":"Shades", "dragon sanctuary":"Sanctuary"}
 The_Pink_Pussycat_Club.POI = {}        
 The_Pink_Pussycat_Club.Items = []
 The_Pink_Pussycat_Club.boss = False
@@ -201,14 +197,28 @@ Dragon_Sanctuary = Location
 Dragon_Sanctuary.name = "The Sanctuary for Lost Dragons"
 Dragon_Sanctuary.description = ""  #insert roshan here
 Dragon_Sanctuary.NPC = ["Lady Sybil Ramkin"]
-Dragon_Sanctuary.exits = {"pseudopolis yard outside":"Pseudopolis Yard Outside", "pink pussycat club":"The Pink Pussycat Club"} 
+Dragon_Sanctuary.exits = {"pseudopolis yard outside":"Outside", "pink pussycat club":"Club"} 
 Dragon_Sanctuary.POI = ["Return dragons"]
 Dragon_Sanctuary.Items = []        
 Dragon_Sanctuary.boss = False
 Dragon_Sanctuary.sprite = True
 
-ListLocations = {"Reception":Pseudopolis_Yard_Reception, "Locker Room":Pseudopolis_Yard_Upstairs, 
-"Outside":Pseudopolis_Yard_Outside, "Tower":Tower_of_Art, "Library":Library, "Roof":Library_Roof, "Square":Sator_Square,
-"Entrance":Palace_Entrance, "Palace":Palace, "Post Office":Post_Office, "Basement":Post_Office_Basement, "Mended Drum":Mended_Drum,
-"Hospital":Lady_Sybil_Free_Hospital, "Temple":Temple_of_Anoia, "Inner":Temple_of_Anoia_Inner,
-"Restaurant":Gimlets_Restaurant, "Shades":The_Shades, "Club":The_Pink_Pussycat_Club, "Sanctuary":Dragon_Sanctuary}
+ListLocations = {"Reception":Pseudopolis_Yard_Reception,
+ "Locker Room":Pseudopolis_Yard_Upstairs, 
+"Outside":Pseudopolis_Yard_Outside, 
+"Tower":Tower_of_Art, 
+"Library":Library, 
+"Roof":Library_Roof, 
+"Square":Sator_Square,
+"Entrance":Palace_Entrance, 
+"Palace":Palace, 
+"Post Office":Post_Office, 
+"Basement":Post_Office_Basement, 
+"Mended Drum":Mended_Drum,
+"Hospital":Lady_Sybil_Free_Hospital, 
+"Temple":Temple_of_Anoia, 
+"Inner":Temple_of_Anoia_Inner,
+"Restaurant":Gimlets_Restaurant, 
+"Shades":The_Shades, 
+"Club":The_Pink_Pussycat_Club, 
+"Sanctuary":Dragon_Sanctuary}

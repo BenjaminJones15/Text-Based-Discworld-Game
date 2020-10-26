@@ -64,8 +64,8 @@ def StartMenu():  # Where the program begins. Can change when everything is impl
     player = Player(user_name, user_class)  # Creating the player using an instance of the Player class
     player.inventory = starting_inventory(player)  # Gives the player starting items depending on their class
 
-if __name__ == "__main__":  # Sets the main to StartMenu()
-    StartMenu()
+#if __name__ == "__main__":  # Sets the main to StartMenu()
+    #StartMenu()
 
 
 

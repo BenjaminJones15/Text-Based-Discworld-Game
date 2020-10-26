@@ -31,3 +31,7 @@ def RndEncounter(location):
         else:
             CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
             start_battle()
+
+            
+if __name__ == "__main__":  # Sets the main to StartMenu()
+    main()

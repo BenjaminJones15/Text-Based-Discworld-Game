@@ -52,7 +52,8 @@ def execute_item():  # brings up a item selection menu
         if inventory["HP Pie"] == 0:
             print("You do not have enough HP Pies")
         else:
-            Player.health = Player.health + 50
+            Player.health = Player.health + 50            
+            Player.maxHealth = Player.maxHealth            
             if Player.health > Player.maxHealth:  # checks to see health doesn't go over the max
                 Player.health = Player.maxHealth
             inventory["HP Pie"] -= 1
@@ -61,6 +62,7 @@ def execute_item():  # brings up a item selection menu
             print("You do not have enough Mana Pies")
         else:
             Player.mana = Player.mana + 50
+            Player.maxMana = Player.maxMana
             if Player.mana > Player.maxMana:  # checks to see mana doesn't go over the max
                 Player.mana = Player.maxMana
             inventory["Mana Pie"] -= 1

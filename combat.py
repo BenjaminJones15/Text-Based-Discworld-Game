@@ -4,10 +4,9 @@ from Map import *
 from Player import *
 from enemies import *
 from Main import CurEnemy    #would still need this one
-CurrentLocation = Pseudopolis_Yard_Inside
-
 import random
 import time
+CurrentLocation = Pseudopolis_Yard_Inside
 
 
 def print_battle():  # prints your battle options each turn
@@ -77,10 +76,11 @@ def execute_item():  # brings up a item selection menu
 
 
 def execute_inspect():  # views the enemies stats
-    print(enemy.description)
+    print(CurEnemy.description)
     print("The enemy has " + CurEnemy.health)
     print("Enemy strength " + CurEnemy.strength)
     print("Enemy magic " + CurEnemy.magic)
+
 
 def execute_run():  # try to run from the fight
     if Location.boss:  # checks if the fight is a boss battle
@@ -120,7 +120,7 @@ def execute_battle_choice(choice):  # used to pick which battle action should oc
 
 
 def enemy_health_check():  # checks the enemy's health each turn to see if the battle has ended
-    if enemy.health <= 0:
+    if CurEnemy.health <= 0:
         print("you win.")
         battle = False
         if Location.boss:  # if it is a boss fight it drops set items
@@ -140,7 +140,7 @@ def enemy_attack():
     if attack == 3:
         print(CurEnemy.name + " uses magic")
         print("You took " + CurEnemy.magic + " damage")
-        Player.health = Player.health - enemy.magic
+        Player.health = Player.health - CurEnemy.magic
     else:  # enemies are more likely to attack than use magic
         print(CurEnemy.name + " attacks")
         print("You took " + CurEnemy.strength + " damage")
@@ -185,6 +185,7 @@ def start_battle():  # how the battle will be carried out each turn
         enemy_attack()
         health_check()
 
+
 def save_checkpoint():  # saves all the players stats after reaching a checkpoint
     global saveHealth, saveMana, saveExp, saveInventory, saveLocation
     # global used so that the variables can be accessed in other functions e.g. load_checkpoint
@@ -192,11 +193,12 @@ def save_checkpoint():  # saves all the players stats after reaching a checkpoin
     saveMana = Player.mana
     saveExp = Player.exp
     saveInventory = Player.inventory
-    saveLocation = Location
+    saveLocation = CurrentLocation
+
 
 def load_checkpoint():  # loads last saved checkpoint after loosing a game
     Player.health = saveHealth
     Player.mana = saveMana
     Player.exp = saveExp
     Player.inventory = saveInventory
-    Location = saveLocation
+    CurrentLocation = saveLocation

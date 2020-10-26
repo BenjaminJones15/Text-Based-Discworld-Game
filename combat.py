@@ -3,9 +3,11 @@ from normalise import *
 from Map import *
 from Player import *
 from enemies import *
-from Main import save_checkpoint           #can remove if save and load moved here.
+'''from Main import save_checkpoint           #can remove if save and load moved here.
 from Main import load_checkpoint           #    look up.
-from Main import CurEnemy
+from Main import CurEnemy '''
+from Main import *
+
 import random
 import time
 
@@ -150,7 +152,7 @@ def health_check():  # checks the player's health each turn to check they haven'
         game_over()
  
 
-def exp_check():  # checks to see if the player should level up
+def exp_check():  # checks to see if the player should level up    
     if Player.exp >= 100:
         Player.health = Player.maxHealth
         Player.mana = Player.maxMana
@@ -182,4 +184,3 @@ def start_battle():  # how the battle will be carried out each turn
         time.sleep(2)
         enemy_attack()
         health_check()
-

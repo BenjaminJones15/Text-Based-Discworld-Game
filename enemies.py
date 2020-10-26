@@ -8,8 +8,6 @@ class enemy(object):
         self.description = descrption  #
         self.exp = exp #
 
-EnemyList = ["Mugger", "Gnome", "Werewolf", "Swamp Dragon", "Shadowing Lemma"]
-
 Mugger = enemy
 Mugger.name = "Mugger"
 Mugger.health = 25
@@ -72,6 +70,7 @@ Chimera.magic = 25
 Chimera.description = ("Native to Klatch, incredibly rare species")
 Chimera.exp = 40
 
+EnemyList = [Mugger, Gnome, Werewolf, SwampDragon, ShadowingLemma]
 
 # these are the bosses
 Johnathan = enemy

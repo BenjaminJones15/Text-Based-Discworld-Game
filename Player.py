@@ -3,6 +3,18 @@ import time
 from character_class import *
 from inventory import *
 
+class Player:  # Player Class
+    def __init__(self, player_name, class_chosen):  # player_name and class_chosen use user inputs so 'self' is used
+        self.player_name = player_name
+        self.class_chosen = class_chosen
+        self.exp = 0  # player's exp, initially set to 0
+        self.health = Classes[self.class_chosen]["health"]  # health, mana, strength added from Classes dictionary
+        self.mana = Classes[self.class_chosen]["mana"]
+        self.strength = Classes[self.class_chosen]["strength"]
+        self.maxHealth = Classes[self.class_chosen]["health"]
+        self.maxMana = Classes[self.class_chosen]["mana"]
+        self.inventory = inventory  # Inventory added from inventory dictionary
+
 
 def print_descriptions():  # Prints the descriptions of each class
     for key in Classes:  # Loops for the number of classes
@@ -52,20 +64,9 @@ def StartMenu():  # Where the program begins. Can change when everything is impl
     player = Player(user_name, user_class)  # Creating the player using an instance of the Player class
     player.inventory = starting_inventory(player)  # Gives the player starting items depending on their class
 
-
-class Player:  # Player Class
-    def __init__(self, player_name, class_chosen):  # player_name and class_chosen use user inputs so 'self' is used
-        self.player_name = player_name
-        self.class_chosen = class_chosen
-        self.exp = 0  # player's exp, initially set to 0
-        self.health = Classes[self.class_chosen]["health"]  # health, mana, strength added from Classes dictionary
-        self.mana = Classes[self.class_chosen]["mana"]
-        self.strength = Classes[self.class_chosen]["strength"]
-        self.maxHealth = Classes[self.class_chosen]["health"]
-        self.maxMana = Classes[self.class_chosen]["mana"]
-        self.inventory = inventory  # Inventory added from inventory dictionary
-
 if __name__ == "__main__":  # Sets the main to StartMenu()
     StartMenu()
+
+
 
 # inventory as a dictionary

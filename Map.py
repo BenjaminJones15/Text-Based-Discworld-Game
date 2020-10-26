@@ -206,3 +206,9 @@ Dragon_Sanctuary.POI = ["Return dragons"]
 Dragon_Sanctuary.Items = []        
 Dragon_Sanctuary.boss = False
 Dragon_Sanctuary.sprite = True
+
+ListLocations = [Pseudopolis_Yard_Reception, Pseudopolis_Yard_Upstairs, 
+Pseudopolis_Yard_Outside, Tower_of_Art, Library, Library_Roof, Sator_Square,
+Palace_Entrance, Palace, Post_Office, Post_Office_Basement, Mended_Drum,
+Lady_Sybil_Free_Hospital, Temple_of_Anoia, Temple_of_Anoia_Inner,
+Gimlets_Restaurant, The_Shades, The_Pink_Pussycat_Club, Dragon_Sanctuary]

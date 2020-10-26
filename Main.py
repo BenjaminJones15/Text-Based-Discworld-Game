@@ -14,7 +14,6 @@ saveLocation = ""
 def main():
     StartMenu()
     
- 
     #commenting
 
 def RndEncounter(location):

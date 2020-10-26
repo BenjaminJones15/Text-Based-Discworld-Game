@@ -10,15 +10,15 @@ class Location(object):
         self.sprite = sprite #boolean variable, if sprite can spawn here = True
 
 
-Pseudopolis_Yard_Inside = Location
-Pseudopolis_Yard_Inside.name = "The Inside of Pseudopolis Yard Watch house"
-Pseudopolis_Yard_Inside.description = ""  #insert roshan here
-Pseudopolis_Yard_Inside.NPC = ["Fred Colon", "Nobby Nobs"]
-Pseudopolis_Yard_Inside.exits = {"upstairs":"Locker Room", "outside": "Outside the watch house"}
-Pseudopolis_Yard_Inside.POI = {"Talk to Fred and Nobby": '''insert dialogue var here'''}
-Pseudopolis_Yard_Inside.Items = []
-Pseudopolis_Yard_Inside.boss = False
-Pseudopolis_Yard_Inside.sprite = False
+Pseudopolis_Yard_Reception = Location
+Pseudopolis_Yard_Reception.name = "The Inside of Pseudopolis Yard Watch house"
+Pseudopolis_Yard_Reception.description = ""  #insert roshan here
+Pseudopolis_Yard_Reception.NPC = ["Fred Colon", "Nobby Nobs"]
+Pseudopolis_Yard_Reception.exits = {"upstairs":"Locker Room", "outside": "Outside the watch house"}
+Pseudopolis_Yard_Reception.POI = {"Talk to Fred and Nobby": '''insert dialogue var here'''}
+Pseudopolis_Yard_Reception.Items = []
+Pseudopolis_Yard_Reception.boss = False
+Pseudopolis_Yard_Reception.sprite = False
 
 Pseudopolis_Yard_Upstairs = Location
 Pseudopolis_Yard_Upstairs.name = "The locker room of the watch house"

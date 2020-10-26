@@ -6,7 +6,7 @@ from enemies import *
 from Main import CurEnemy    #would still need this one
 import random
 import time
-CurrentLocation = Pseudopolis_Yard_Inside
+CurrentLocation = Pseudopolis_Yard_Reception
 
 
 def print_battle():  # prints your battle options each turn

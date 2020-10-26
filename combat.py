@@ -3,10 +3,8 @@ from normalise import *
 from Map import *
 from Player import *
 from enemies import *
-'''from Main import save_checkpoint           #can remove if save and load moved here.
-from Main import load_checkpoint           #    look up.
-from Main import CurEnemy '''    #would still need this one
-from Main import *      #can remove if save and load moved here.
+from Main import CurEnemy    #would still need this one
+CurrentLocation = Pseudopolis_Yard_Inside
 
 import random
 import time
@@ -186,3 +184,19 @@ def start_battle():  # how the battle will be carried out each turn
         time.sleep(2)
         enemy_attack()
         health_check()
+
+def save_checkpoint():  # saves all the players stats after reaching a checkpoint
+    global saveHealth, saveMana, saveExp, saveInventory, saveLocation
+    # global used so that the variables can be accessed in other functions e.g. load_checkpoint
+    saveHealth = Player.health
+    saveMana = Player.mana
+    saveExp = Player.exp
+    saveInventory = Player.inventory
+    saveLocation = Location
+
+def load_checkpoint():  # loads last saved checkpoint after loosing a game
+    Player.health = saveHealth
+    Player.mana = saveMana
+    Player.exp = saveExp
+    Player.inventory = saveInventory
+    Location = saveLocation

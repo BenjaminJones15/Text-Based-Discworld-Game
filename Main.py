@@ -1,10 +1,10 @@
-#from combat import *        #can add back in if save and load moved.
+from combat import *
 from enemies import *
 from Map import *
 from Player import *
 import random
 CurEnemy = enemy
-CurrentLocation = Pseudopolis_Yard_Inside       #would need to move to combat.py if also moving save and load 
+
 saveHealth = 0
 saveMana = 0
 saveExp = 0
@@ -31,23 +31,3 @@ def RndEncounter(location):
         else:
             CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
             start_battle()
-
-#to solve errors need to move both functions into combat.py, and then call them from here.
-
-
-def save_checkpoint():  # saves all the players stats after reaching a checkpoint
-    global saveHealth, saveMana, saveExp, saveInventory, saveLocation
-    # global used so that the variables can be accessed in other functions e.g. load_checkpoint
-    saveHealth = Player.health
-    saveMana = Player.mana
-    saveExp = Player.exp
-    saveInventory = Player.inventory
-    saveLocation = Location
-
-
-def load_checkpoint():  # loads last saved checkpoint after loosing a game
-    Player.health = saveHealth
-    Player.mana = saveMana
-    Player.exp = saveExp
-    Player.inventory = saveInventory
-    Location = saveLocation

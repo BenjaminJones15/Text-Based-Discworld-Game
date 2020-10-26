@@ -2,6 +2,7 @@ from player import *
 from items import *
 from main import *
 from map import *
+from normalise import *
 
 ## This piece of code is designed to be amended to the excecute go function.
 ## This is currently unfinished and requires correct variable names and modules to import

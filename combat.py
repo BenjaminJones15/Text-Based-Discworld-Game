@@ -83,7 +83,7 @@ def execute_inspect():  # views the enemies stats
 
 
 def execute_run():  # try to run from the fight
-    if Location.boss:  # checks if the fight is a boss battle
+    if CurrentLocation.boss:  # checks if the fight is a boss battle
         if CurEnemy.name == "Jonathan":  # easter egg with the first boss
             print("Really?")
             game_over()  #nice touch
@@ -123,7 +123,7 @@ def enemy_health_check():  # checks the enemy's health each turn to see if the b
     if CurEnemy.health <= 0:
         print("you win.")
         battle = False
-        if Location.boss:  # if it is a boss fight it drops set items
+        if CurrentLocation.boss:  # if it is a boss fight it drops set items
             inventory["Money"] += 100
             inventory["Key Piece"] += 1
             Player.exp = Player.exp + 100  # level up after a fight

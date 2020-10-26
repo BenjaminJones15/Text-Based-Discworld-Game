@@ -11,7 +11,7 @@ class Location(object):
 
 
 Pseudopolis_Yard_Reception = Location
-Pseudopolis_Yard_Reception.name = "The Inside of Pseudopolis Yard Watch house"
+Pseudopolis_Yard_Reception.name = "The reception of Pseudopolis Yard Watch house"
 Pseudopolis_Yard_Reception.description = ""  #insert roshan here
 Pseudopolis_Yard_Reception.NPC = ["Fred Colon", "Nobby Nobs"]
 Pseudopolis_Yard_Reception.exits = {"upstairs":"Locker Room", "outside": "Outside the watch house"}

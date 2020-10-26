@@ -58,7 +58,7 @@ Basilisk.name = "Basilisk"
 Basilisk.health = 80
 Basilisk.strength = 24
 Basilisk.magic = 28
-Basilisk.description = ("Powerful and giant snake")
+Basilisk.description = ("Powerful and giant snake whose gaze can kill")
 Basilisk.exp = 36
 
 

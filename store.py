@@ -20,22 +20,22 @@ def store():
             print("You have bought a health pie for 5 AM$")
             wallet = wallet-5
             for items in inventory:
-                healthpie=inventory["healthpie"]
-                inventory.append(healthpie)
+                Health_Pie=inventory["Health_Pie"]
+                inventory.append(Health_Pie)
 
     if optioncmot == "2":
             print("You have bought a mana pie for 20 AM$")
             wallet = wallet-20
             for items in inventory:
-                manapie=inventory["manapie"]
-                inventory.append(manapie)
+                Mana_Pie=inventory["Mana_Pie"]
+                inventory.append(Mana_Pie)
 
     if optioncmot == "3":
             print("You have bought a strength pie for 12 AM$")
             wallet = wallet-12
             for items in inventory:
-                manapie=inventory["strengthpie"]
-                inventory.append(strenthpie)
+                Strength_Pie=inventory["Strength_Pie"]
+                inventory.append(Strength_Pie)
 
     else:
             print("That item does not exist")

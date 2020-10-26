@@ -20,7 +20,7 @@ def main():
 def RndEncounter(location):
     if location.name == "The Library":
         CurEnemy = ShadowingLemma
-        start_battle()
+        start_battle()        #will be fixed if moving save and load to combat.
     elif location.name == "The Shades":
         CurEnemy = Mugger
         start_battle()

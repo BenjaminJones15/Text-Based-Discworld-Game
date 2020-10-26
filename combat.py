@@ -48,15 +48,15 @@ def execute_item():  # brings up a item selection menu
     for i in inventory:  # prints items in your inventory
         print(i)
     item = normalise_input(input("> "))
-    if item == "hp pie":
-        if inventory["HP Pie"] == 0:
-            print("You do not have enough HP Pies")
+    if item == "health pie":
+        if inventory["Health Pie"] == 0:
+            print("You do not have enough Health Pies")
         else:
             Player.health = Player.health + 50            
             Player.maxHealth = Player.maxHealth            
             if Player.health > Player.maxHealth:  # checks to see health doesn't go over the max
                 Player.health = Player.maxHealth
-            inventory["HP Pie"] -= 1
+            inventory["Health Pie"] -= 1
     elif item == "mana pie":
         if inventory["Mana Pie"] == 0:
             print("You do not have enough Mana Pies")

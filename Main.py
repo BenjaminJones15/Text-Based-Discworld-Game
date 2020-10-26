@@ -1,9 +1,9 @@
-from combat import *
+#from combat import *
 from enemies import *
 from Map import *
 from Player import *
 import random
-
+CurEnemy = enemy
 CurrentLocation = Pseudopolis_Yard_Inside       #would need to move to combat.py if also moving save and load 
 saveHealth = 0
 saveMana = 0
@@ -19,10 +19,10 @@ def main():
 
 def RndEncounter(location):
     if location.name == "The Library":
-        CurEnemy = "ShadowingLemma"
+        CurEnemy = ShadowingLemma
         start_battle()
     elif location.name == "The Shades":
-        CurEnemy = "Mugger"
+        CurEnemy = Mugger
         start_battle()
     else:
         EnChance = random.randint(0,1)

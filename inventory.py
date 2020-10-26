@@ -1,22 +1,22 @@
 # Contain items and amount of them
 # This dictionary is not currently being used
-hp_pie = {
-    "name": "HP Pie",
+Health_Pie = {
+    "name": "Health Pie",
     "amount": 0,
     "Description": "A pie that refills part of your health bar"}
 
-mana_pie = {
+Mana_Pie = {
     "name": "Mana Pie",
     "amount": 0,
     "description": "A pie that refills part of your mana bar"}
 
-strength_pie = {
+Strength_Pie = {
     "name": "Strength Pie",
     "amount": 0,
     "description": "A pie that temporarily increases your strength"}
 
 inventory = {  # User inventory. Starts empty
-    "HP Pie": 0,
+    "Health Pie": 0,
     "Mana Pie": 0,
     "Strength Pie": 0,
     "Money": 0,

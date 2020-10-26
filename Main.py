@@ -2,8 +2,10 @@ from combat import *
 from enemies import *
 from Map import *
 from Player import *
+from Move import *
 import random
 CurEnemy = enemy
+CurrentLocation = Pseudopolis_Yard_Reception
 
 saveHealth = 0
 saveMana = 0
@@ -13,8 +15,18 @@ saveLocation = ""
 
 def main():
     StartMenu()
-    
-    #commenting
+
+    while True:   #main game loop.        
+        display_location(CurrentLocation)    #displays current location
+
+        # What are the possible exits from the current room?
+        exits = current_room["exits"]
+
+        # Show the menu with exits and ask the player
+        direction = menu(exits)
+
+        # Move the protagonist, i.e. update the current room
+        current_room = move(exits, direction)
 
 def RndEncounter(location):
     if location.name == "The Library":

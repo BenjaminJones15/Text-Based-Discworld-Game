@@ -16,6 +16,9 @@ def filter_words(words, skip_words):
     words = [x for x in words if x not in skip_words]
     return words
 
+def remove_spaces(text):
+    text = text.strip()
+    return text
 
 def remove_punct(text):
     no_punct = ""
@@ -27,6 +30,10 @@ def remove_punct(text):
 
 
 def normalise_input(user_input):
-    no_punct = remove_punct(user_input).lower()
-    words = no_punct.split()
-    return filter_words(words, skip_words)
+    user_input = remove_punct(user_input.lower()) #removes punct
+    user_input = remove_spaces(user_input)  #removes spaces
+    words = user_input.split()  #splits user input into list
+    words = filter_words(words, skip_words)
+    final = " ".join(words)
+    return final
+    

@@ -85,7 +85,7 @@ Palace_Entrance = Location
 Palace_Entrance.name = "Palace Entrance"
 Palace_Entrance.description = ""  #insert roshan here
 Palace_Entrance.NPC = ["Vetinari"]
-Palace_Entrance.exits = {"sator square":"Sator Square", "pseudopolis yard":"Pseudopolis Yard",
+Palace_Entrance.exits = {"sator square":"Sator Square", "pseudopolis yard outside":"Pseudopolis Yard Outside",
 "post office":"Post Office"}
 Palace_Entrance.POI = {"Enter the throne room to battle Kirill": '''insert dialogue here'''}
 Palace_Entrance.Items = []
@@ -201,14 +201,14 @@ Dragon_Sanctuary = Location
 Dragon_Sanctuary.name = "The Sanctuary for Lost Dragons"
 Dragon_Sanctuary.description = ""  #insert roshan here
 Dragon_Sanctuary.NPC = ["Lady Sybil Ramkin"]
-Dragon_Sanctuary.exits = {"pseudopolis yard":"Pseudopolis Yard", "pink pussycat club":"The Pink Pussycat Club"} 
+Dragon_Sanctuary.exits = {"pseudopolis yard outside":"Pseudopolis Yard Outside", "pink pussycat club":"The Pink Pussycat Club"} 
 Dragon_Sanctuary.POI = ["Return dragons"]
 Dragon_Sanctuary.Items = []        
 Dragon_Sanctuary.boss = False
 Dragon_Sanctuary.sprite = True
 
-ListLocations = [Pseudopolis_Yard_Reception, Pseudopolis_Yard_Upstairs, 
-Pseudopolis_Yard_Outside, Tower_of_Art, Library, Library_Roof, Sator_Square,
-Palace_Entrance, Palace, Post_Office, Post_Office_Basement, Mended_Drum,
-Lady_Sybil_Free_Hospital, Temple_of_Anoia, Temple_of_Anoia_Inner,
-Gimlets_Restaurant, The_Shades, The_Pink_Pussycat_Club, Dragon_Sanctuary]
+ListLocations = {"Reception":Pseudopolis_Yard_Reception, "Locker Room":Pseudopolis_Yard_Upstairs, 
+"Outside":Pseudopolis_Yard_Outside, "Tower":Tower_of_Art, "Library":Library, "Roof":Library_Roof, "Square":Sator_Square,
+"Entrance":Palace_Entrance, "Palace":Palace, "Post Office":Post_Office, "Basement":Post_Office_Basement, "Mended Drum":Mended_Drum,
+"Hospital":Lady_Sybil_Free_Hospital, "Temple":Temple_of_Anoia, "Inner":Temple_of_Anoia_Inner,
+"Restaurant":Gimlets_Restaurant, "Shades":The_Shades, "Club":The_Pink_Pussycat_Club, "Sanctuary":Dragon_Sanctuary}

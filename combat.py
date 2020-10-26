@@ -3,10 +3,10 @@ from normalise import *
 from Map import *
 from Player import *
 from enemies import *
-from Main import CurEnemy    #would still need this one
+from Main import CurEnemy    
+from Main import CurrentLocation
 import random
 import time
-CurrentLocation = Pseudopolis_Yard_Reception
 
 
 def print_battle():  # prints your battle options each turn

@@ -74,7 +74,7 @@ EnemyList = [Mugger, Gnome, Werewolf, SwampDragon, ShadowingLemma]
 
 # these are the bosses
 Johnathan = enemy()
-Johnathan.name = "Johnathan"
+Johnathan.name = "Jonathan"
 Johnathan.health = 100
 Johnathan.strength = 5
 Johnathan.magic = 0

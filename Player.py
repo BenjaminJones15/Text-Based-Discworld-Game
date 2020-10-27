@@ -15,7 +15,7 @@ class Player:  # Player Class
         self.maxMana = Classes[self.class_chosen]["mana"]
         self.inventory = inventory  # Inventory added from inventory dictionary
 
-player = Player("Test", "Undead")
+player = Player("Test", "undead")
 
 def print_descriptions():  # Prints the descriptions of each class
     for key in Classes:  # Loops for the number of classes

@@ -7,6 +7,7 @@ import random
 CurEnemy = Mugger
 CurrentLocation = Pseudopolis_Yard_Reception
 
+
 def main():    
     StartMenu()
     global CurrentLocation    
@@ -70,8 +71,9 @@ def RndEncounter(location):
         if location.boss == True:
             CurEnemy = Gitlab
             CurrentLocation = start_battle(location, CurEnemy)        
-    else:        
-        if EnChance == 0:
+    else:
+        EnChance = 1        
+        if EnChance == 0:            
             return()
         else:
             CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites

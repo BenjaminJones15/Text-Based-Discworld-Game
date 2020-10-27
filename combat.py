@@ -101,7 +101,7 @@ def execute_run(CurrentLocation, CurEnemy):  # try to run from the fight
             health_check()
             global battle
             battle = False
-            print("You ran away!")
+            print("You ran away!")               #######################################################
         else:
             print("You couldn't get away")
 
@@ -201,7 +201,7 @@ def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried o
             battle = False
             return NewLocation
         if battle == False:            
-            return()
+            return CurrentLocation
         print("Enemy's turn")  # and then the enemies
         print()
         time.sleep(2)

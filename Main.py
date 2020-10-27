@@ -52,8 +52,6 @@ def RndEncounter(location):
             return()
         else:
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)
-    elif location.sprite == False:
-        return()
     elif location == Gimlets_Restaurant:
         if location.boss == True:
             CurEnemy = Johnathan        
@@ -75,7 +73,7 @@ def RndEncounter(location):
             CurEnemy = Gitlab
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
     else:            
-        if EnChance == 0:            
+        if EnChance == 0 or location.sprite == False:            
             return()
         else:
             CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites

@@ -99,6 +99,7 @@ def execute_run(CurrentLocation, CurEnemy, player):  # try to run from the fight
         run = random.randint(1, 2)  # random chance to run from the battle
         if run == 1:
             player.health = player.health - 10  # still take damage for running away
+            print("You took 10 damage")
             health_check(player)
             global battle
             battle = False

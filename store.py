@@ -10,7 +10,7 @@ def store():
     print("2.) Mana Pie 20 AM$")
     print("3.) Strength Pie 12 AM$")
     print()
-    print("X.) Exit Store")
+    print("x.) Exit Store")
 
     wallet = 0
     options = ["1", "2", "3", "x"]

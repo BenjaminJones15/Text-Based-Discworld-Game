@@ -34,15 +34,15 @@ def is_valid_class(picked_class):  # Checks if the class inputted by the user is
 def choose_class():  # Takes user's class input and checks if it is valid. It will continue to loop till a valid class is entered
     print("Choose your class")
     picked_class = input("> ")  # User inputs class name
-    #  <-- Insert normalise_input function here
+    picked_class = "".join(normalise_input(picked_class))
     valid_class = is_valid_class(picked_class)  # Calls is_valid_class function to check if the class entered by user is in the character class dictionary
     while valid_class == False:  # Loops while return value from is_valid_class is False
         print("Invalid class inputted")
         print("Choose your class: ")
         picked_class = input("> ")  # User inputs class name
-        #  <-- Insert normalise_input function here
+        picked_class = "".join(normalise_input(picked_class))
         valid_class = is_valid_class(picked_class)  # Calls check_input function to check if the class entered is in the character class dictionary
-    return "".join(normalise_input(picked_class))
+    return picked_class
 
 
 def starting_inventory(player):  # Gives the player starting items depending on their chosen class

@@ -194,6 +194,7 @@ def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried o
         execute_battle_choice(options, CurrentLocation, CurEnemy)
         enemy_health_check(CurrentLocation, CurEnemy)
         if battle == False:
+            
             return()
         print("Enemy's turn")  # and then the enemies
         print()
@@ -212,9 +213,12 @@ def save_checkpoint(CurrentLocation):  # saves all the players stats after reach
     saveLocation = CurrentLocation
 
 
-def load_checkpoint(CurrentLocation):  # loads last saved checkpoint after loosing a game
+def load_checkpoint(CurrentLocation):  # loads last saved checkpoint after loosing a game    
     player.health = saveHealth
     player.mana = saveMana
     player.exp = saveExp
     player.inventory = saveInventory
     CurrentLocation = saveLocation
+    global NewLocation
+    NewLocation = saveLocation
+    

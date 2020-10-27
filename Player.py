@@ -2,6 +2,8 @@ import time
 from character_class import *
 from inventory import *
 
+
+
 class Player:  # Player Class
     def __init__(self, player_name, class_chosen):  # player_name and class_chosen use user inputs so 'self' is used
         self.player_name = player_name
@@ -14,6 +16,7 @@ class Player:  # Player Class
         self.maxMana = Classes[self.class_chosen]["mana"]
         self.inventory = inventory  # Inventory added from inventory dictionary
 
+player = Player("Test", "Undead")
 
 def print_descriptions():  # Prints the descriptions of each class
     for key in Classes:  # Loops for the number of classes

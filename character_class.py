@@ -1,6 +1,6 @@
 class_wizard = {
     # Low phys dmg, high mag dmg, med hp, high mana, 2 mana potions
-    "name": "Wizard",
+    "name": "wizard",
     "health": 100,
     "mana": 100,
     "strength": 15,
@@ -10,7 +10,7 @@ class_wizard = {
 
 class_warrior = {
     # Med phys dmg, low mag dmg, med hp, med mana, 1 mana 1 hp potions
-    "name": "Warrior",
+    "name": "warrior",
     "health": 130,
     "mana": 70,
     "strength": 12,
@@ -20,7 +20,7 @@ class_warrior = {
 
 class_undead = {
     # Med dmg, high hp, low mana, 2 strength potions (when added)
-    "name": "Undead",
+    "name": "undead",
     "health": 150,
     "mana": 50,
     "strength": 10,

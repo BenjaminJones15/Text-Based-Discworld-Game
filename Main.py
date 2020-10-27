@@ -20,8 +20,7 @@ def main():
 
 def RndEncounter(location):
     global CurEnemy
-    #EnChance = random.randint(0,1)
-    EnChance = 1
+    EnChance = random.randint(0,1)
     if location == Library:
         CurEnemy = ShadowingLemma
         if EnChance == 0:

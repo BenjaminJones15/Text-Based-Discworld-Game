@@ -9,14 +9,15 @@ CurrentLocation = Pseudopolis_Yard_Reception
 
 def main():    
     StartMenu()
-    global CurrentLocation
+    global CurrentLocation    
     save_checkpoint(CurrentLocation)
     print("You must free the city and defeat Kirill!")
-    while True:
+    while True:        
         print_location(CurrentLocation)
         RndEncounter(CurrentLocation)
-        command = menu(CurrentLocation.exits, CurrentLocation.Items, inventory)
-        CurrentLocation = execute_command(command, CurrentLocation)        
+        command = menu(CurrentLocation.exits, CurrentLocation.Items, inventory)        
+        CurrentLocation = execute_command(command, CurrentLocation)
+                
 
 def RndEncounter(location):
     global CurEnemy
@@ -56,7 +57,8 @@ def RndEncounter(location):
         else:
             CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
             start_battle(location, CurEnemy)
-
+    global CurrentLocation
+    CurrentLocation = NewLocation
             
 if __name__ == "__main__":  # Sets the main to StartMenu()
     main()

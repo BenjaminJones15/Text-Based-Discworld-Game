@@ -184,17 +184,18 @@ def game_over(CurrentLocation):  # game over screen asking if they wish to conti
 def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried out each turn
     global strength_check
     global battle
+    global NewLocation
     battle = True
     strength_check = False
     print(CurEnemy.name + " has appeared")  # gets enemy name from what was called in the random encounter
     while battle == True:
+        NewLocation = CurrentLocation
         print("Your turn")  # with your turn is occurring
         print()
         options = print_battle()
         execute_battle_choice(options, CurrentLocation, CurEnemy)
         enemy_health_check(CurrentLocation, CurEnemy)
-        if battle == False:
-            
+        if battle == False:            
             return()
         print("Enemy's turn")  # and then the enemies
         print()
@@ -212,13 +213,12 @@ def save_checkpoint(CurrentLocation):  # saves all the players stats after reach
     saveInventory = player.inventory
     saveLocation = CurrentLocation
 
+NewLocation = Pseudopolis_Yard_Reception
 
 def load_checkpoint(CurrentLocation):  # loads last saved checkpoint after loosing a game    
     player.health = saveHealth
     player.mana = saveMana
     player.exp = saveExp
-    player.inventory = saveInventory
-    CurrentLocation = saveLocation
+    player.inventory = saveInventory   
     global NewLocation
-    NewLocation = saveLocation
-    
+    NewLocation = CurrentLocation

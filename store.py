@@ -1,6 +1,6 @@
 from threading import Timer
 import time, sys
-
+from inventory import *
 
 def store():
     print("CMOT Dibbler: 'Welcome to my store'")
@@ -12,7 +12,6 @@ def store():
     print()
     print("X.) Exit Store")
 
-    inventory = ""
     wallet = 0
     options = ["1", "2", "3", "x"]
 

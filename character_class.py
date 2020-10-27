@@ -33,37 +33,3 @@ Classes = {
     "Warrior": class_warrior,
     "Undead": class_undead
 }
-
-#Change to a class instead?
-'''
-class Character(object):
-        def _init_(self, name, health, mana, strength, description):
-            self.name = name
-            self.health = health
-            self.mana = mana
-            self.strength = strength
-            self.description = description
-
-ClassList = ["Wizard", "Warrior", "Undead"]
-
-Wizard = Character
-Wizard.name = "Wizard"
-Wizard.health = 100
-Wizard.strength = 15
-Wizard.mana = 100
-Wizard.description = "The wizard  deals high magic damage, with a high amount of mana. Beware, as the wizard has a lower amount of health.\n Starts with 2 mana pies"
-
-Warrior = Character
-Warrior.name = "Warrior"
-Warrior.health = 130
-Warrior.strength = 12
-Warrior.mana = 70
-Warrior.description = "The warrior deals medium amounts of damage, and has a fairly high amount of health.\n Starts with 1 mana and 1 health pie"
-
-Undead = Character
-Undead.name = "Undead"
-Undead.health = 150
-Undead.strength = 10
-Undead.mana = 50
-Undead.description = "The undead compensates for his smaller mana pool for a very amount high of health.\n Starts with 2 strength pies."
-'''

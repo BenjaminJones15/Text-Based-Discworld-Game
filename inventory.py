@@ -1,16 +1,16 @@
 # Contain items and amount of them
 # This dictionary is not currently being used
-Health_Pie = {
-    "name": "Health Pie",
+health_pie = {
+    "name": "health pie",
     "amount": 0,
     "Description": "A pie that refills part of your health bar"}
 
-Mana_Pie = {
+mana_pie = {
     "name": "Mana Pie",
     "amount": 0,
     "description": "A pie that refills part of your mana bar"}
 
-Strength_Pie = {
+strength_pie = {
     "name": "Strength Pie",
     "amount": 0,
     "description": "A pie that temporarily increases your strength"}

@@ -1,5 +1,4 @@
 import time
-
 from character_class import *
 from inventory import *
 

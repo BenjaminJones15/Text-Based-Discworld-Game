@@ -22,18 +22,18 @@ def print_battle():  # prints your battle options each turn
 
 
 def execute_attack(CurEnemy):  # deals damage to the enemy
-    CurEnemy.health = CurEnemy.health - random.randrange(player.strength / 2, player.strength, 1)
+    CurEnemy.health = CurEnemy.health - random.randrange(Player.strength / 2, Player.strength, 1)
     # takes a random number based on strength to attack
-    print("The enemy lost " + player.strength + " health")
+    print("The enemy lost " + Player.strength + " health")
     global strength_check  # used to check if a strength potion has been used
-    if strength_check == True:
-        player.strength = player.strength/3
+    if strength_check = True:
+        Player.strength = Player.strength/3
         strength_check = False
 
 
 def execute_mana(CurEnemy):  # mana is set damage and shows your mana falling
     CurEnemy.health = CurEnemy.health - 20
-    player.mana = player.mana - 20
+    Player.mana = Player.mana - 20
     print("The enemy lost 20 health")
     print("You used up 20 mana")
 
@@ -47,25 +47,25 @@ def execute_item():  # brings up a item selection menu
         if inventory["Health Pie"] == 0:
             print("You do not have enough Health Pies")
         else:
-            player.health = player.health + 50            
-            player.maxHealth = player.maxHealth            
-            if player.health > player.maxHealth:  # checks to see health doesn't go over the max
-                player.health = player.maxHealth
+            Player.health = Player.health + 50            
+            Player.maxHealth = Player.maxHealth            
+            if Player.health > Player.maxHealth:  # checks to see health doesn't go over the max
+                Player.health = Player.maxHealth
             inventory["Health Pie"] -= 1
     elif item == "mana pie":
         if inventory["Mana Pie"] == 0:
             print("You do not have enough Mana Pies")
         else:
-            player.mana = player.mana + 50
-            player.maxMana = player.maxMana
-            if player.mana > player.maxMana:  # checks to see mana doesn't go over the max
-                player.mana = player.maxMana
+            Player.mana = Player.mana + 50
+            Player.maxMana = Player.maxMana
+            if Player.mana > Player.maxMana:  # checks to see mana doesn't go over the max
+                Player.mana = Player.maxMana
             inventory["Mana Pie"] -= 1
     elif item == "strength pie":
         if inventory["Strength Pie"] == 0:
             print("You do not have enough Strength Pies")
         else:
-            player.strength = player.strength*3  # increases the players strength for one turn
+            Player.strength = Player.strength*3  # increases the players strength for one turn
             global strength_check
             strength_check = True  # check used to turn it back the next attack
             inventory["Strength Pie"] -= 1
@@ -90,7 +90,7 @@ def execute_run(CurrentLocation, CurEnemy):  # try to run from the fight
     else:
         run = random.randrange(1, 2, 1)  # random chance to run from the battle
         if run == 1:
-            player.health = player.health - 10  # still take damage for running away
+            Player.health = Player.health - 10  # still take damage for running away
             health_check(CurrentLocation)
             global battle
             battle = False
@@ -103,7 +103,7 @@ def execute_battle_choice(choice, CurrentLocation, CurEnemy):  # used to pick wh
     if choice == "attack":
         execute_attack(CurEnemy)
     elif choice == "mana":
-        if player.mana >= 20:  # see's if the player has enough mana to use a spell
+        if Player.mana >= 20:  # see's if the player has enough mana to use a spell
             execute_mana(CurEnemy)
         else:
             print("Not enough mana")
@@ -125,13 +125,13 @@ def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health 
         if CurrentLocation.boss:  # if it is a boss fight it drops set items
             inventory["Money"] += 100
             inventory["Key Piece"] += 1
-            player.exp = player.exp + 100  # level up after a fight
+            Player.exp = Player.exp + 100  # level up after a fight
             save_checkpoint(CurrentLocation)  # saves the players progress after beating a boss
         else:  # otherwise a random amount of gold and exp
             drop = random.randrange(0, 5, 1)
             inventory["Money"] += drop
             ex = random.randrange(CurEnemy.exp / 2, CurEnemy.exp, 1)  # random amount of experience after regular fights
-            player.exp = player.exp + ex
+            Player.exp = Player.exp + ex
 
 
 def enemy_attack(CurEnemy):
@@ -139,23 +139,23 @@ def enemy_attack(CurEnemy):
     if attack == 3:
         print(CurEnemy.name + " uses magic")
         print("You took " + CurEnemy.magic + " damage")
-        player.health = player.health - CurEnemy.magic
+        Player.health = Player.health - CurEnemy.magic
     else:  # enemies are more likely to attack than use magic
         print(CurEnemy.name + " attacks")
         print("You took " + str(CurEnemy.strength) + " damage")
-        player.health = player.health - CurEnemy.strength
+        Player.health = Player.health - CurEnemy.strength
 
 
 def health_check(CurrentLocation):  # checks the player's health each turn to check they haven't died
-    if player.health <= 0:  # if they have it does the game over screen
+    if Player.health <= 0:  # if they have it does the game over screen
         game_over(CurrentLocation)
  
 
 def exp_check():  # checks to see if the player should level up    
-    if player.exp >= 100:
-        player.health = player.maxHealth
-        player.mana = player.maxMana
-        player. exp = 0
+    if Player.exp >= 100:
+        Player.health = Player.maxHealth
+        Player.mana = Player.maxMana
+        Player. exp = 0
 
 
 def game_over(CurrentLocation):  # game over screen asking if they wish to continue
@@ -190,16 +190,16 @@ def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried o
 def save_checkpoint(CurrentLocation):  # saves all the players stats after reaching a checkpoint
     global saveHealth, saveMana, saveExp, saveInventory, saveLocation
     # global used so that the variables can be accessed in other functions e.g. load_checkpoint
-    saveHealth = player.health
-    saveMana = player.mana
-    saveExp = player.exp
-    saveInventory = player.inventory
+    saveHealth = Player.health
+    saveMana = Player.mana
+    saveExp = Player.exp
+    saveInventory = Player.inventory
     saveLocation = CurrentLocation
 
 
 def load_checkpoint(CurrentLocation):  # loads last saved checkpoint after loosing a game
-    player.health = saveHealth
-    player.mana = saveMana
-    player.exp = saveExp
-    player.inventory = saveInventory
+    Player.health = saveHealth
+    Player.mana = saveMana
+    Player.exp = saveExp
+    Player.inventory = saveInventory
     CurrentLocation = saveLocation

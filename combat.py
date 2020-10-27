@@ -26,7 +26,7 @@ def execute_attack(CurEnemy):  # deals damage to the enemy
     # takes a random number based on strength to attack
     print("The enemy lost " + Player.strength + " health")
     global strength_check  # used to check if a strength potion has been used
-    if strength_check = True:
+    if strength_check:
         Player.strength = Player.strength/3
         strength_check = False
 

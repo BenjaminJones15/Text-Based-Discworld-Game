@@ -78,9 +78,9 @@ def execute_item():  # brings up a item selection menu
 
 def execute_inspect(CurEnemy):  # views the enemies stats
     print(CurEnemy.description)
-    print("The enemy has " + CurEnemy.health)
-    print("Enemy strength " + CurEnemy.strength)
-    print("Enemy magic " + CurEnemy.magic)
+    print("The enemy has " + str(CurEnemy.health))
+    print("Enemy strength " + str(CurEnemy.strength))
+    print("Enemy magic " + str(CurEnemy.magic))
 
 
 def execute_run(CurrentLocation, CurEnemy):  # try to run from the fight

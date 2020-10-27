@@ -49,7 +49,7 @@ def starting_inventory(player):  # Gives the player starting items depending on 
         player.inventory["Mana Pie"] += 2
     elif player.class_chosen == "Warrior":  # If warrior was chosen, add 1 hp, 1 mana pie to inventory
         player.inventory["Mana Pie"] += 1
-        player.inventory["HP Pie"] += 1
+        player.inventory["Health Pie"] += 1
     else:
         player.inventory["Strength Pie"] += 2  # If undead was chosen, add 2 strength pie to inventory
 

@@ -34,8 +34,8 @@ Pseudopolis_Yard_Outside = Location()
 Pseudopolis_Yard_Outside.name = "The outside of Pseudopolis Yard Watch house"
 Pseudopolis_Yard_Outside.description = ""  #insert roshan here
 Pseudopolis_Yard_Outside.NPC = ["Captain Carrot"]
-Pseudopolis_Yard_Outside.exits = {"reception":"Reception", "tower": "Tower","palace entrance": "Entrance",
-"gimlet's restaurant": "Restaurant"}
+Pseudopolis_Yard_Outside.exits = {"reception":"Reception", "tower": "Tower","entrance": "Entrance",
+"restaurant": "Restaurant"}
 Pseudopolis_Yard_Outside.POI = {"Talk to Captain Carrot.": '''insert dialogue here'''}
 Pseudopolis_Yard_Outside.Items = []
 Pseudopolis_Yard_Outside.boss = False
@@ -147,7 +147,7 @@ Temple_of_Anoia.name = "Temple of Anoia"
 Temple_of_Anoia.description = ""  #insert roshan here
 Temple_of_Anoia.NPC = ["Prietess?"]
 Temple_of_Anoia.exits = {"mended drum":"Mended Drum", "hospital":"Hospital","restaurant":"Restaurant", 
-"inner temple":"Inner"}
+"inner":"Inner"}
 Temple_of_Anoia.POI = {}    
 Temple_of_Anoia.Items = []    
 Temple_of_Anoia.boss = False

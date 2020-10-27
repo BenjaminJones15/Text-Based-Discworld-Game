@@ -47,12 +47,12 @@ def choose_class():  # Takes user's class input and checks if it is valid. It wi
 
 def starting_inventory(player):  # Gives the player starting items depending on their chosen class
     if player.class_chosen == "wizard":  # If wizard was chosen, add 2 mana pies to inventory
-        player.inventory["Mana Pie"] += 2
+        player.inventory["mana pie"] += 2
     elif player.class_chosen == "warrior":  # If warrior was chosen, add 1 hp, 1 mana pie to inventory
-        player.inventory["Mana Pie"] += 1
-        player.inventory["Health Pie"] += 1
+        player.inventory["mana pie"] += 1
+        player.inventory["health pie"] += 1
     else:
-        player.inventory["Strength Pie"] += 2  # If undead was chosen, add 2 strength pie to inventory
+        player.inventory["strength pie"] += 2  # If undead was chosen, add 2 strength pie to inventory
 
     return player.inventory  # Return updated player inventory
 

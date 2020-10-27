@@ -130,12 +130,15 @@ def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health 
         global battle
         battle = False
         if CurrentLocation.boss:  # if it is a boss fight it drops set items
-            inventory["Money"] += 100
-            inventory["Key Piece"] += 1
-            print("You picked up a key piece")
-            player.exp = player.exp + 100  # level up after a fight
-            CurrentLocation.boss = False
-            save_checkpoint(CurrentLocation)  # saves the players progress after beating a boss
+            if CurEnemy.name == "Kirill":
+                you_win()
+            else:
+                inventory["Money"] += 100
+                inventory["Key Piece"] += 1
+                print("You picked up a key piece")
+                player.exp = player.exp + 100  # level up after a fight
+                CurrentLocation.boss = False
+                save_checkpoint(CurrentLocation)  # saves the players progress after beating a boss
         else:  # otherwise a random amount of gold and exp
             drop = random.randint(0, 5)
             inventory["Money"] += drop
@@ -143,6 +146,28 @@ def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health 
             player.exp = player.exp + ex
     print()
 
+
+def you_win():
+    print("""
+▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  
+█       █  █ █  █       █  █       █  █  █ █      █ 
+█▄     ▄█  █▄█  █    ▄▄▄█  █    ▄▄▄█   █▄█ █  ▄    █
+  █   █ █       █   █▄▄▄   █   █▄▄▄█       █ █ █   █
+  █   █ █   ▄   █    ▄▄▄█  █    ▄▄▄█  ▄    █ █▄█   █
+  █   █ █  █ █  █   █▄▄▄   █   █▄▄▄█ █ █   █       █
+  █▄▄▄█ █▄▄█ █▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄█ 
+
+Made By:
+----------------
+Benjamin Jones
+Cameron Bethell
+Jamie Groom
+Roshan Roy
+Will Simkins
+Will Shepherd
+    """)
+    time.sleep(20)
+    quit()
 
 def enemy_attack(CurEnemy):
     attack = random.randint(1, 3)   # randomly decides what attack enemies should use

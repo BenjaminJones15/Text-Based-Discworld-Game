@@ -38,11 +38,10 @@ def is_valid_exit(exits, chosen_exit):
 def execute_go(direction,location):  
      
     if is_valid_exit(location.exits,direction) == True:
-        location = move(location.exits, direction)
-        print(location.name)
+        location = move(location.exits, direction)        
         return location
     else:
-        print("You cannot go there.")
+        print("You cannot go there.")        
 
 def execute_take(item_id, location):
     for i in location.Items:
@@ -69,7 +68,12 @@ def execute_command(command, location):
 
     if command[0] == "go":
         if len(command) > 1:
-            return execute_go(command[1], location)            
+            newlocation= execute_go(command[1], location) 
+            if newlocation is None:
+                newlocation = location
+                return newlocation
+            else:
+                return newlocation          
         else:
             print("Go where?")
 

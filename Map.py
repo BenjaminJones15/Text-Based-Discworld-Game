@@ -170,8 +170,8 @@ Gimlets_Restaurant.NPC = ["Gimlet", "Captain Carrot"]
 Gimlets_Restaurant.exits = {"temple":"Temple", "shades":"Shades"}
 Gimlets_Restaurant.POI = {}    
 Gimlets_Restaurant.Items = []    
-Gimlets_Restaurant.boss = False
-Gimlets_Restaurant.sprite = True
+Gimlets_Restaurant.boss = True
+Gimlets_Restaurant.sprite = False
 
 The_Shades = Location()
 The_Shades.name = "The Shades"

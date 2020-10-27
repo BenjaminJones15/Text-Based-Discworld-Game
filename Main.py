@@ -39,6 +39,7 @@ def RndEncounter(location):
     global CurrentLocation
     global MyPlayer
     EnChance = random.randint(0,1)
+
     if location == Library:
         CurEnemy = ShadowingLemma
         if EnChance == 0:
@@ -51,7 +52,7 @@ def RndEncounter(location):
             return()
         else:
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)
-    elif location == Pseudopolis_Yard_Reception or location == Pseudopolis_Yard_Outside or location == Pseudopolis_Yard_Upstairs:   #get rid of. use .sprite = true
+    elif location.sprite == False:
         return()
     elif location == Gimlets_Restaurant:
         if location.boss == True:

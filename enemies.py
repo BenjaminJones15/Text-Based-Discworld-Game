@@ -8,7 +8,7 @@ class enemy(object):
         self.description = descrption  #
         self.exp = exp #
 
-Mugger = enemy
+Mugger = enemy()
 Mugger.name = "Mugger"
 Mugger.health = 25
 Mugger.strength = 8
@@ -17,7 +17,7 @@ Mugger.description = ("Armed with a shiv and a licence to steal.")
 Mugger.exp = 8
 
 
-Gnome = enemy
+Gnome = enemy()
 Gnome.name = "Gnome"
 Gnome.health = 40
 Gnome.strength = 12
@@ -26,7 +26,7 @@ Gnome.description = ("Gnomes are the smallest form of humanoids")
 Gnome.exp = 18
 
 
-Werewolf = enemy
+Werewolf = enemy()
 Werewolf.name = "Werewolf"
 Werewolf.health = 30
 Werewolf.strength = 30
@@ -35,7 +35,7 @@ Werewolf.description = ("Physcially powerful and hard to kill")
 Werewolf.exp = 20
 
 
-SwampDragon = enemy
+SwampDragon = enemy()
 SwampDragon.name = "Swamp Dragon"
 SwampDragon.health = 100
 SwampDragon.strength = 14
@@ -44,7 +44,7 @@ SwampDragon.description = ("Will eat and drink anything that can be used as fuel
 SwampDragon.exp = 25
 
 
-ShadowingLemma = enemy
+ShadowingLemma = enemy()
 ShadowingLemma.name = "Shadowing Lemma"
 ShadowingLemma.health = 50
 ShadowingLemma.strength = 14
@@ -53,7 +53,7 @@ ShadowingLemma.description = ("A curious creature that exists in only two dimens
 ShadowingLemma.exp = 28
 
 
-Basilisk = enemy
+Basilisk = enemy()
 Basilisk.name = "Basilisk"
 Basilisk.health = 80
 Basilisk.strength = 24
@@ -62,7 +62,7 @@ Basilisk.description = ("Powerful and giant snake whose gaze can kill")
 Basilisk.exp = 36
 
 
-Chimera = enemy
+Chimera = enemy()
 Chimera.name = "Chimera"
 Chimera.health = 70
 Chimera.strength = 25
@@ -73,7 +73,7 @@ Chimera.exp = 40
 EnemyList = [Mugger, Gnome, Werewolf, SwampDragon, ShadowingLemma]
 
 # these are the bosses
-Johnathan = enemy
+Johnathan = enemy()
 Johnathan.name = "Johnathan"
 Johnathan.health = 100
 Johnathan.strength = 5
@@ -81,7 +81,7 @@ Johnathan.magic = 0
 Johnathan.description = ("Most annoying in Ankh-Morpork")
 
 
-CarcerDun = enemy
+CarcerDun = enemy()
 CarcerDun.name = "Carcer Dun"
 CarcerDun.health = 150
 CarcerDun.strength = 40
@@ -89,7 +89,7 @@ CarcerDun.magic = 20
 CarcerDun.description = ("Stone-cold killer")
 
 
-Gitlab = enemy
+Gitlab = enemy()
 Gitlab.name = "Gitlab"
 Gitlab.health = 250
 Gitlab.strength = 30
@@ -97,7 +97,7 @@ Gitlab.magic = 35
 Gitlab.description = ("Why do we even use this?")
 
 
-MrGryle = enemy
+MrGryle = enemy()
 MrGryle.name = "Mr Gryle"
 MrGryle.health = 200
 MrGryle.strength = 20
@@ -105,7 +105,7 @@ MrGryle.magic = 60
 MrGryle.description = ("Powerful Banshee")
 
 
-Kiril = enemy
+Kiril = enemy()
 Kiril.name = "Kirill"
 Kiril.health = 400
 Kiril.strength = 35

@@ -4,7 +4,7 @@ from Map import *
 from Player import *
 from Move import *
 import random
-CurEnemy = enemy
+CurEnemy = Mugger
 CurrentLocation = Pseudopolis_Yard_Reception
 
 def main():    
@@ -13,24 +13,34 @@ def main():
     while True:
         global CurrentLocation
         print_location(CurrentLocation)
+        RndEncounter(CurrentLocation)
         command = menu(CurrentLocation.exits, CurrentLocation.Items, inventory)
-        CurrentLocation = execute_command(command, CurrentLocation)
-        
+        CurrentLocation = execute_command(command, CurrentLocation)        
 
 def RndEncounter(location):
-    if location.name == "The Library":
+    global CurEnemy
+    #EnChance = random.randint(0,1)
+    EnChance = 1
+    if location == Library:
         CurEnemy = ShadowingLemma
-        start_battle()        #will be fixed if moving save and load to combat.
-    elif location.name == "The Shades":
+        if EnChance == 0:
+            return()
+        else:
+            start_battle(location, CurEnemy)        
+    elif location == The_Shades:
         CurEnemy = Mugger
-        start_battle()
-    else:
-        EnChance = random.randint(0,1)
+        if EnChance == 0:
+            return()
+        else:
+            start_battle(location, CurEnemy)
+    elif location == Pseudopolis_Yard_Reception or location == Pseudopolis_Yard_Outside or location == Pseudopolis_Yard_Upstairs:
+        return()
+    else:        
         if EnChance == 0:
             return()
         else:
             CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
-            start_battle()
+            start_battle(location, CurEnemy)
 
             
 if __name__ == "__main__":  # Sets the main to StartMenu()

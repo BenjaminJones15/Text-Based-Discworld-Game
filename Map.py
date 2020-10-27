@@ -126,7 +126,7 @@ Mended_Drum.name = "The Mended Drum"
 Mended_Drum.description = ""  #insert roshan here
 Mended_Drum.NPC = ["Librarian", "Conan the Barbarian"]
 Mended_Drum.exits = {"post":"Post Office", "hospital":"Hospital",
-"temple of anoia":"Temple of Anoia"}
+"temple":"Temple of Anoia"}
 Mended_Drum.POI = {}        #maybe?
 Mended_Drum.Items = []
 Mended_Drum.boss = False
@@ -212,9 +212,9 @@ ListLocations = {"Reception":Pseudopolis_Yard_Reception,
 "Square":Sator_Square,
 "Entrance":Palace_Entrance, 
 "Palace":Palace, 
-"Post Office":Post_Office, 
+"Post":Post_Office, 
 "Basement":Post_Office_Basement, 
-"Mended Drum":Mended_Drum,
+"Mended":Mended_Drum,
 "Hospital":Lady_Sybil_Free_Hospital, 
 "Temple":Temple_of_Anoia, 
 "Inner":Temple_of_Anoia_Inner,

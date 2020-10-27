@@ -3,6 +3,7 @@ import time, sys
 from inventory import *
 
 def store():
+    openStore = True
     print("CMOT Dibbler: 'Welcome to my store'")
     print("-----------------------------------")
     print("CMOT Dibbler: 'I'll sell it for less, and that's cutting me own throat.'")
@@ -26,27 +27,28 @@ def store():
             "\n>"
         ],
     )
-    t.start()
-    optioncmot = input(">")
-    t.cancel()
+    while openStore:
+        t.start()
+        optioncmot = input(">")
+        t.cancel()
 
-    if optioncmot == "1":
-        print("You have bought a health pie for 5 AM$")
-        wallet = wallet - 5        
-        inventory["health pie"] += 1
+        if optioncmot == "1":
+            print("You have bought a health pie for 5 AM$")
+            wallet = wallet - 5
+            inventory["health pie"] += 1
 
-    if optioncmot == "2":
-        print("You have bought a mana pie for 20 AM$")
-        wallet = wallet - 20
-        inventory["mana pie"] += 1
+        if optioncmot == "2":
+            print("You have bought a mana pie for 20 AM$")
+            wallet = wallet - 20
+            inventory["mana pie"] += 1
 
-    if optioncmot == "3":
-        print("You have bought a strength pie for 12 AM$")
-        wallet = wallet - 12
-        inventory["strength pie"] += 1
+        if optioncmot == "3":
+            print("You have bought a strength pie for 12 AM$")
+            wallet = wallet - 12
+            inventory["strength pie"] += 1
 
-    if optioncmot.lower == "x":
-        store = False
+        if optioncmot.lower == "x":
+            openStore = False
 
-    if optioncmot not in options:
-        print("Invalid input")
+        if optioncmot not in options:
+            print("Invalid input")

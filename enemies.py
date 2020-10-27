@@ -37,7 +37,7 @@ Werewolf.exp = 20
 
 SwampDragon = enemy()
 SwampDragon.name = "Swamp Dragon"
-SwampDragon.health = 100
+SwampDragon.health = 45
 SwampDragon.strength = 14
 SwampDragon.magic = 20
 SwampDragon.description = ("Will eat and drink anything that can be used as fuel for fire-breathing")

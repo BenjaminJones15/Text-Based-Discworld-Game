@@ -37,7 +37,7 @@ def is_valid_exit(exits, chosen_exit):
 
 def execute_go(direction,location):  
     
-    keyvalue= inventory["Key Piece"]
+    keyvalue= inventory["key piece"]
 
     if direction == "palace":
         print("You have " + str(keyvalue) + " keys")

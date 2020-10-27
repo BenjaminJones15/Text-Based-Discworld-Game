@@ -23,7 +23,7 @@ def print_battle():  # prints your battle options each turn
     return choice
 
 
-def execute_attack(CurEnemy):  # deals damage to the enemy
+def execute_attack(CurEnemy, player):  # deals damage to the enemy
     ran = random.randint(player.strength / 2, player.strength)
     CurEnemy.health = CurEnemy.health - ran
     # takes a random number based on strength to attack
@@ -34,14 +34,14 @@ def execute_attack(CurEnemy):  # deals damage to the enemy
         strength_check = False
 
 
-def execute_mana(CurEnemy):  # mana is set damage and shows your mana falling
+def execute_mana(CurEnemy, player):  # mana is set damage and shows your mana falling
     CurEnemy.health = CurEnemy.health - 20
     player.mana = player.mana - 20
     print("The enemy lost 20 health")
     print("You used up 20 mana")
 
 
-def execute_item():  # brings up a item selection menu
+def execute_item(player):  # brings up a item selection menu
     print("What item do you want to use: ")
     for i in player.inventory:  # prints items in your inventory
         print(i, inventory[i])
@@ -86,19 +86,19 @@ def execute_inspect(CurEnemy):  # views the enemies stats
     print("Enemy magic " + str(CurEnemy.magic))
 
 
-def execute_run(CurrentLocation, CurEnemy):  # try to run from the fight
+def execute_run(CurrentLocation, CurEnemy, player):  # try to run from the fight
     if CurrentLocation.boss:  # checks if the fight is a boss battle
         if CurEnemy.name == "Jonathan":  # easter egg with the first boss
             print("Really?")
             time.sleep(1)
-            game_over()  #nice touch
+            game_over(player)  #nice touch
         else:  # not allowed to run from a boss fight
             print("You can't run from this battle")
     else:
         run = random.randint(1, 2)  # random chance to run from the battle
         if run == 1:
             player.health = player.health - 10  # still take damage for running away
-            health_check()
+            health_check(player)
             global battle
             battle = False
             print("You ran away!")               #######################################################
@@ -106,25 +106,26 @@ def execute_run(CurrentLocation, CurEnemy):  # try to run from the fight
             print("You couldn't get away")
 
 
-def execute_battle_choice(choice, CurrentLocation, CurEnemy):  # used to pick which battle action should occur
+def execute_battle_choice(choice, CurrentLocation, CurEnemy, player):  # used to pick which battle action should occur
     if choice == "attack":
-        execute_attack(CurEnemy)
+        execute_attack(CurEnemy, player)
     elif choice == "mana":
         if player.mana >= 20:  # see's if the player has enough mana to use a spell
-            execute_mana(CurEnemy)
+            player
+            execute_mana(CurEnemy, player)
         else:
             print("Not enough mana")
     elif choice == "items":
-        execute_item()
+        execute_item(player)
     elif choice == "inspect":
         execute_inspect(CurEnemy)
     elif choice == "run":
-        execute_run(CurrentLocation, CurEnemy)
+        execute_run(CurrentLocation, CurEnemy, player)
     else:
         print("Incorrect command")  # used to make sure the user knows they entered the wrong value
 
 
-def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health each turn to see if the battle has ended
+def enemy_health_check(CurrentLocation, CurEnemy, player):  # checks the enemy's health each turn to see if the battle has ended
     if CurEnemy.health <= 0:
         print("you win.")
         global battle
@@ -138,7 +139,7 @@ def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health 
                 print("You picked up a key piece")
                 player.exp = player.exp + 100  # level up after a fight
                 CurrentLocation.boss = False
-                save_checkpoint(CurrentLocation)  # saves the players progress after beating a boss
+                save_checkpoint(CurrentLocation, player)  # saves the players progress after beating a boss
         else:  # otherwise a random amount of gold and exp
             drop = random.randint(0, 5)
             inventory["Money"] += drop
@@ -169,7 +170,7 @@ Will Shepherd
     time.sleep(20)
     quit()
 
-def enemy_attack(CurEnemy):
+def enemy_attack(CurEnemy, player):
     attack = random.randint(1, 3)   # randomly decides what attack enemies should use
     if attack == 3:
         print(CurEnemy.name + " uses magic")
@@ -182,9 +183,9 @@ def enemy_attack(CurEnemy):
     print()
 
 
-def health_check():  # checks the player's health each turn to check they haven't died
+def health_check(player):  # checks the player's health each turn to check they haven't died
     if player.health <= 0:  # if they have it does the game over screen
-        game_over()
+        game_over(player)
  
 
 def exp_check():  # checks to see if the player should level up    
@@ -193,7 +194,7 @@ def exp_check():  # checks to see if the player should level up
         player.mana = player.maxMana
         player. exp = 0
 
-def game_over():  # game over screen asking if they wish to continue
+def game_over(player):  # game over screen asking if they wish to continue
     global battle
     global Restart
     battle = False
@@ -205,10 +206,10 @@ def game_over():  # game over screen asking if they wish to continue
     if choice == "no":  # if yes it loads a checkpoint otherwise the game quits
         quit()
     else:
-        load_checkpoint() 
+        load_checkpoint(player) 
         Restart = True
 
-def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried out each turn
+def start_battle(CurrentLocation, CurEnemy, player):  # how the battle will be carried out each turn
     global strength_check
     global battle
     global Restart 
@@ -219,8 +220,8 @@ def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried o
         print("Your turn")  # with your turn is occurring
         print()
         options = print_battle()
-        execute_battle_choice(options, CurrentLocation, CurEnemy)
-        enemy_health_check(CurrentLocation, CurEnemy)
+        execute_battle_choice(options, CurrentLocation, CurEnemy, player)
+        enemy_health_check(CurrentLocation, CurEnemy, player)
         if Restart == True:
             Restart = False
             battle = False
@@ -230,15 +231,15 @@ def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried o
         print("Enemy's turn")  # and then the enemies
         print()
         time.sleep(2)
-        enemy_attack(CurEnemy)
-        health_check()
+        enemy_attack(CurEnemy, player)
+        health_check(player)
         if Restart == True:
             Restart = False
             battle = False
             return NewLocation
     return CurrentLocation
 
-def save_checkpoint(CurrentLocation):  # saves all the players stats after reaching a checkpoint
+def save_checkpoint(CurrentLocation, player):  # saves all the players stats after reaching a checkpoint
     global saveHealth, saveMana, saveExp, saveInventory, saveLocation
     # global used so that the variables can be accessed in other functions e.g. load_checkpoint
     saveHealth = player.health
@@ -247,7 +248,7 @@ def save_checkpoint(CurrentLocation):  # saves all the players stats after reach
     saveInventory = player.inventory
     saveLocation = CurrentLocation
 
-def load_checkpoint():  # loads last saved checkpoint after losing a game    
+def load_checkpoint(player):  # loads last saved checkpoint after losing a game    
     player.health = saveHealth
     player.mana = saveMana
     player.exp = saveExp

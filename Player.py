@@ -15,8 +15,6 @@ class Player:  # Player Class
         self.maxMana = Classes[self.class_chosen]["mana"]
         self.inventory = inventory  # Inventory added from inventory dictionary
 
-player = Player("Test", "undead")
-
 def print_descriptions():  # Prints the descriptions of each class
     for key in Classes:  # Loops for the number of classes
         print(Classes[key]["description"])  # Prints each description
@@ -56,11 +54,11 @@ def starting_inventory(player):  # Gives the player starting items depending on 
 
     return player.inventory  # Return updated player inventory
 
-def StartMenu():  # Where the program begins. Can change when everything is implemented
-    global player
+def StartMenu():  # Where the program begins. Can change when everything is implemented    
     print("Enter your name")
     user_name = input("> ")  # Prompts user to enter a name for the character
     print_descriptions()  # Calls print_descriptions function, which prints each class description
     user_class = choose_class()  # Calls function choose_class
     player = Player(user_name, user_class)  # Creating the player using an instance of the Player class
     player.inventory = starting_inventory(player)  # Gives the player starting items depending on their class
+    return player

@@ -22,7 +22,7 @@ def print_battle():  # prints your battle options each turn
 
 
 def execute_attack(CurEnemy):  # deals damage to the enemy
-    CurEnemy.health = CurEnemy.health - random.randrange(player.strength / 2, player.strength, 1)
+    CurEnemy.health = CurEnemy.health - random.randint(player.strength / 2, player.strength)
     # takes a random number based on strength to attack
     print("The enemy lost " + str(player.strength) + " health")
     global strength_check  # used to check if a strength potion has been used
@@ -42,7 +42,7 @@ def execute_item():  # brings up a item selection menu
     print("What item do you want to use: ")
     for i in inventory:  # prints items in your inventory
         print(i)
-    item = normalise_input(input("> "))
+    item = " ".join(normalise_input(input("> ")))
     if item == "health pie":
         if inventory["Health Pie"] == 0:
             print("You do not have enough Health Pies")
@@ -65,10 +65,13 @@ def execute_item():  # brings up a item selection menu
         if inventory["Strength Pie"] == 0:
             print("You do not have enough Strength Pies")
         else:
-            player.strength = player.strength*3  # increases the players strength for one turn
             global strength_check
-            strength_check = True  # check used to turn it back the next attack
-            inventory["Strength Pie"] -= 1
+            if strength_check:
+                print("You've already taken a strength pie")
+            else:
+                player.strength = player.strength*3  # increases the players strength for one turn
+                strength_check = True  # check used to turn it back the next attack
+                inventory["Strength Pie"] -= 1
     else:  # incase the user try's to select another item
         print("Please select a potion")
 
@@ -88,7 +91,7 @@ def execute_run(CurrentLocation, CurEnemy):  # try to run from the fight
         else:  # not allowed to run from a boss fight
             print("You can't run from this battle")
     else:
-        run = random.randrange(1, 2, 1)  # random chance to run from the battle
+        run = random.randint(1, 2)  # random chance to run from the battle
         if run == 1:
             player.health = player.health - 10  # still take damage for running away
             health_check(CurrentLocation)
@@ -125,25 +128,27 @@ def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health 
         if CurrentLocation.boss:  # if it is a boss fight it drops set items
             inventory["Money"] += 100
             inventory["Key Piece"] += 1
+            print("You picked up a key")
             player.exp = player.exp + 100  # level up after a fight
             save_checkpoint(CurrentLocation)  # saves the players progress after beating a boss
         else:  # otherwise a random amount of gold and exp
-            drop = random.randrange(0, 5, 1)
+            drop = random.randint(0, 5)
             inventory["Money"] += drop
-            ex = random.randrange(CurEnemy.exp / 2, CurEnemy.exp, 1)  # random amount of experience after regular fights
+            ex = random.randint(CurEnemy.exp / 2, CurEnemy.exp)  # random amount of experience after regular fights
             player.exp = player.exp + ex
 
 
 def enemy_attack(CurEnemy):
-    attack = random.randrange(1, 3, 1)   # randomly decides what attack enemies should use
+    attack = random.randint(1, 3)   # randomly decides what attack enemies should use
     if attack == 3:
         print(CurEnemy.name + " uses magic")
-        print("You took " + CurEnemy.magic + " damage")
+        print("You took " + str(CurEnemy.magic) + " damage")
         player.health = player.health - CurEnemy.magic
     else:  # enemies are more likely to attack than use magic
         print(CurEnemy.name + " attacks")
         print("You took " + str(CurEnemy.strength) + " damage")
         player.health = player.health - CurEnemy.strength
+    print()
 
 
 def health_check(CurrentLocation):  # checks the player's health each turn to check they haven't died
@@ -178,12 +183,14 @@ def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried o
     print(CurEnemy.name + " has appeared")  # gets enemy name from what was called in the random encounter
     while battle == True:
         print("Your turn")  # with your turn is occurring
+        print()
         options = print_battle()
         execute_battle_choice(options, CurrentLocation, CurEnemy)
         enemy_health_check(CurrentLocation, CurEnemy)
         if battle == False:
             return()
         print("Enemy's turn")  # and then the enemies
+        print()
         time.sleep(2)
         enemy_attack(CurEnemy)
         health_check(CurrentLocation)

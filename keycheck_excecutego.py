@@ -7,17 +7,9 @@ from normalise import *
 ## This piece of code is designed to be amended to the excecute go function.
 ## This is currently unfinished and requires correct variable names and modules to import
 
-keyvalue = 0  ## start this value as zero from main? Global Variable
+keyvalue = 0  # start this value as zero from main? Global Variable
 
-stringinput = ()
-stringinput = normalised_user_input
-# string input lets us know when the player wants to go into throne room
-# global variable, can be placed potentionally in main
-
-global current_room
-
-
-if stringinput == "throne room ":
+if direction == "palace":
     # granted user input is normalised and .lowered / else may require stringinput[1]
     for key in inventory:
         keyvalue = keyvalue + 1

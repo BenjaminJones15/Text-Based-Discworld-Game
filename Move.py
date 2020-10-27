@@ -36,7 +36,15 @@ def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
 def execute_go(direction,location):  
-     
+    
+    keyvalue= inventory["Key Piece"]
+
+    if direction == "palace":
+        print("You have " + keyvalue + " keys")
+        if keyvalue < 4:
+            print("You need four keys to enter the Throne Room")
+            return()
+            
     if is_valid_exit(location.exits,direction) == True:
         location = move(location.exits, direction)        
         return location

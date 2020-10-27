@@ -155,7 +155,7 @@ Temple_of_Anoia.sprite = False
 
 Temple_of_Anoia_Inner = Location()
 Temple_of_Anoia_Inner.name = "Inner Shrine of Anoia"
-Temple_of_Anoia.description = ""  #insert roshan here
+Temple_of_Anoia_Inner.description = ""  #insert roshan here
 Temple_of_Anoia_Inner.NPC = []
 Temple_of_Anoia_Inner.exits = {"temple":"Temple"}
 Temple_of_Anoia_Inner.POI = {}

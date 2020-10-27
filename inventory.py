@@ -17,13 +17,13 @@ Strength_Pie = {
 
 
 inventory = {  # User inventory. Starts empty
-    "Health Pie": 0,
-    "Mana Pie": 0,
-    "Strength Pie": 0,
-    "Money": 0,
-    "Key Piece": 0,
-    "Arms": 0,
-    "Swamp Dragons": 0
+    "health pie": 0,
+    "mana pie": 0,
+    "strength pie": 0,
+    "money": 0,
+    "key piece": 0,
+    "arms": 0,
+    "swamp dragons": 0
 }
 
 '''    #possible use if each item became an object.

@@ -50,6 +50,3 @@ def store():
 
     if optioncmot not in options:
         print("Invalid input")
-
-
-store()

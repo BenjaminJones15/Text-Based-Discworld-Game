@@ -85,7 +85,7 @@ def execute_command(command, location):
             else:
                 return newlocation          
         else:
-            print("Go where?")
+            print("Go where?")            
 
     elif command[0] == "take":
         if len(command) > 1:
@@ -101,6 +101,8 @@ def execute_command(command, location):
 
     else:
         print("This makes no sense.")
+        newlocation = location
+        return newlocation
 
 def menu(exits, room_items, inv_items):
     # Display menu

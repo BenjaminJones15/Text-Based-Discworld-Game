@@ -8,7 +8,7 @@ import time
 NewLocation = Pseudopolis_Yard_Reception
 Restart = False
 
-def print_battle():  # prints your battle options each turn
+def print_battle(player):  # prints your battle options each turn
     print("You can: ")
     print("Attack")
     print("Use Mana")
@@ -16,6 +16,7 @@ def print_battle():  # prints your battle options each turn
     print("Inspect enemy")
     print("RUN!!!")
     print()
+    print("You have " + str(player.health) + " health")
     print("What do you want to do?")
     choice = input("> ")
     choice = normalise_input(choice)
@@ -218,7 +219,7 @@ def start_battle(CurrentLocation, CurEnemy, player):  # how the battle will be c
     while battle == True:               
         print("Your turn")  # with your turn is occurring
         print()
-        options = print_battle()
+        options = print_battle(player)
         execute_battle_choice(options, CurrentLocation, CurEnemy, player)
         enemy_health_check(CurrentLocation, CurEnemy, player)
         if Restart == True:

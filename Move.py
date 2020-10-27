@@ -40,7 +40,7 @@ def execute_go(direction,location):
     keyvalue= inventory["Key Piece"]
 
     if direction == "palace":
-        print("You have " + keyvalue + " keys")
+        print("You have " + str(keyvalue) + " keys")
         if keyvalue < 4:
             print("You need four keys to enter the Throne Room")
             return()

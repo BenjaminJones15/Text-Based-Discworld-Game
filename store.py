@@ -1,4 +1,3 @@
-from pies import *
 from threading import Timer
 import time, sys
 
@@ -15,22 +14,23 @@ def store():
 
     inventory = ""
     wallet = 0
-    global pies
+    options = ["1", "2", "3", "x"]
 
-    timeframe = 500
+    timeframe = 5
 
     t = Timer(
         timeframe,
         print,
         [
             "\n CMOT Dibbler: '… when you sell sausages you don’t just hang around waiting for people to want sausage,"
-            "\n you go out there and make them hungry. And you put mustard on ‘em.' \nPress ENTER to display menu..."
+            "\n you go out there and make them hungry. And you put mustard on ‘em.' \n \n Please choose an option..."
+            "\n>"
         ],
     )
     t.start()
     optioncmot = input(">")
     t.cancel()
-    ## if no input after 500 seconds
+
     if optioncmot == "1":
         print("You have bought a health pie for 5 AM$")
         wallet = wallet - 5
@@ -52,11 +52,11 @@ def store():
             Strength_Pie = inventory["Strength_Pie"]
             inventory.append(Strength_Pie)
 
-    if optioncmot == "":
-        store()
+    if optioncmot == "X":
+        store = False
 
-    else:
-        print("That item does not exist")
+    if optioncmot not in options:
+        print("Invalid input")
 
 
 store()

@@ -87,6 +87,7 @@ def execute_run(CurrentLocation, CurEnemy):  # try to run from the fight
     if CurrentLocation.boss:  # checks if the fight is a boss battle
         if CurEnemy.name == "Jonathan":  # easter egg with the first boss
             print("Really?")
+            time.sleep(1)
             game_over(CurrentLocation)  #nice touch
         else:  # not allowed to run from a boss fight
             print("You can't run from this battle")
@@ -169,7 +170,7 @@ def game_over(CurrentLocation):  # game over screen asking if they wish to conti
     global battle
     battle = False
     print("You lose")
-    time.sleep(10)  # time to reflect on losing
+    time.sleep(3)  # time to reflect on losing
     print()
     print("Do you wish to continue? yes/no")  # option to continue
     choice = "".join(normalise_input(input()))

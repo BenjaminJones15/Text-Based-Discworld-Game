@@ -9,10 +9,10 @@ CurrentLocation = Pseudopolis_Yard_Reception
 
 def main():    
     StartMenu()
-                  
+    global CurrentLocation
+    save_checkpoint(CurrentLocation)
     print("You must free the city and defeat Kirill!")
     while True:
-        global CurrentLocation
         print_location(CurrentLocation)
         RndEncounter(CurrentLocation)
         command = menu(CurrentLocation.exits, CurrentLocation.Items, inventory)

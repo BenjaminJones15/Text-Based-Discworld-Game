@@ -166,15 +166,18 @@ def exp_check():  # checks to see if the player should level up
 
 
 def game_over(CurrentLocation):  # game over screen asking if they wish to continue
+    global battle
+    battle = False
     print("You lose")
     time.sleep(10)  # time to reflect on losing
     print()
     print("Do you wish to continue? yes/no")  # option to continue
-    choice = normalise_input(input())
-    if choice == "yes":  # if yes it loads a checkpoint otherwise the game quits
-        load_checkpoint(CurrentLocation)
-    else:
+    choice = "".join(normalise_input(input()))
+    if choice == "no":  # if yes it loads a checkpoint otherwise the game quits
         quit()
+    else:
+        load_checkpoint(CurrentLocation)
+
 
 
 def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried out each turn

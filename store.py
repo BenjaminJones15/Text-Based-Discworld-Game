@@ -16,7 +16,7 @@ def store():
     wallet = 0
     options = ["1", "2", "3", "x"]
 
-    timeframe = 5
+    timeframe = 500
 
     t = Timer(
         timeframe,

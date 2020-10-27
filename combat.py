@@ -128,8 +128,9 @@ def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health 
         if CurrentLocation.boss:  # if it is a boss fight it drops set items
             inventory["Money"] += 100
             inventory["Key Piece"] += 1
-            print("You picked up a key")
+            print("You picked up a key piece")
             player.exp = player.exp + 100  # level up after a fight
+            CurrentLocation.boss = False
             save_checkpoint(CurrentLocation)  # saves the players progress after beating a boss
         else:  # otherwise a random amount of gold and exp
             drop = random.randint(0, 5)

@@ -3,7 +3,7 @@ class_wizard = {
     "name": "wizard",
     "health": 100,
     "mana": 100,
-    "strength": 15,
+    "strength": 14,
     "description": "The wizard  deals high magic damage, with a high amount of mana. Beware, as the wizard has a lower amount of health.\n Starts with 2 mana pies"
     
 }

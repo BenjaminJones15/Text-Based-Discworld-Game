@@ -11,6 +11,18 @@ def main():
     StartMenu()
     global CurrentLocation    
     save_checkpoint(CurrentLocation)
+    print("""
+ ____  _                             _     _ 
+|  _ \(_)___  _____      _____  _ __| | __| |
+| | | | / __|/ __\ \ /\ / / _ \| '__| |/ _` |
+| |_| | \__ \ (__ \ V  V / (_) | |  | | (_| |
+|____/|_|___/\___| \_/\_/ \___/|_|  |_|\__,_|
+
+
+▀█▀ █░█ █▀▀   █▀▄ █▀█ █░█░█ █▄░█ █▀▀ ▄▀█ █░░ █░░   █▀█ █▀▀   █▄▀ █ █▀█ █ █░░ █░░
+░█░ █▀█ ██▄   █▄▀ █▄█ ▀▄▀▄▀ █░▀█ █▀░ █▀█ █▄▄ █▄▄   █▄█ █▀░   █░█ █ █▀▄ █ █▄▄ █▄▄
+""")
+
     print("You must free the city and defeat Kirill!")
     while True:        
         print_location(CurrentLocation)

@@ -137,6 +137,7 @@ def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health 
             inventory["Money"] += drop
             ex = random.randint(CurEnemy.exp / 2, CurEnemy.exp)  # random amount of experience after regular fights
             player.exp = player.exp + ex
+    print()
 
 
 def enemy_attack(CurEnemy):

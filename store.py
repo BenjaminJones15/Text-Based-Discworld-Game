@@ -35,21 +35,21 @@ def store():
         print("You have bought a health pie for 5 AM$")
         wallet = wallet - 5
         for items in inventory:
-            Health_Pie = inventory["Health_Pie"]
+            Health_Pie = inventory["health pie"]
             inventory.append(Health_Pie)
 
     if optioncmot == "2":
         print("You have bought a mana pie for 20 AM$")
         wallet = wallet - 20
         for items in inventory:
-            Mana_Pie = inventory["Mana_Pie"]
+            Mana_Pie = inventory["mana pie"]
             inventory.append(Mana_Pie)
 
     if optioncmot == "3":
         print("You have bought a strength pie for 12 AM$")
         wallet = wallet - 12
         for items in inventory:
-            Strength_Pie = inventory["Strength_Pie"]
+            Strength_Pie = inventory["strength pie"]
             inventory.append(Strength_Pie)
 
     if optioncmot == "X":

@@ -8,7 +8,8 @@ CurEnemy = Mugger
 CurrentLocation = Pseudopolis_Yard_Reception
 MyPlayer = Player
 
-def main():    
+def main(): 
+    global MyPlayer   
     MyPlayer = StartMenu()
     global CurrentLocation    
     save_checkpoint(CurrentLocation, MyPlayer)
@@ -36,6 +37,7 @@ def main():
 def RndEncounter(location):    
     global CurEnemy
     global CurrentLocation
+    global MyPlayer
     EnChance = random.randint(0,1)
     if location == Library:
         CurEnemy = ShadowingLemma

@@ -29,7 +29,7 @@ class_undead = {
 }
 
 Classes = {
-    "Wizard": class_wizard,
-    "Warrior": class_warrior,
-    "Undead": class_undead
+    "wizard": class_wizard,
+    "warrior": class_warrior,
+    "undead": class_undead
 }

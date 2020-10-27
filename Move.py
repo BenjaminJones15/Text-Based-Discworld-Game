@@ -1,10 +1,8 @@
 from Map import *
 from normalise import *
 from inventory import *
-CurrentLocation = Location
 
-
-def print_location(location):
+def print_location(location):        
     # Display room name
     print()
     print((location.name).upper())
@@ -14,11 +12,11 @@ def print_location(location):
     print()   
 
 def exit_leads_to(exits, direction):
-    #returns name of room into which exit leads.
+    #returns name of room into which exit leads.    
     return (ListLocations[exits[direction]]).name
 
 def print_exit(direction, leads_to):
-    print("Type " + direction.upper() + " to go to " + leads_to + ".")
+    print("Type Go " + direction.upper() + " to go to " + leads_to + ".")
 
 def print_menu(exits, location_items, inv_items):
     print("You can:")
@@ -37,51 +35,53 @@ def print_menu(exits, location_items, inv_items):
 def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
-def execute_go(direction):    
-    if is_valid_exit(CurrentLocation.exits,direction) == True:
-        CurrentLocation = move(CurrentLocation.exits, direction)
-        print(CurrentLocation.name)
+def execute_go(direction,location):  
+     
+    if is_valid_exit(location.exits,direction) == True:
+        location = move(location.exits, direction)
+        print(location.name)
+        return location
     else:
         print("You cannot go there.")
 
-def execute_take(item_id):
-    for i in CurrentLocation.Items:
+def execute_take(item_id, location):
+    for i in location.Items:
         count +=1
         if item_id == i["id"]:   #change if each item becomes an object
             if item_id in inventory:
                 inventory[item_id] += 1
-                del CurrentLocation.Items[count]
+                del location.Items[count]
                 return()
 
-def execute_drop(item_id):
+def execute_drop(item_id, location):
     for i in inventory:
         count +=1
         if item_id == i["id"]:   #change if each item becomes an object
             if item_id in inventory:
                 inventory[item_id] += 1
-                del CurrentLocation.Items[count]
+                del location.Items[count]
                 return()
     print("You cannot drop that")
 
-def execute_command(command):
+def execute_command(command, location):
     if 0 == len(command):
         return
 
     if command[0] == "go":
         if len(command) > 1:
-            execute_go(command[1])
+            return execute_go(command[1], location)            
         else:
             print("Go where?")
 
     elif command[0] == "take":
         if len(command) > 1:
-            execute_take(command[1])
+            execute_take(command[1], location)
         else:
             print("Take what?")
 
     elif command[0] == "drop":
         if len(command) > 1:
-            execute_drop(command[1])
+            execute_drop(command[1], location)
         else:
             print("Drop what?")
 

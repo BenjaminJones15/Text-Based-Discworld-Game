@@ -40,8 +40,8 @@ def execute_mana(CurEnemy):  # mana is set damage and shows your mana falling
 
 def execute_item():  # brings up a item selection menu
     print("What item do you want to use: ")
-    for i in inventory:  # prints items in your inventory
-        print(i)
+    for i in player.inventory:  # prints items in your inventory
+        print(i, inventory[i])
     item = " ".join(normalise_input(input("> ")))
     if item == "health pie":
         if inventory["Health Pie"] == 0:
@@ -73,7 +73,7 @@ def execute_item():  # brings up a item selection menu
                 strength_check = True  # check used to turn it back the next attack
                 inventory["Strength Pie"] -= 1
     else:  # incase the user try's to select another item
-        print("Please select a potion")
+        print("Please select a pie")
 
 
 def execute_inspect(CurEnemy):  # views the enemies stats

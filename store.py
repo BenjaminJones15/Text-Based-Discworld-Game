@@ -1,5 +1,3 @@
-from pies import *
-
 def store():
     print("CMOT Dibbler: 'Welcome to my store'")
     print("-----------------------------------")
@@ -12,8 +10,8 @@ def store():
     
     inventory=""
     wallet=0
-    global pies
-    
+    options = ["1","2","3","x"]
+
     optioncmot = input('>')
     
     if optioncmot == "1":
@@ -37,8 +35,11 @@ def store():
                 Strength_Pie=inventory["Strength_Pie"]
                 inventory.append(Strength_Pie)
 
-    else:
-            print("That item does not exist")
+    if optioncmot == "X":
+            store=False
+            
+    if optioncmot not in options:
+        print("Invalid input")
         
     
 

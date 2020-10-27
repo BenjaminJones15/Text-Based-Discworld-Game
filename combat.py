@@ -22,9 +22,10 @@ def print_battle():  # prints your battle options each turn
 
 
 def execute_attack(CurEnemy):  # deals damage to the enemy
-    CurEnemy.health = CurEnemy.health - random.randint(player.strength / 2, player.strength)
+    ran = random.randint(player.strength / 2, player.strength)
+    CurEnemy.health = CurEnemy.health - ran
     # takes a random number based on strength to attack
-    print("The enemy lost " + str(player.strength) + " health")
+    print("The enemy lost " + str(ran) + " health")
     global strength_check  # used to check if a strength potion has been used
     if strength_check:
         player.strength = player.strength/3

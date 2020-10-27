@@ -47,25 +47,25 @@ def execute_item():  # brings up a item selection menu
         print(i, inventory[i])
     item = " ".join(normalise_input(input("> ")))
     if item == "health pie":
-        if inventory["Health Pie"] == 0:
+        if inventory["health pie"] == 0:
             print("You do not have enough Health Pies")
         else:
             player.health = player.health + 50            
             player.maxHealth = player.maxHealth            
             if player.health > player.maxHealth:  # checks to see health doesn't go over the max
                 player.health = player.maxHealth
-            inventory["Health Pie"] -= 1
+            inventory["health pie"] -= 1
     elif item == "mana pie":
-        if inventory["Mana Pie"] == 0:
+        if inventory["mana pie"] == 0:
             print("You do not have enough Mana Pies")
         else:
             player.mana = player.mana + 50
             player.maxMana = player.maxMana
             if player.mana > player.maxMana:  # checks to see mana doesn't go over the max
                 player.mana = player.maxMana
-            inventory["Mana Pie"] -= 1
+            inventory["mana pie"] -= 1
     elif item == "strength pie":
-        if inventory["Strength Pie"] == 0:
+        if inventory["strength pie"] == 0:
             print("You do not have enough Strength Pies")
         else:
             global strength_check
@@ -74,7 +74,7 @@ def execute_item():  # brings up a item selection menu
             else:
                 player.strength = player.strength*3  # increases the players strength for one turn
                 strength_check = True  # check used to turn it back the next attack
-                inventory["Strength Pie"] -= 1
+                inventory["strength pie"] -= 1
     else:  # incase the user try's to select another item
         print("Please select a pie")
 

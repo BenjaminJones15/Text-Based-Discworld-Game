@@ -8,7 +8,8 @@ CurEnemy = Mugger
 CurrentLocation = Pseudopolis_Yard_Reception
 
 def main():    
-    StartMenu()              
+    StartMenu()
+                  
     print("You must free the city and defeat Kirill!")
     while True:
         global CurrentLocation

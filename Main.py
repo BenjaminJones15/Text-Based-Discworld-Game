@@ -33,49 +33,48 @@ def main():
 
 def RndEncounter(location):
     global CurEnemy
+    global CurrentLocation
     EnChance = random.randint(0,1)
     if location == Library:
         CurEnemy = ShadowingLemma
         if EnChance == 0:
             return()
         else:
-            start_battle(location, CurEnemy)        
+            CurrentLocation = start_battle(location, CurEnemy)        
     elif location == The_Shades:
         CurEnemy = Mugger
         if EnChance == 0:
             return()
         else:
-            start_battle(location, CurEnemy)
+            CurrentLocation = start_battle(location, CurEnemy)
     elif location == Pseudopolis_Yard_Reception or location == Pseudopolis_Yard_Outside or location == Pseudopolis_Yard_Upstairs:
         return()
     elif location == Gimlets_Restaurant:
         if location.boss == True:
             CurEnemy = Johnathan        
-            start_battle(location, CurEnemy)        
+            CurrentLocation = start_battle(location, CurEnemy)        
     elif location == Library_Roof:
         if location.boss == True:
             CurEnemy = CarcerDun
-            start_battle(location, CurEnemy)        
+            CurrentLocation = start_battle(location, CurEnemy)        
     elif location == Palace:
         if location.boss == True:
             CurEnemy = Kirill
-            start_battle(location, CurEnemy)        
+            CurrentLocation = start_battle(location, CurEnemy)        
     elif location == Post_Office_Basement:
         if location.boss == True:
             CurEnemy = MrGryle
-            start_battle(location, CurEnemy)        
+            CurrentLocation = start_battle(location, CurEnemy)        
     elif location == Temple_of_Anoia_Inner:
         if location.boss == True:
             CurEnemy = Gitlab
-            start_battle(location, CurEnemy)        
+            CurrentLocation = start_battle(location, CurEnemy)        
     else:        
         if EnChance == 0:
             return()
         else:
             CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
-            start_battle(location, CurEnemy)
-    global CurrentLocation
-    CurrentLocation = NewLocation
+            CurrentLocation = start_battle(location, CurEnemy)    
             
 if __name__ == "__main__":  # Sets the main to StartMenu()
     main()

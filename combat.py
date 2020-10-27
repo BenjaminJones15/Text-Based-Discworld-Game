@@ -5,6 +5,8 @@ from enemies import *
 import random
 import time
 
+NewLocation = Pseudopolis_Yard_Reception
+Restart = False
 
 def print_battle():  # prints your battle options each turn
     print("You can: ")
@@ -89,14 +91,14 @@ def execute_run(CurrentLocation, CurEnemy):  # try to run from the fight
         if CurEnemy.name == "Jonathan":  # easter egg with the first boss
             print("Really?")
             time.sleep(1)
-            game_over(CurrentLocation)  #nice touch
+            game_over()  #nice touch
         else:  # not allowed to run from a boss fight
             print("You can't run from this battle")
     else:
         run = random.randint(1, 2)  # random chance to run from the battle
         if run == 1:
             player.health = player.health - 10  # still take damage for running away
-            health_check(CurrentLocation)
+            health_check()
             global battle
             battle = False
             print("You ran away!")
@@ -155,9 +157,9 @@ def enemy_attack(CurEnemy):
     print()
 
 
-def health_check(CurrentLocation):  # checks the player's health each turn to check they haven't died
+def health_check():  # checks the player's health each turn to check they haven't died
     if player.health <= 0:  # if they have it does the game over screen
-        game_over(CurrentLocation)
+        game_over()
  
 
 def exp_check():  # checks to see if the player should level up    
@@ -166,9 +168,9 @@ def exp_check():  # checks to see if the player should level up
         player.mana = player.maxMana
         player. exp = 0
 
-
-def game_over(CurrentLocation):  # game over screen asking if they wish to continue
+def game_over():  # game over screen asking if they wish to continue
     global battle
+    global Restart
     battle = False
     print("You lose")
     time.sleep(3)  # time to reflect on losing
@@ -178,32 +180,38 @@ def game_over(CurrentLocation):  # game over screen asking if they wish to conti
     if choice == "no":  # if yes it loads a checkpoint otherwise the game quits
         quit()
     else:
-        load_checkpoint(CurrentLocation)
-
-
+        load_checkpoint() 
+        Restart = True
 
 def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried out each turn
     global strength_check
     global battle
-    global NewLocation
+    global Restart 
     battle = True
     strength_check = False
     print(CurEnemy.name + " has appeared")  # gets enemy name from what was called in the random encounter
-    while battle == True:
-        NewLocation = CurrentLocation
+    while battle == True:               
         print("Your turn")  # with your turn is occurring
         print()
         options = print_battle()
         execute_battle_choice(options, CurrentLocation, CurEnemy)
         enemy_health_check(CurrentLocation, CurEnemy)
+        if Restart == True:
+            Restart = False
+            battle = False
+            return NewLocation
         if battle == False:            
             return()
         print("Enemy's turn")  # and then the enemies
         print()
         time.sleep(2)
         enemy_attack(CurEnemy)
-        health_check(CurrentLocation)
-
+        health_check()
+        if Restart == True:
+            Restart = False
+            battle = False
+            return NewLocation
+    return CurrentLocation
 
 def save_checkpoint(CurrentLocation):  # saves all the players stats after reaching a checkpoint
     global saveHealth, saveMana, saveExp, saveInventory, saveLocation
@@ -214,12 +222,10 @@ def save_checkpoint(CurrentLocation):  # saves all the players stats after reach
     saveInventory = player.inventory
     saveLocation = CurrentLocation
 
-NewLocation = Pseudopolis_Yard_Reception
-
-def load_checkpoint(CurrentLocation):  # loads last saved checkpoint after loosing a game    
+def load_checkpoint():  # loads last saved checkpoint after losing a game    
     player.health = saveHealth
     player.mana = saveMana
     player.exp = saveExp
     player.inventory = saveInventory   
     global NewLocation
-    NewLocation = CurrentLocation
+    NewLocation = saveLocation

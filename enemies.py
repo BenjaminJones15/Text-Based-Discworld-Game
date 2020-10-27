@@ -41,7 +41,7 @@ SwampDragon.health = 45
 SwampDragon.strength = 14
 SwampDragon.magic = 20
 SwampDragon.description = ("Will eat and drink anything that can be used as fuel for fire-breathing")
-SwampDragon.exp = 25
+SwampDragon.exp = 24
 
 
 ShadowingLemma = enemy()

@@ -36,7 +36,7 @@ def RndEncounter(location):
     elif location == Pseudopolis_Yard_Reception or location == Pseudopolis_Yard_Outside or location == Pseudopolis_Yard_Upstairs:
         return()
     elif location == Gimlets_Restaurant:
-        CurEnemy = Johnathan
+        CurEnemy = Johnathan        
         start_battle(location, CurEnemy)
     elif location == Library_Roof:
         CurEnemy = CarcerDun

@@ -138,7 +138,7 @@ Lady_Sybil_Free_Hospital.description = ""  #insert roshan here
 Lady_Sybil_Free_Hospital.NPC = ["Igor"]
 Lady_Sybil_Free_Hospital.exits = {"mended drum":"Mended Drum", "temple":"Temple"}
 Lady_Sybil_Free_Hospital.POI = {}    
-Lady_Sybil_Free_Hospital.Items = []    
+Lady_Sybil_Free_Hospital.Items = ["Arms"]    
 Lady_Sybil_Free_Hospital.boss = False
 Lady_Sybil_Free_Hospital.sprite = True
 

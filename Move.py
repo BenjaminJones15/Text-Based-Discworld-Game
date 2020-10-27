@@ -52,6 +52,7 @@ def execute_go(direction,location):
         print("You cannot go there.")        
 
 def execute_take(item_id, location):
+    count = 0
     for i in location.Items:
         count +=1
         if item_id == i["id"]:   #change if each item becomes an object
@@ -61,6 +62,7 @@ def execute_take(item_id, location):
                 return()
 
 def execute_drop(item_id, location):
+    count = 0
     for i in inventory:
         count +=1
         if item_id == i["id"]:   #change if each item becomes an object

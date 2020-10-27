@@ -1,8 +1,7 @@
 import time
 from character_class import *
 from inventory import *
-
-
+from normalise import *
 
 class Player:  # Player Class
     def __init__(self, player_name, class_chosen):  # player_name and class_chosen use user inputs so 'self' is used
@@ -43,7 +42,7 @@ def choose_class():  # Takes user's class input and checks if it is valid. It wi
         picked_class = input("> ")  # User inputs class name
         #  <-- Insert normalise_input function here
         valid_class = is_valid_class(picked_class)  # Calls check_input function to check if the class entered is in the character class dictionary
-    return picked_class
+    return normalise_input(picked_class)
 
 
 def starting_inventory(player):  # Gives the player starting items depending on their chosen class

@@ -16,8 +16,8 @@ def print_battle():  # prints your battle options each turn
     print()
     print("What do you want to do?")
     choice = input("> ")
-    choice = remove_punct(choice.lower()) # uses the function from normalise.py
-    choice = remove_spaces(choice)
+    choice = normalise_input(choice)
+    choice = "".join(choice)
     return choice
 
 

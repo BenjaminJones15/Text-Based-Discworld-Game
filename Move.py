@@ -59,7 +59,7 @@ def execute_go(direction, location):
         print("You have " + str(keyvalue) + " keys")
         if keyvalue < 4:
             print("You need four keys to enter the Throne Room")
-        return location
+            return location
 
     if is_valid_exit(location.exits, direction) == True:
         location = move(location.exits, direction)

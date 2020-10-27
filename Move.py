@@ -2,23 +2,36 @@ from Map import *
 from normalise import *
 from inventory import *
 
-def print_location(location):        
+
+def print_location(location):
     # Display room name
     print()
     print((location.name).upper())
     print()
     # Display room description
     print(location.description)
-    print()   
+    print()
+
 
 def exit_leads_to(exits, direction):
-    #returns name of room into which exit leads.    
+    # returns name of room into which exit leads.
     return (ListLocations[exits[direction]]).name
+
 
 def print_exit(direction, leads_to):
     print("Type Go " + direction.upper() + " to go to " + leads_to + ".")
 
+
 def print_menu(exits, location_items, inv_items):
+
+    print("You currently have:")
+    print()
+    for key, value in inventory.items():
+        if value > 0:
+            print(key, "- Quantity:", value)
+
+    print()
+
     print("You can:")
     for direction in exits:
         # Print the exit name and where it leads to
@@ -29,48 +42,54 @@ def print_menu(exits, location_items, inv_items):
 
     for i in inv_items:
         print("DROP " + i.upper() + " to drop your " + i + ".")
-    
+
     print("What do you want to do?")
+
 
 def is_valid_exit(exits, chosen_exit):
     return chosen_exit in exits
 
-def execute_go(direction,location):  
-    
-    keyvalue= inventory["key piece"]
+def execute_go(direction, location):
+
+    keyvalue = 0
+
+    keyvalue = inventory.get("key piece")
 
     if direction == "palace":
         print("You have " + str(keyvalue) + " keys")
         if keyvalue < 4:
             print("You need four keys to enter the Throne Room")
-            return location
-            
-    if is_valid_exit(location.exits,direction) == True:
-        location = move(location.exits, direction)        
+        return location
+
+    if is_valid_exit(location.exits, direction) == True:
+        location = move(location.exits, direction)
         return location
     else:
-        print("You cannot go there.")        
+        print("You cannot go there.")
+
 
 def execute_take(item_id, location):
     count = 0
     for i in location.Items:
-        count +=1
-        if item_id == i["id"]:   #change if each item becomes an object
+        count += 1
+        if item_id == i["id"]:  # change if each item becomes an object
             if item_id in inventory:
                 inventory[item_id] += 1
                 del location.Items[count]
-                return()
+                return ()
+
 
 def execute_drop(item_id, location):
     count = 0
     for i in inventory:
-        count +=1
-        if item_id == i["id"]:   #change if each item becomes an object
+        count += 1
+        if item_id == i["id"]:  # change if each item becomes an object
             if item_id in inventory:
                 inventory[item_id] += 1
                 del location.Items[count]
-                return()
+                return ()
     print("You cannot drop that")
+
 
 def execute_command(command, location):
     if 0 == len(command):
@@ -78,14 +97,14 @@ def execute_command(command, location):
 
     if command[0] == "go":
         if len(command) > 1:
-            newlocation= execute_go(command[1], location) 
+            newlocation = execute_go(command[1], location)
             if newlocation is None:
                 newlocation = location
                 return newlocation
             else:
-                return newlocation          
+                return newlocation
         else:
-            print("Go where?")            
+            print("Go where?")
 
     elif command[0] == "take":
         if len(command) > 1:
@@ -104,6 +123,7 @@ def execute_command(command, location):
         newlocation = location
         return newlocation
 
+
 def menu(exits, room_items, inv_items):
     # Display menu
     print_menu(exits, room_items, inv_items)
@@ -115,6 +135,7 @@ def menu(exits, room_items, inv_items):
     normalised_user_input = normalise_input(user_input)
 
     return normalised_user_input
+
 
 def move(exits, direction):
     return ListLocations[exits[direction]]

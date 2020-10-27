@@ -6,12 +6,12 @@ health_pie = {
     "Description": "A pie that refills part of your health bar"}
 
 mana_pie = {
-    "name": "Mana Pie",
+    "name": "mana pie",
     "amount": 0,
     "description": "A pie that refills part of your mana bar"}
 
 strength_pie = {
-    "name": "Strength Pie",
+    "name": "strength pie",
     "amount": 0,
     "description": "A pie that temporarily increases your strength"}
 

@@ -139,6 +139,7 @@ def enemy_health_check(CurrentLocation, CurEnemy, player):  # checks the enemy's
                 inventory["key piece"] += 1
                 print("You picked up a key piece")
                 player.exp = player.exp + 100  # level up after a fight
+                exp_check(player)
                 CurrentLocation.boss = False
                 save_checkpoint(CurrentLocation, player)  # saves the players progress after beating a boss
         else:  # otherwise a random amount of gold and exp
@@ -146,6 +147,7 @@ def enemy_health_check(CurrentLocation, CurEnemy, player):  # checks the enemy's
             inventory["money"] += drop
             ex = random.randint(CurEnemy.exp / 2, CurEnemy.exp)  # random amount of experience after regular fights
             player.exp = player.exp + ex
+            exp_check(player)
     print()
 
 

@@ -71,8 +71,7 @@ def RndEncounter(location):
         if location.boss == True:
             CurEnemy = Gitlab
             CurrentLocation = start_battle(location, CurEnemy)        
-    else:
-        EnChance = 1        
+    else:            
         if EnChance == 0:            
             return()
         else:

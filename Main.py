@@ -49,20 +49,25 @@ def RndEncounter(location):
     elif location == Pseudopolis_Yard_Reception or location == Pseudopolis_Yard_Outside or location == Pseudopolis_Yard_Upstairs:
         return()
     elif location == Gimlets_Restaurant:
-        CurEnemy = Johnathan        
-        start_battle(location, CurEnemy)
+        if location.boss == True:
+            CurEnemy = Johnathan        
+            start_battle(location, CurEnemy)        
     elif location == Library_Roof:
-        CurEnemy = CarcerDun
-        start_battle(location, CurEnemy)
+        if location.boss == True:
+            CurEnemy = CarcerDun
+            start_battle(location, CurEnemy)        
     elif location == Palace:
-        CurEnemy = Kirill
-        start_battle(location, CurEnemy)
+        if location.boss == True:
+            CurEnemy = Kirill
+            start_battle(location, CurEnemy)        
     elif location == Post_Office_Basement:
-        CurEnemy = MrGryle
-        start_battle(location, CurEnemy)
+        if location.boss == True:
+            CurEnemy = MrGryle
+            start_battle(location, CurEnemy)        
     elif location == Temple_of_Anoia_Inner:
-        CurEnemy = Gitlab
-        start_battle(location, CurEnemy)
+        if location.boss == True:
+            CurEnemy = Gitlab
+            start_battle(location, CurEnemy)        
     else:        
         if EnChance == 0:
             return()

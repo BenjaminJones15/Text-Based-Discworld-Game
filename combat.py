@@ -110,8 +110,7 @@ def execute_battle_choice(choice, CurrentLocation, CurEnemy, player):  # used to
     if choice == "attack":
         execute_attack(CurEnemy, player)
     elif choice == "mana":
-        if player.mana >= 20:  # see's if the player has enough mana to use a spell
-            player
+        if player.mana >= 20:  # see's if the player has enough mana to use a spell            
             execute_mana(CurEnemy, player)
         else:
             print("Not enough mana")

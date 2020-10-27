@@ -9,7 +9,10 @@ skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
               'of', 'off', 'oh', 'on', 'please', 'small', 'some', 'soon',
               'that', 'the', 'then', 'this', 'those', 'through', 'till', 'to',
               'towards', 'until', 'us', 'want', 'we', 'what', 'when', 'why',
-              'wish', 'with', 'would', 'of', 'Art', 'use','enemy']
+              'wish', 'with', 'would', 'Art', 'use', 'enemy', 'Drum', 'watch',
+              'pseudopolis', 'yard', 'house', 'sator', 'lady', 'sybil', 'free',
+              'shrine', 'anoia', 'gimlet', 'dwarfs', 'delicatessen', 'pink',
+              'pussycat', 'lost']
 
 
 def filter_words(words, skip_words):
@@ -35,4 +38,3 @@ def normalise_input(user_input):
     words = user_input.split()  #splits user input into list
     words = filter_words(words, skip_words)    
     return words
-    

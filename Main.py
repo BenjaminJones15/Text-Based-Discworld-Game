@@ -24,6 +24,7 @@ def main():
 """)
 
     print("You must free the city and defeat Kirill!")
+    time.sleep(2.5)
     while True:        
         print_location(CurrentLocation)
         RndEncounter(CurrentLocation)

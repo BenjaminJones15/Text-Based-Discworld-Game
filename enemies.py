@@ -74,7 +74,7 @@ EnemyList = [Mugger, Gnome, Werewolf, SwampDragon, ShadowingLemma]
 
 # these are the bosses
 Johnathan = enemy()
-Johnathan.name = "Johnathan"
+Johnathan.name = "Jonathan"
 Johnathan.health = 100
 Johnathan.strength = 5
 Johnathan.magic = 0
@@ -105,9 +105,9 @@ MrGryle.magic = 60
 MrGryle.description = ("Powerful Banshee")
 
 
-Kiril = enemy()
-Kiril.name = "Kirill"
-Kiril.health = 400
-Kiril.strength = 35
-Kiril.magic = 50
-Kiril.description = ("Biggest badass in Ankh-Morpork")
+Kirill = enemy()
+Kirill.name = "Kirill"
+Kirill.health = 400
+Kirill.strength = 35
+Kirill.magic = 50
+Kirill.description = ("Biggest badass in Ankh-Morpork")

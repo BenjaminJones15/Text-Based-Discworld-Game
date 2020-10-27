@@ -128,14 +128,16 @@ def enemy_health_check(CurrentLocation, CurEnemy):  # checks the enemy's health 
         if CurrentLocation.boss:  # if it is a boss fight it drops set items
             inventory["Money"] += 100
             inventory["Key Piece"] += 1
-            print("You picked up a key")
+            print("You picked up a key piece")
             player.exp = player.exp + 100  # level up after a fight
+            CurrentLocation.boss = False
             save_checkpoint(CurrentLocation)  # saves the players progress after beating a boss
         else:  # otherwise a random amount of gold and exp
             drop = random.randint(0, 5)
             inventory["Money"] += drop
             ex = random.randint(CurEnemy.exp / 2, CurEnemy.exp)  # random amount of experience after regular fights
             player.exp = player.exp + ex
+    print()
 
 
 def enemy_attack(CurEnemy):
@@ -164,15 +166,18 @@ def exp_check():  # checks to see if the player should level up
 
 
 def game_over(CurrentLocation):  # game over screen asking if they wish to continue
+    global battle
+    battle = False
     print("You lose")
     time.sleep(10)  # time to reflect on losing
     print()
     print("Do you wish to continue? yes/no")  # option to continue
-    choice = normalise_input(input())
-    if choice == "yes":  # if yes it loads a checkpoint otherwise the game quits
-        load_checkpoint(CurrentLocation)
-    else:
+    choice = "".join(normalise_input(input()))
+    if choice == "no":  # if yes it loads a checkpoint otherwise the game quits
         quit()
+    else:
+        load_checkpoint(CurrentLocation)
+
 
 
 def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried out each turn

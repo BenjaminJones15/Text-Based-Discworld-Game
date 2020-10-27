@@ -113,7 +113,7 @@ def execute_battle_choice(choice, CurrentLocation, CurEnemy):  # used to pick wh
             print("Not enough mana")
     elif choice == "items":
         execute_item()
-    elif choice == "inspects":
+    elif choice == "inspect":
         execute_inspect(CurEnemy)
     elif choice == "run":
         execute_run(CurrentLocation, CurEnemy)

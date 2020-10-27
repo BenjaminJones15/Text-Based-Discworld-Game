@@ -79,7 +79,7 @@ def execute_item():  # brings up a item selection menu
 
 def execute_inspect(CurEnemy):  # views the enemies stats
     print(CurEnemy.description)
-    print("The enemy has " + str(CurEnemy.health))
+    print("The enemy has " + str(CurEnemy.health) + " health")
     print("Enemy strength " + str(CurEnemy.strength))
     print("Enemy magic " + str(CurEnemy.magic))
 

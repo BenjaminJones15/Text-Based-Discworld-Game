@@ -51,7 +51,7 @@ def RndEncounter(location):
             return()
         else:
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)
-    elif location == Pseudopolis_Yard_Reception or location == Pseudopolis_Yard_Outside or location == Pseudopolis_Yard_Upstairs:
+    elif location == Pseudopolis_Yard_Reception or location == Pseudopolis_Yard_Outside or location == Pseudopolis_Yard_Upstairs:   #get rid of. use .sprite = true
         return()
     elif location == Gimlets_Restaurant:
         if location.boss == True:

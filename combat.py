@@ -189,7 +189,7 @@ def health_check(player):  # checks the player's health each turn to check they 
         game_over(player)
  
 
-def exp_check():  # checks to see if the player should level up    
+def exp_check(player):  # checks to see if the player should level up    
     if player.exp >= 100:
         player.health = player.maxHealth
         player.mana = player.maxMana

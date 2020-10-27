@@ -12,7 +12,7 @@ skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
               'wish', 'with', 'would', 'Art', 'use', 'enemy', 'Drum', 'watch',
               'pseudopolis', 'yard', 'house', 'sator', 'lady', 'sybil', 'free',
               'shrine', 'anoia', 'gimlet', 'dwarfs', 'delicatessen', 'pink',
-              'pussycat', 'lost']
+              'pussycat', 'lost', 'office', 'drum']
 
 
 def filter_words(words, skip_words):

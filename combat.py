@@ -181,6 +181,8 @@ def start_battle(CurrentLocation, CurEnemy):  # how the battle will be carried o
         options = print_battle()
         execute_battle_choice(options, CurrentLocation, CurEnemy)
         enemy_health_check(CurrentLocation, CurEnemy)
+        if battle == False:
+            return()
         print("Enemy's turn")  # and then the enemies
         time.sleep(2)
         enemy_attack(CurEnemy)

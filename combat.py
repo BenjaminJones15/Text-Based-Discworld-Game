@@ -103,7 +103,7 @@ def execute_run(CurrentLocation, CurEnemy, player):  # try to run from the fight
             health_check(player)
             global battle
             battle = False
-            print("You ran away!")               #######################################################
+            print("You ran away!")
         else:
             print("You couldn't get away")
 
@@ -114,6 +114,8 @@ def execute_battle_choice(choice, CurrentLocation, CurEnemy, player):  # used to
     elif choice == "mana":
         if player.mana >= 20:  # see's if the player has enough mana to use a spell            
             execute_mana(CurEnemy, player)
+        elif CurrentLocation == Tower_of_Art:
+            print("You cannot use mana here")
         else:
             print("Not enough mana")
     elif choice == "items":

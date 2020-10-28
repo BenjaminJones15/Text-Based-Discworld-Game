@@ -1,3 +1,5 @@
+'''
+COMMENTED IT OUT AS WE NO LONGER NEEDED THIS FILE, BUT TO SHOW THE WORK WE HAVE DONE
 from player import *
 from items import *
 from main import *
@@ -36,4 +38,4 @@ elif is_valid_exit(current_room["exits"], direction):
     return current_room
 
 else:
-    print("You cannot go there.")
+    print("You cannot go there.")'''

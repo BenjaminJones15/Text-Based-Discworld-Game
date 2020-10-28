@@ -69,7 +69,7 @@ Library_Roof.POI = {"sam":"WATCH OUT! Sam Vimes appears, making a diving leap, a
 Library_Roof.Items = {}
 Library_Roof.boss = True
 Library_Roof.sprite = False
-Library_Roof = False
+Library_Roof.sidequest = False
 
 Sator_Square = Location()
 Sator_Square.name = "Sator Square"
@@ -208,7 +208,7 @@ ListLocations = {"Reception":Pseudopolis_Yard_Reception,
 "Outside":Pseudopolis_Yard_Outside, 
 "Tower":Tower_of_Art, 
 "Library":Library, 
-"Roof":Library_Roof, 
+"Roof": Library_Roof 
 "Square":Sator_Square,
 "Entrance":Palace_Entrance, 
 "Palace":Palace, 

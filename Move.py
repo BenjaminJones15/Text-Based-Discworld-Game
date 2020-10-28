@@ -91,7 +91,7 @@ def execute_drop(item_id, location):
             if item_id in inventory:
                 if inventory[item_id] > 0:
                     inventory[item_id] -= 1
-                    location.items[item_id] +=1                
+                    location.Items[item_id] +=1
                 return ()
     print("You cannot drop that")
 

@@ -125,7 +125,7 @@ def execute_talk(command, location):
             print(location.POI[command])
         else:
             print("you can't talk to that")
-
+    time.sleep(15)
 
 def execute_command(command, location):
     if 0 == len(command):

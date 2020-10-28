@@ -35,7 +35,7 @@ Pseudopolis_Yard_Outside.name = "The outside of Pseudopolis Yard Watch house"
 Pseudopolis_Yard_Outside.description = "Following a cobbled path leads you to the headquarters of the Ankh-Morpork City Watch. The Watch primarily deal with crimes committed in front of a watch officer or otherwise reported. Hulking over you is Captain Carrot with his bulging muscles in his glistening bronze armour – you can see your own warped image peering back at you." 
 Pseudopolis_Yard_Outside.exits = {"reception":"Reception", "tower": "Tower","entrance": "Entrance",
 "restaurant": "Restaurant"}
-Pseudopolis_Yard_Outside.POI = {"carrot":"Ah. Right on time. Sergeant Colon has informed me of a spike in reports of crime across the city, and we're shorthanded. Usually you would have a week of basic training with Detritus, our troll instructor, but it looks like you'll be learning on the job."}
+Pseudopolis_Yard_Outside.POI = {"carrot":"Ah. Right on time. Sergeant Colon has informed me of a spike in reports of crime across the city, and we're shorthanded. Usually you would have a week of basic training with Detritus, our troll instructor, but it looks like you'll be learning on the job. \n \nI've just been informed there's a particularly unsociable dwarf causing a scene at Gimlet the Dwarf's Delitcatessen. You must apprehend the dwarf. \n \nOnce battle begins, select one of the options – both attack and mana will deal damage, while eating a pie will respectively regenerate part of your health, increase your strength for your next attack or refill part of your mana bar. Inspecting the enemy will allow you to judge what steps you need to take next in the battle. The last tool of the watchman is the most important – knowing when to cut your losses and live to fight another day. Running might not be glamourous, but if it saves your life, it’ll do.  "}
 Pseudopolis_Yard_Outside.Items = {"arms":0}
 Pseudopolis_Yard_Outside.boss = False
 Pseudopolis_Yard_Outside.sprite = False
@@ -167,7 +167,7 @@ Gimlets_Restaurant = Location()
 Gimlets_Restaurant.name = "Gimlet the Dwarf's Delicatessen"
 Gimlets_Restaurant.description = "Following Captain Carrot, you enter the dwarven restaurant, and greet the proprietor, a bearded dwarf named Gimlet. He points you in the direction of a particularly troublesome customer – a feeble dwarf by the name of Jonathan. He is refusing to leave, creating a ruckus and generally annoying the other customers.        #gimlet gives you health pie/rat pie for killing jonathan."
 Gimlets_Restaurant.exits = {"temple":"Temple", "shades":"Shades"}
-Gimlets_Restaurant.POI = {"carrot":"Due to his unsociable behaviour, you must apprehend the dwarf. Once battle begins, select one of the options – both attack and mana will deal damage, while eating a pie will respectively regenerate part of your health, increase your strength for your next attack or refill part of your mana bar. Inspecting the enemy will allow you to judge what steps you need to take next in the battle. The last tool of the watchman is the most important – knowing when to cut your losses and live to fight another day. Running might not be glamourous, but if it saves your life, it’ll do."}    
+Gimlets_Restaurant.POI = {}    
 Gimlets_Restaurant.Items = {"arms":0}
 Gimlets_Restaurant.boss = True
 Gimlets_Restaurant.sprite = False

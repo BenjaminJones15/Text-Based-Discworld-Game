@@ -119,7 +119,7 @@ Post_Office_Basement.POI = {"moist": "The sorting engine - a perfect metaphor fo
 Post_Office_Basement.Items = {"arms":0}
 Post_Office_Basement.boss = True
 Post_Office_Basement.sprite = False
-Post_Office_Basement.sidequest = False
+Post_Office_Basement.sidequest = True
 
 Mended_Drum = Location()
 Mended_Drum.name = "The Mended Drum"

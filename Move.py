@@ -105,6 +105,10 @@ def execute_talk(command, location):
         print("He damn near killed old Mr Groat. Thank you so much for defeating him. As a gift, take some money - the first ever 30 AM$ bill.")
         inventory["money"] += 30
         location.sidequest = False
+    elif location == Gimlets_Restaurant and location.sidequest:
+        print("Thank you for getting rid of him - he was grating on everyone's nerves. Truly the most irritating customer I've ever met, and that's saying something. Have a free rat pie on me!")
+        inventory["health pie"] += 1
+        location.sidequest = False
     elif location.Items["arms"] == 5 and location == Lady_Sybil_Free_Hospital:
         if location.sidequest:
             print("Thank you for bringing me these arms")
@@ -118,8 +122,8 @@ def execute_talk(command, location):
         choice = " ".join(normalise_input(input("> ")))
         if choice == "yes":
             num = 0
-            while inventory["swamp dragon"]>0:
-                inventory["swamp dragon"] -=1
+            while inventory["swamp dragons"]>0:
+                inventory["swamp dragons"] -=1
                 num +=1
             print("here is " + str(num*10) + " AM$")
             inventory["money"] += num*10

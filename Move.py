@@ -104,7 +104,10 @@ def execute_talk(command, location):
     if command == "dibbler":
         store()
     else:
-        print(location.POI[command])
+        if command in location.POI:
+            print(location.POI[command])
+        else:
+            print("you can't talk to that")
 
 
 def execute_command(command, location):

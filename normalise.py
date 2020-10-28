@@ -1,6 +1,6 @@
 import string
 
-# List of "unimportant" words
+# List of "unimportant" words added more based on our commands
 skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
               'bad', 'beautiful', 'been', 'better', 'big', 'can', 'every', 'for',
               'from', 'good', 'have', 'her', 'here', 'hers', 'his', 'how',
@@ -20,15 +20,14 @@ def filter_words(words, skip_words):
     return words
 
 def remove_spaces(text):
-    text = text.strip()
+    text = text.strip()  # removes unnessary blank spaces
     return text
 
 def remove_punct(text):
     no_punct = ""
     for char in text:
-        if not (char in string.punctuation):
+        if not (char in string.punctuation):  # takes out punctuation
             no_punct = no_punct + char
-
     return no_punct
 
 

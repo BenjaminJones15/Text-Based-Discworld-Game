@@ -3,7 +3,7 @@ import time, sys
 from inventory import *
 
 def store():
-    openStore = True
+    openStore = True  # store check for the while loop
     print("CMOT Dibbler: 'Welcome to my store'")
     print("-----------------------------------")
     print("CMOT Dibbler: 'I'll sell it for less, and that's cutting me own throat.'")
@@ -13,13 +13,13 @@ def store():
     print()
     print("x.) Exit Store")
 
-    options = ["1", "2", "3", "x"]
+    options = ["1", "2", "3", "x"]  # prints out the options you can select
 
-    timeframe = 500
+    timeframe = 60  # time frame used for easter egg
 
     t = Timer(
         timeframe,
-        print,
+        print, # custom print message appears
         [
             "\n CMOT Dibbler: '… when you sell sausages you don’t just hang around waiting for people to want sausage,"
             "\n you go out there and make them hungry. And you put mustard on ‘em.' \n \n Please choose an option..."
@@ -27,16 +27,16 @@ def store():
         ],
     )
     t.start()
-    while openStore:
-        print("you have " + inventory["money"] + " AM$")
+    while openStore:  # loop for continuing to buy things
+        print("you have " + inventory["money"] + " AM$")  # prints how much money you have left each loop
         optioncmot = input(">")
         t.cancel()
 
         if optioncmot == "1":
-            if inventory["money"] < 5:
+            if inventory["money"] < 5:  # if you can't afford it, it throws this message
                 print("you can't afford that")
             else:
-                print("You have bought a health pie for 5 AM$")
+                print("You have bought a health pie for 5 AM$")  # otherwise you buy it and add it to the inventory
                 inventory["money"] -= 5
                 inventory["health pie"] += 1
                 print("Do you want to buy anything else?")
@@ -59,10 +59,10 @@ def store():
                 inventory["strength pie"] += 1
                 print("Do you want to buy anything else?")
 
-        if str(optioncmot).lower() == "x":
+        if str(optioncmot).lower() == "x":  # means the player can then leave the shop
             openStore = False
 
-        if optioncmot not in options:
+        if optioncmot not in options:  # incase another command is entered
             print("Invalid input")
 
         

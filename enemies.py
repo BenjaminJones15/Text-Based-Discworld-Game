@@ -1,13 +1,14 @@
 # ordered enemies from weakest to strongest
 class enemy(object):
     def _init_(self, name, health, strength, magic, descrption, exp):
-        self.name = name  #
-        self.health = health  #
-        self.strength = strength #
-        self.magic = magic  #
-        self.description = descrption  #
-        self.exp = exp #
+        self.name = name  #the name of the enemy, string
+        self.health = health  #how much health the enemy has, int
+        self.strength = strength #how much strength the enemy has, int
+        self.magic = magic  #the enemies magic stat, int
+        self.description = descrption  #a description of the enemy, string
+        self.exp = exp #how much experience the enemy awards you, string
 
+#these are the common enemies
 Mugger = enemy()
 Mugger.name = "Mugger"
 Mugger.health = 25

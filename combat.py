@@ -5,7 +5,7 @@ import random
 import time
 
 NewLocation = Pseudopolis_Yard_Reception
-Restart = False
+Restart = False  # checks for checkpoint functions
 
 def print_battle(player):  # prints your battle options each turn
     print("You can: ")
@@ -15,7 +15,7 @@ def print_battle(player):  # prints your battle options each turn
     print("Inspect enemy")
     print("RUN!!!")
     print()
-    print("You have " + str(player.health) + " health")
+    print("You have " + str(player.health) + " health")  # prints your health and mana each turn
     print("You have " + str(player.mana) + " mana")
     print("What do you want to do?")
     choice = input("> ")
@@ -48,14 +48,14 @@ def execute_item(player):  # brings up a item selection menu
         print(i, inventory[i])
     item = " ".join(normalise_input(input("> ")))
     if item == "health pie":
-        if inventory["health pie"] == 0:
+        if inventory["health pie"] == 0:  # if you don't have enough pies returns a different message
             print("You do not have enough Health Pies")
         else:
             player.health = player.health + 50            
             player.maxHealth = player.maxHealth            
             if player.health > player.maxHealth:  # checks to see health doesn't go over the max
                 player.health = player.maxHealth
-            inventory["health pie"] -= 1
+            inventory["health pie"] -= 1  # takes a pie out of your inventory
     elif item == "mana pie":
         if inventory["mana pie"] == 0:
             print("You do not have enough Mana Pies")
@@ -70,7 +70,7 @@ def execute_item(player):  # brings up a item selection menu
             print("You do not have enough Strength Pies")
         else:
             global strength_check
-            if strength_check:
+            if strength_check:  # check to see if you have already taken a health pie
                 print("You've already taken a strength pie")
             else:
                 player.strength = player.strength*3  # increases the players strength for one turn
@@ -101,7 +101,7 @@ def execute_run(CurrentLocation, CurEnemy, player):  # try to run from the fight
             player.health = player.health - 10  # still take damage for running away
             print("You took 10 damage")
             health_check(player)
-            global battle
+            global battle  # stops the battle from occuring after winning
             battle = False
             print("You ran away!")
         else:
@@ -112,7 +112,7 @@ def execute_battle_choice(choice, CurrentLocation, CurEnemy, player):  # used to
     if choice == "attack":
         execute_attack(CurEnemy, player)
     elif choice == "mana":
-        if CurrentLocation == Tower_of_Art:
+        if CurrentLocation == Tower_of_Art:  # mana can't be used in the tower
             print("You cannot use mana here")
         elif player.mana >= 20:  # see's if the player has enough mana to use a spell
             execute_mana(CurEnemy, player)
@@ -135,13 +135,13 @@ def enemy_health_check(CurrentLocation, CurEnemy, player):  # checks the enemy's
         battle = False
         if CurrentLocation.boss:  # if it is a boss fight it drops set items
             if CurEnemy.name == "Kirill":
-                you_win(player)
+                you_win(player)  # end screen is called
             else:
                 inventory["money"] += 100
                 inventory["key piece"] += 1
                 print("You picked up a key piece")
                 player.exp = player.exp + 100  # level up after a fight
-                exp_check(player)
+                exp_check(player)  # checks the players experience each turn
                 CurrentLocation.boss = False
                 save_checkpoint(CurrentLocation, player)  # saves the players progress after beating a boss
         else:  # otherwise a random amount of gold and exp
@@ -198,6 +198,7 @@ if you think your good enough enter the class 'computer' for a real challenge
         """)
     time.sleep(20)
     quit()
+
 def enemy_attack(CurEnemy, player):
     attack = random.randint(1, 3)   # randomly decides what attack enemies should use
     if attack == 3:
@@ -220,7 +221,7 @@ def exp_check(player):  # checks to see if the player should level up
     if player.exp >= 100:
         player.health = player.maxHealth
         player.mana = player.maxMana
-        player. exp = 0
+        player.exp = 0  # resets the exp back to zero
 
 def game_over(player):  # game over screen asking if they wish to continue
     global battle
@@ -250,7 +251,7 @@ def start_battle(CurrentLocation, CurEnemy, player):  # how the battle will be c
         options = print_battle(player)
         execute_battle_choice(options, CurrentLocation, CurEnemy, player)
         enemy_health_check(CurrentLocation, CurEnemy, player)
-        if Restart == True:
+        if Restart == True:  # stops the fight after you use checkpoints
             Restart = False
             battle = False
             return NewLocation
@@ -261,7 +262,7 @@ def start_battle(CurrentLocation, CurEnemy, player):  # how the battle will be c
         time.sleep(2)
         enemy_attack(CurEnemy, player)
         health_check(player)
-        if Restart == True:
+        if Restart == True:  # stops the fight after you use checkpoints
             Restart = False
             battle = False
             return NewLocation
@@ -276,7 +277,8 @@ def save_checkpoint(CurrentLocation, player):  # saves all the players stats aft
     saveInventory = player.inventory
     saveLocation = CurrentLocation
 
-def load_checkpoint(player):  # loads last saved checkpoint after losing a game    
+def load_checkpoint(player):  # loads last saved checkpoint after losing a game
+# loads the stats that you had from the last boss battle
     player.health = saveHealth
     player.mana = saveMana
     player.exp = saveExp

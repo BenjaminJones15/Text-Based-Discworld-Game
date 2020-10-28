@@ -11,13 +11,13 @@ class Player:  # Player Class
         self.health = Classes[self.class_chosen]["health"]  # health, mana, strength added from Classes dictionary
         self.mana = Classes[self.class_chosen]["mana"]
         self.strength = Classes[self.class_chosen]["strength"]
-        self.maxHealth = Classes[self.class_chosen]["health"]
+        self.maxHealth = Classes[self.class_chosen]["health"]  # used to check against health and mana so are called from the same place
         self.maxMana = Classes[self.class_chosen]["mana"]
         self.inventory = inventory  # Inventory added from inventory dictionary
 
 def print_descriptions():  # Prints the descriptions of each class
     for key in Classes:  # Loops for the number of classes
-        if key == "computer":
+        if key == "computer":  # skips the hidden classes details
             pass
         else:
             print(Classes[key]["description"])  # Prints each description

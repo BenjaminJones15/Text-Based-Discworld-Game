@@ -104,6 +104,7 @@ def execute_talk(command, location):
     elif location == Post_Office_Basement and location.sidequest:
         print("He damn near killed old Mr Groat. Thank you so much for defeating him. As a gift, take some money - the first ever 30 AM$ bill.")
         inventory["money"] += 30
+        location.sidequest = False
     elif location.Items["arms"] == 5 and location == Lady_Sybil_Free_Hospital:
         if location.sidequest:
             print("Thank you for bringing me these arms")

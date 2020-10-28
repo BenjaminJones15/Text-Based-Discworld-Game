@@ -17,9 +17,12 @@ class Player:  # Player Class
 
 def print_descriptions():  # Prints the descriptions of each class
     for key in Classes:  # Loops for the number of classes
-        print(Classes[key]["description"])  # Prints each description
-        time.sleep(2.5)  # 2.5 second delay between each description output
-        print()  # Adds a blank line between each description
+        if key == "computer":
+            pass
+        else:
+            print(Classes[key]["description"])  # Prints each description
+            time.sleep(2.5)  # 2.5 second delay between each description output
+            print()  # Adds a blank line between each description  
 
 
 def is_valid_class(picked_class):  # Checks if the class inputted by the user is in the dictionary

@@ -28,8 +28,18 @@ class_undead = {
 
 }
 
+class_computer = {
+    # med dmg, low hp, low mana, no potions
+    "name": "computer",
+    "health": 80,
+    "mana": 20,
+    "strength": 10,
+    "description": ""
+}
+
 Classes = {
     "wizard": class_wizard,
     "warrior": class_warrior,
-    "undead": class_undead
+    "undead": class_undead,
+    "computer": class_computer
 }

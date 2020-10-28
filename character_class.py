@@ -23,7 +23,7 @@ class_undead = {
     "name": "undead",
     "health": 150,
     "mana": 50,
-    "strength": 16,
+    "strength": 16000,
     "description": "The undead compensates for his smaller mana pool for a very amount high of health.\n Starts with 2 strength pies."
 
 }

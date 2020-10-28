@@ -133,7 +133,7 @@ def enemy_health_check(CurrentLocation, CurEnemy, player):  # checks the enemy's
         battle = False
         if CurrentLocation.boss:  # if it is a boss fight it drops set items
             if CurEnemy.name == "Kirill":
-                you_win()
+                you_win(player)
             else:
                 inventory["money"] += 100
                 inventory["key piece"] += 1
@@ -151,8 +151,30 @@ def enemy_health_check(CurrentLocation, CurEnemy, player):  # checks the enemy's
     print()
 
 
-def you_win():
-    print("""
+def you_win(player):
+    if player.class_chosen == "computer":
+        print(""" 
+▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  
+█       █  █ █  █       █  █       █  █  █ █      █ 
+█▄     ▄█  █▄█  █    ▄▄▄█  █    ▄▄▄█   █▄█ █  ▄    █
+  █   █ █       █   █▄▄▄   █   █▄▄▄█       █ █ █   █
+  █   █ █   ▄   █    ▄▄▄█  █    ▄▄▄█  ▄    █ █▄█   █
+  █   █ █  █ █  █   █▄▄▄   █   █▄▄▄█ █ █   █       █
+  █▄▄▄█ █▄▄█ █▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄█ 
+
+Made By:
+----------------
+Benjamin Jones
+Cameron Bethell
+Jamie Groom
+Roshan Roy
+Will Simkins
+Will Shepherd 
+
+You have earned your masters in this degree 
+        """)
+    else:
+        print("""
 ▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  
 █       █  █ █  █       █  █       █  █  █ █      █ 
 █▄     ▄█  █▄█  █    ▄▄▄█  █    ▄▄▄█   █▄█ █  ▄    █
@@ -171,10 +193,9 @@ Will Simkins
 Will Shepherd
 
 if you think your good enough enter the class 'computer' for a real challenge
-    """)
+        """)
     time.sleep(20)
     quit()
-
 def enemy_attack(CurEnemy, player):
     attack = random.randint(1, 3)   # randomly decides what attack enemies should use
     if attack == 3:

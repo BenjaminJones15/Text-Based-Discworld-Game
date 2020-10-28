@@ -31,7 +31,7 @@ def main():
     while True:
         print_location(CurrentLocation)
         RndEncounter(CurrentLocation)
-        command = menu(CurrentLocation.exits, CurrentLocation.Items, inventory, CurrentLocation)
+        command = menu(CurrentLocation.exits, CurrentLocation, MyPlayer)
         CurrentLocation = execute_command(command, CurrentLocation)
                 
 

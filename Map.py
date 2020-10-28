@@ -208,7 +208,7 @@ ListLocations = {"Reception":Pseudopolis_Yard_Reception,
 "Outside":Pseudopolis_Yard_Outside, 
 "Tower":Tower_of_Art, 
 "Library":Library, 
-"Roof": Library_Roof 
+"Roof": Library_Roof,
 "Square":Sator_Square,
 "Entrance":Palace_Entrance, 
 "Palace":Palace, 

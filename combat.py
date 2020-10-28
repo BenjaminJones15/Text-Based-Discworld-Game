@@ -1,7 +1,6 @@
 from normalise import *
 from Map import *
 from Player import *
-from enemies import *
 import random
 import time
 

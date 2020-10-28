@@ -58,7 +58,7 @@ def store():
                 inventory["strength pie"] += 1
                 print("Do you want to buy anything else?")
 
-        if optioncmot.lower == "x":
+        if str(optioncmot).lower() == "x":
             openStore = False
 
         if optioncmot not in options:

@@ -17,6 +17,7 @@ def print_battle(player):  # prints your battle options each turn
     print("RUN!!!")
     print()
     print("You have " + str(player.health) + " health")
+    print("You have " + str(player.mana) + " mana")
     print("What do you want to do?")
     choice = input("> ")
     choice = normalise_input(choice)

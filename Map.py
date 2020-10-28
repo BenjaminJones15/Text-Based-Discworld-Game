@@ -115,7 +115,7 @@ Post_Office_Basement = Location()
 Post_Office_Basement.name = "Post Office Basement"
 Post_Office_Basement.description = "The basement contains a rather notorious machine, which sorts mail. It is a creation of BS (Bloody Stupid) Johnson, the man who disapproved of pi, instead setting it equal to 3. This has led to the machine producing letters not only from the future, but indeed from alternate realities as well. A small grimy window produces the only source of illumination – spotlighting a hunched figure, the banshee Mr Gryle, who is tightly wrapped in a thick, leathery cape. "
 Post_Office_Basement.exits = {"post":"Post Office"}
-Post_Office_Basement.POI = {"moist": "He damn near killed old Mr Groat. Thank you so much for defeating him. As a gift, take some money - the first ever 10 AM$ bill."}
+Post_Office_Basement.POI = {"moist": "The sorting engine - a perfect metaphor for the old post office. Now it stands here. Fairly useless, but it's a lot safer than even attempting to move it."}
 Post_Office_Basement.Items = {"arms":0}
 Post_Office_Basement.boss = True
 Post_Office_Basement.sprite = False
@@ -165,13 +165,13 @@ Temple_of_Anoia_Inner.sidequest = False
 
 Gimlets_Restaurant = Location()
 Gimlets_Restaurant.name = "Gimlet the Dwarf's Delicatessen"
-Gimlets_Restaurant.description = "               #gimlet gives you health pie/rat pie for killing jonathan."
+Gimlets_Restaurant.description = "Stooping your head to enter,                #gimlet gives you health pie/rat pie for killing jonathan."
 Gimlets_Restaurant.exits = {"temple":"Temple", "shades":"Shades"}
-Gimlets_Restaurant.POI = {}    
+Gimlets_Restaurant.POI = {"gimlet":"Welcome to the best dwarf restaurant in Ankh-Morpork. We've found a use for every part of a rat!"}    
 Gimlets_Restaurant.Items = {"arms":0}
 Gimlets_Restaurant.boss = True
 Gimlets_Restaurant.sprite = False
-Gimlets_Restaurant.sidequest = False
+Gimlets_Restaurant.sidequest = True
 
 The_Shades = Location()
 The_Shades.name = "The Shades"

@@ -77,7 +77,9 @@ def RndEncounter(location):
             return()
         else:
             CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer)    
+            CurrentLocation = start_battle(location, CurEnemy, MyPlayer) 
+            if CurEnemy == SwampDragon:
+                   inventory["swamp dragons"] += 1
             
 if __name__ == "__main__":  # Sets the main to StartMenu()
     main()

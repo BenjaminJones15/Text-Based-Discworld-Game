@@ -165,7 +165,7 @@ Temple_of_Anoia_Inner.sidequest = False
 
 Gimlets_Restaurant = Location()
 Gimlets_Restaurant.name = "Gimlet the Dwarf's Delicatessen"
-Gimlets_Restaurant.description = "Stooping your head to enter,                #gimlet gives you health pie/rat pie for killing jonathan."
+Gimlets_Restaurant.description = 'Stooping your head to enter, a brightly lit scene greets your eyes, and every few seconds a shout breaks through the general clatter of pans: "Order up!"'
 Gimlets_Restaurant.exits = {"temple":"Temple", "shades":"Shades"}
 Gimlets_Restaurant.POI = {"gimlet":"Welcome to the best dwarf restaurant in Ankh-Morpork. We've found a use for every part of a rat!"}    
 Gimlets_Restaurant.Items = {"arms":0}

@@ -46,7 +46,10 @@ def print_menu(exits, location_items, inv_items, location):
     if location == Lady_Sybil_Free_Hospital:
         print("DROP arms")
     elif location == Dragon_Sanctuary:
-        print("DROP swamp dragons")     
+        print("DROP swamp dragons")
+
+    for i in location.POI:
+        print("TALK to " + i.upper())
 
     print("What do you want to do?")
 
@@ -95,6 +98,11 @@ def execute_drop(item_id, location):
     print("You cannot drop that")
 
 
+def execute_talk(command, location):
+    command = " ".join(command)
+    print(location.POI[command])
+
+
 def execute_command(command, location):
     if 0 == len(command):
         return
@@ -122,10 +130,16 @@ def execute_command(command, location):
         else:
             print("Drop what?")
 
+    elif command[0] == "talk":
+        if len(command) > 1:
+            execute_talk(command[1:], location)
+        else:
+            print("Talk to who?")
+
     else:
         print("This makes no sense.")
-        newlocation = location
-        return newlocation
+    newlocation = location
+    return newlocation
 
 
 def menu(exits, room_items, inv_items, location):

@@ -37,8 +37,11 @@ def print_menu(exits, location_items, inv_items, location):
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
 
-    for i in location_items:
-        print("TAKE " + i.upper() + " to take " + i + ".")
+    if location == Lady_Sybil_Free_Hospital or location == Dragon_Sanctuary:
+        None
+    else:
+        for i in location_items:
+            print("TAKE " + i.upper() + " to take " + i + ".")
 
     if location == Lady_Sybil_Free_Hospital:
         print("DROP arms")

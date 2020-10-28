@@ -38,12 +38,12 @@ def print_menu(exits, location_items, inv_items, location):
         print_exit(direction, exit_leads_to(exits, direction))
 
     for i in location_items:
-        print("TAKE " + i["id"].upper() + " to take " + i["name"] + ".")
+        print("TAKE " + i.upper() + " to take " + i + ".")
 
     if location == Lady_Sybil_Free_Hospital:
         print("DROP arms")
     elif location == Dragon_Sanctuary:
-        print("DROP swamp dragons")
+        print("DROP swamp dragons")     
 
     print("What do you want to do?")
 
@@ -70,25 +70,24 @@ def execute_go(direction, location):
         print("You cannot go there.")
 
 
-def execute_take(item_id, location):
-    count = 0
-    for i in location.Items:
-        count += 1
-        if item_id == i["id"]:  # change if each item becomes an object
-            if item_id in inventory:
-                inventory[item_id] += 1
-                del location.Items[count]
-                return ()
+def execute_take(item_id, location):    
+    item_id = " ".join(item_id)
+    for i in location.Items:        
+        if item_id == i:  # change if each item becomes an object
+            if location.Items[item_id] > 0:
+                if item_id in inventory:
+                    inventory[item_id] += 1                
+                    location.Items[item_id] -= 1
+                    return ()
 
-
-def execute_drop(item_id, location):
-    count = 0
-    for i in inventory:
-        count += 1
-        if item_id == i["id"]:  # change if each item becomes an object
+def execute_drop(item_id, location):    
+    item_id = " ".join(item_id)
+    for i in inventory:               
+        if item_id == i:  # change if each item becomes an object
             if item_id in inventory:
-                inventory[item_id] += 1
-                del location.Items[count]
+                if inventory[item_id] > 0:
+                    inventory[item_id] -= 1
+                    location.items[item_id] +=1                
                 return ()
     print("You cannot drop that")
 
@@ -110,13 +109,13 @@ def execute_command(command, location):
 
     elif command[0] == "take":
         if len(command) > 1:
-            execute_take(command[1], location)
+            execute_take(command[1:], location)
         else:
             print("Take what?")
 
     elif command[0] == "drop":
         if len(command) > 1:
-            execute_drop(command[1], location)
+            execute_drop(command[1:], location)
         else:
             print("Drop what?")
 

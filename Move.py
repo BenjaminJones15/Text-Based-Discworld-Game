@@ -2,7 +2,7 @@ from Map import *
 from normalise import *
 from inventory import *
 from store import *
-
+from Player import *
 
 def print_location(location):
     # Display room name
@@ -23,7 +23,7 @@ def print_exit(direction, leads_to):
     print("Type Go " + direction.upper() + " to go to " + leads_to + ".")
 
 
-def print_menu(exits, location_items, inv_items, location):
+def print_menu(exits, location, player):
 
     print("You currently have:")
     print()
@@ -43,8 +43,9 @@ def print_menu(exits, location_items, inv_items, location):
 
     if location == Lady_Sybil_Free_Hospital:
         print("DROP arms")
-    elif location == Dragon_Sanctuary:
-        print("DROP swamp dragons")
+
+    if player.class_chosen == "computer" and location == Pseudopolis_Yard_Upstairs:
+        print("INTERACT with locker")
 
     for i in location.POI:
         print("TALK to " + i.upper())
@@ -120,6 +121,7 @@ def execute_talk(command, location):
             inventory["money"] += num*10
         else:
             print("Are you sure you won't reconsider?")
+
     else:
         if command in location.POI:
             print(location.POI[command])
@@ -153,6 +155,8 @@ def execute_command(command, location):
             execute_drop(command[1:], location)
         else:
             print("Drop what?")
+    elif command[0] == "interact" and location == Pseudopolis_Yard_Upstairs:
+        print("A picture of your computer scientist degree")
 
     elif command[0] == "talk":
         if len(command) > 1:
@@ -166,9 +170,9 @@ def execute_command(command, location):
     return newlocation
 
 
-def menu(exits, room_items, inv_items, location):
+def menu(exits, location, player):
     # Display menu
-    print_menu(exits, room_items, inv_items, location)
+    print_menu(exits, location, player)
 
     # Read player's input
     user_input = input("> ")

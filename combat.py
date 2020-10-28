@@ -36,9 +36,9 @@ def execute_attack(CurEnemy, player):  # deals damage to the enemy
 
 
 def execute_mana(CurEnemy, player):  # mana is set damage and shows your mana falling
-    CurEnemy.health = CurEnemy.health - 20
+    CurEnemy.health = CurEnemy.health - 30
     player.mana = player.mana - 20
-    print("The enemy lost 20 health")
+    print("The enemy lost 30 health")
     print("You used up 20 mana")
 
 

@@ -1,13 +1,13 @@
 class Location(object):
     def _init_(self, name, description, exits, Items, POI, boss, sprite, sidequest):
-        self.name = name     #name of the location
-        self.description = description    #description of the location
-        self.exits = exits   #dictionary of exits from the location
-        self.POI = POI       #list of things to do around the location
-        self.items = Items   #list of items around the location
-        self.boss = boss     #boolean variable, if boss battle happens = True
-        self.sprite = sprite #boolean variable, if sprite can spawn here = True
-        self.sidequest = sidequest  #checks if the sidequest has been completed.
+        self.name = name     #name of the location, string
+        self.description = description    #description of the location, string
+        self.exits = exits           #possible exits from the location, dictionary
+        self.POI = POI               #things to do around the location, dictionary
+        self.items = Items           #all of the items around the location, dictionary
+        self.boss = boss             #checks if boss battle happens, boolean
+        self.sprite = sprite         #checks if sprite can spawn here, boolean
+        self.sidequest = sidequest   #checks if sidequest has been completed, boolean
 
 
 Pseudopolis_Yard_Reception = Location()
@@ -23,7 +23,7 @@ Pseudopolis_Yard_Reception.sidequest = False
 Pseudopolis_Yard_Upstairs = Location()
 Pseudopolis_Yard_Upstairs.name = "The locker room of the watch house"
 Pseudopolis_Yard_Upstairs.description = "The locker room of the Watch House contains tall standing storage cupboards – once a gleaming bronze, but now dull and dented by the grime of life. They are filled with the possessions of all the Watchmen.        *grime of life sounds wrong."
-Pseudopolis_Yard_Upstairs.exits = {"reception":"Reception"}
+Pseudopolis_Yard_Upstairs.exits = {"reception":"Reception"}       #here, as with all other exits, has been shortened to one word, to prevent erros when the exits are called.
 Pseudopolis_Yard_Upstairs.POI = {}
 Pseudopolis_Yard_Upstairs.Items = {"arms":0}
 Pseudopolis_Yard_Upstairs.boss = False
@@ -126,7 +126,7 @@ Mended_Drum.name = "The Mended Drum"
 Mended_Drum.description = "Entering the bar, you pass a lichen covered troll acting as a bouncer, and walk almost immediately into an on-going bar fight, between a wiry old man and various other patrons of the bar. After observing the carnage for a few minutes, you notice a distinct decrease in the amount of combat, mainly due to the old man’s canny ability to convince the other participants it is best to stay down rather than face him again.     #talk to cohen the barbarian, npc."
 Mended_Drum.exits = {"post":"Post Office", "hospital":"Hospital",
 "temple":"Temple"}
-Mended_Drum.POI = {"conan":"Come share a beer with me if you ever want to hear how I returned fire to the gods"}        #maybe?
+Mended_Drum.POI = {"conan":"Come share a beer with me if you ever want to hear how I returned fire to the gods"}
 Mended_Drum.Items = {"arms": 5}
 Mended_Drum.boss = False
 Mended_Drum.sprite = True
@@ -203,8 +203,8 @@ Dragon_Sanctuary.boss = False
 Dragon_Sanctuary.sprite = True
 Dragon_Sanctuary.sidequest = False
 
-ListLocations = {"Reception":Pseudopolis_Yard_Reception,
-"Locker Room":Pseudopolis_Yard_Upstairs, 
+ListLocations = {"Reception":Pseudopolis_Yard_Reception,             #dictionary of locations, which is easier to call than each individual object.
+"Locker Room":Pseudopolis_Yard_Upstairs,                             
 "Outside":Pseudopolis_Yard_Outside, 
 "Tower":Tower_of_Art, 
 "Library":Library, 

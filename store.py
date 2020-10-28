@@ -13,7 +13,6 @@ def store():
     print()
     print("x.) Exit Store")
 
-    wallet = 0
     options = ["1", "2", "3", "x"]
 
     timeframe = 500
@@ -27,28 +26,37 @@ def store():
             "\n>"
         ],
     )
+    t.start()
     while openStore:
-        t.start()
         optioncmot = input(">")
         t.cancel()
 
         if optioncmot == "1":
-            print("You have bought a health pie for 5 AM$")
-            wallet = wallet - 5
-            inventory["health pie"] += 1
-            print("Do you want to buy anything else?")
+            if inventory["money"] < 5:
+                print("you can't afford that")
+            else:
+                print("You have bought a health pie for 5 AM$")
+                inventory["money"] -= 5
+                inventory["health pie"] += 1
+                print("Do you want to buy anything else?")
 
         if optioncmot == "2":
-            print("You have bought a mana pie for 20 AM$")
-            wallet = wallet - 20
-            inventory["mana pie"] += 1
-            print("Do you want to buy anything else?")
+            if inventory["money"] < 20:
+                print("you can't afford that")
+            else:
+                print("You have bought a mana pie for 20 AM$")
+                inventory["money"] -= 20
+                inventory["mana pie"] += 1
+                print("Do you want to buy anything else?")
 
         if optioncmot == "3":
-            print("You have bought a strength pie for 12 AM$")
-            wallet = wallet - 12
-            inventory["strength pie"] += 1
-            print("Do you want to buy anything else?")
+            if inventory["money"] < 12:
+                print("you can't afford that")
+            else:
+                print("You have bought a strength pie for 12 AM$")
+                inventory["money"] -= 12
+                inventory["strength pie"] += 1
+                print("Do you want to buy anything else?")
 
         if optioncmot.lower == "x":
             openStore = False

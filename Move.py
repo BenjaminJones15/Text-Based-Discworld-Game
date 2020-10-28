@@ -1,6 +1,7 @@
 from Map import *
 from normalise import *
 from inventory import *
+from store import *
 
 
 def print_location(location):
@@ -100,7 +101,10 @@ def execute_drop(item_id, location):
 
 def execute_talk(command, location):
     command = " ".join(command)
-    print(location.POI[command])
+    if command == "dibbler":
+        store()
+    else:
+        print(location.POI[command])
 
 
 def execute_command(command, location):

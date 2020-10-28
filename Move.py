@@ -22,7 +22,7 @@ def print_exit(direction, leads_to):
     print("Type Go " + direction.upper() + " to go to " + leads_to + ".")
 
 
-def print_menu(exits, location_items, inv_items):
+def print_menu(exits, location_items, inv_items, location):
 
     print("You currently have:")
     print()
@@ -40,8 +40,10 @@ def print_menu(exits, location_items, inv_items):
     for i in location_items:
         print("TAKE " + i["id"].upper() + " to take " + i["name"] + ".")
 
-    for i in inv_items:
-        print("DROP " + i.upper() + " to drop your " + i + ".")
+    if location == Lady_Sybil_Free_Hospital:
+        print("DROP arms")
+    elif location == Dragon_Sanctuary:
+        print("DROP swamp dragons")
 
     print("What do you want to do?")
 
@@ -124,9 +126,9 @@ def execute_command(command, location):
         return newlocation
 
 
-def menu(exits, room_items, inv_items):
+def menu(exits, room_items, inv_items, location):
     # Display menu
-    print_menu(exits, room_items, inv_items)
+    print_menu(exits, room_items, inv_items, location)
 
     # Read player's input
     user_input = input("> ")

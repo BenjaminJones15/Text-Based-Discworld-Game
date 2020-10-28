@@ -27,10 +27,10 @@ def main():
 
     print("You must free the city and defeat Kirill!")
     time.sleep(2.5)
-    while True:        
+    while True:
         print_location(CurrentLocation)
         RndEncounter(CurrentLocation)
-        command = menu(CurrentLocation.exits, CurrentLocation.Items, inventory)        
+        command = menu(CurrentLocation.exits, CurrentLocation.Items, inventory, CurrentLocation)
         CurrentLocation = execute_command(command, CurrentLocation)
                 
 

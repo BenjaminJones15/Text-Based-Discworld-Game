@@ -169,6 +169,8 @@ Jamie Groom
 Roshan Roy
 Will Simkins
 Will Shepherd
+
+if you think your good enough enter the class 'computer' for a real challenge
     """)
     time.sleep(20)
     quit()

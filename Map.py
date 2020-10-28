@@ -1,5 +1,5 @@
 class Location(object):
-    def _init_(self, name, description, exits, Items, POI, boss, sprite):
+    def _init_(self, name, description, exits, Items, POI, boss, sprite, sidequest):
         self.name = name     #name of the location
         self.description = description    #description of the location
         self.exits = exits   #dictionary of exits from the location
@@ -7,6 +7,7 @@ class Location(object):
         self.items = Items   #list of items around the location
         self.boss = boss     #boolean variable, if boss battle happens = True
         self.sprite = sprite #boolean variable, if sprite can spawn here = True
+        self.sidequest = sidequest  #checks if the sidequest has been completed.
 
 
 Pseudopolis_Yard_Reception = Location()
@@ -17,6 +18,7 @@ Pseudopolis_Yard_Reception.POI = {"fred": "Hello Recruit, welcome to your first 
 Pseudopolis_Yard_Reception.Items = {}
 Pseudopolis_Yard_Reception.boss = False
 Pseudopolis_Yard_Reception.sprite = False
+Pseudopolis_Yard_Reception.sidequest = False
 
 Pseudopolis_Yard_Upstairs = Location()
 Pseudopolis_Yard_Upstairs.name = "The locker room of the watch house"
@@ -26,6 +28,7 @@ Pseudopolis_Yard_Upstairs.POI = {}
 Pseudopolis_Yard_Upstairs.Items = {}
 Pseudopolis_Yard_Upstairs.boss = False
 Pseudopolis_Yard_Upstairs.sprite = False
+Pseudopolis_Yard_Upstairs.sidequest = False
 
 Pseudopolis_Yard_Outside = Location()
 Pseudopolis_Yard_Outside.name = "The outside of Pseudopolis Yard Watch house"
@@ -36,6 +39,7 @@ Pseudopolis_Yard_Outside.POI = {"carrot":"Ah. Right on time. Sergeant Colon has 
 Pseudopolis_Yard_Outside.Items = {}
 Pseudopolis_Yard_Outside.boss = False
 Pseudopolis_Yard_Outside.sprite = False
+Pseudopolis_Yard_Outside.sidequest = False
 
 Tower_of_Art = Location()
 Tower_of_Art.name = "The Tower of Art"
@@ -45,6 +49,7 @@ Tower_of_Art.POI = {"ridcully":"Careful lad, this area is highly unstable and th
 Tower_of_Art.Items = {}
 Tower_of_Art.boss = False
 Tower_of_Art.sprite = True
+Tower_of_Art.sidequest = False
 
 Library = Location()
 Library.name = "The Library"
@@ -54,6 +59,7 @@ Library.POI = {"librarian":"Ook, Ook. - Translation - 𝘌𝘹𝘤𝘦𝘭𝘭�
 Library.Items = {}
 Library.boss = False
 Library.sprite = True
+Library.sidequest = False
 
 Library_Roof = Location()
 Library_Roof.name = "The roof of the Library"
@@ -63,6 +69,7 @@ Library_Roof.POI = {"sam":"WATCH OUT! Sam Vimes appears, making a diving leap, a
 Library_Roof.Items = {}
 Library_Roof.boss = True
 Library_Roof.sprite = False
+Library_Roof = False
 
 Sator_Square = Location()
 Sator_Square.name = "Sator Square"
@@ -72,6 +79,7 @@ Sator_Square.POI = {"dibbler": "Oi officer, I've got everything you want and mor
 Sator_Square.Items = {}
 Sator_Square.boss = False
 Sator_Square.sprite = True
+Sator_Square.sidequest = False
 
 Palace_Entrance = Location()
 Palace_Entrance.name = "Palace Entrance"
@@ -81,6 +89,7 @@ Palace_Entrance.POI = {}
 Palace_Entrance.Items = {}
 Palace_Entrance.boss = False
 Palace_Entrance.sprite = False
+Palace_Entrance.sidequest = False
 
 Palace = Location()
 Palace.name = "Throne Room"
@@ -90,6 +99,7 @@ Palace.POI = {"vetinari": "Ah, hello officer. Impeccable timing. Both the city a
 Palace.Items = {}
 Palace.boss = True
 Palace.sprite = False
+Palace.sidequest = False
 
 Post_Office = Location()
 Post_Office.name = "Post Office"
@@ -99,6 +109,7 @@ Post_Office.POI = {}
 Post_Office.Items = {}
 Post_Office.boss = False
 Post_Office.sprite = False
+Post_Office.sidequest = False
 
 Post_Office_Basement = Location()
 Post_Office_Basement.name = "Post Office Basement"
@@ -108,6 +119,7 @@ Post_Office_Basement.POI = {"moist": "He damn near killed old Mr Groat. Thank yo
 Post_Office_Basement.Items = {}
 Post_Office_Basement.boss = True
 Post_Office_Basement.sprite = False
+Post_Office_Basement.sidequest = False
 
 Mended_Drum = Location()
 Mended_Drum.name = "The Mended Drum"
@@ -118,6 +130,7 @@ Mended_Drum.POI = {"conan":"Come share a beer with me if you ever want to hear h
 Mended_Drum.Items = {}
 Mended_Drum.boss = False
 Mended_Drum.sprite = True
+Mended_Drum.sidequest = False
 
 Lady_Sybil_Free_Hospital = Location()
 Lady_Sybil_Free_Hospital.name = "Lady Sybil Free Hospital"
@@ -127,6 +140,7 @@ Lady_Sybil_Free_Hospital.POI = {"igor": "Hello thur, today we’ve encountered a
 Lady_Sybil_Free_Hospital.Items = {"Arms":0}    
 Lady_Sybil_Free_Hospital.boss = False
 Lady_Sybil_Free_Hospital.sprite = True
+Lady_Sybil_Free_Hospital.sidequest = True
 
 Temple_of_Anoia = Location()
 Temple_of_Anoia.name = "Temple of Anoia"
@@ -137,6 +151,7 @@ Temple_of_Anoia.POI = {}
 Temple_of_Anoia.Items = {}   
 Temple_of_Anoia.boss = False
 Temple_of_Anoia.sprite = False
+Temple_of_Anoia.sidequest = False
 
 Temple_of_Anoia_Inner = Location()
 Temple_of_Anoia_Inner.name = "Inner Shrine of Anoia"
@@ -146,6 +161,7 @@ Temple_of_Anoia_Inner.POI = {"anoia":"Thank you for cleansing my shrine of this 
 Temple_of_Anoia_Inner.Items = {}       
 Temple_of_Anoia_Inner.boss = True
 Temple_of_Anoia_Inner.sprite = False
+Temple_of_Anoia_Inner.sidequest = False
 
 Gimlets_Restaurant = Location()
 Gimlets_Restaurant.name = "Gimlet the Dwarf's Delicatessen"
@@ -155,6 +171,7 @@ Gimlets_Restaurant.POI = {"carrot":"Due to his unsociable behaviour, you must ap
 Gimlets_Restaurant.Items = {}   
 Gimlets_Restaurant.boss = True
 Gimlets_Restaurant.sprite = False
+Gimlets_Restaurant.sidequest = False
 
 The_Shades = Location()
 The_Shades.name = "The Shades"
@@ -164,6 +181,7 @@ The_Shades.POI = {}
 The_Shades.Items = {}     
 The_Shades.boss = False
 The_Shades.sprite = True
+The_Shades.sidequest = False
 
 The_Pink_Pussycat_Club = Location()
 The_Pink_Pussycat_Club.name = "The Pink Pussycat Club"
@@ -173,15 +191,17 @@ The_Pink_Pussycat_Club.POI = {"flead":"Hello young man. D’you know what the gi
 The_Pink_Pussycat_Club.Items = {}
 The_Pink_Pussycat_Club.boss = False
 The_Pink_Pussycat_Club.sprite = False
+The_Pink_Pussycat_Club.sidequest = False
 
 Dragon_Sanctuary = Location()
 Dragon_Sanctuary.name = "The Sanctuary for Lost Dragons"
 Dragon_Sanctuary.description = "A building with similar design principles to that of a firework factory – mainly thick walls and a light roof – it houses abandoned and mistreated swamp dragons that have been rescued from across the city. A large lady, clad in slightly charred leather armour, approaches, in one hand holding a small swamp dragon, and in the other a lump of coal which she is currently feeding to the animal. #talk to sybil. "
 Dragon_Sanctuary.exits = {"outside":"Outside", "club":"Club"} 
-Dragon_Sanctuary.POI = {"sybil":"After defeating any poor dragons you find across the city, I would be extremely grateful if you would be kind enough to return them here, so they can be re-homed and properly cared for."}
+Dragon_Sanctuary.POI = {}
 Dragon_Sanctuary.Items = {"swamp dragons":0}        
 Dragon_Sanctuary.boss = False
 Dragon_Sanctuary.sprite = True
+Dragon_Sanctuary.sidequest = False
 
 ListLocations = {"Reception":Pseudopolis_Yard_Reception,
 "Locker Room":Pseudopolis_Yard_Upstairs, 

@@ -13,7 +13,7 @@ class_warrior = {
     "name": "warrior",
     "health": 130,
     "mana": 70,
-    "strength": 12,
+    "strength": 20,
     "description": "The warrior deals medium amounts of damage, and has a fairly high amount of health.\n Starts with 1 mana and 1 health pie."
     
 }
@@ -23,7 +23,7 @@ class_undead = {
     "name": "undead",
     "health": 150,
     "mana": 50,
-    "strength": 10,
+    "strength": 16,
     "description": "The undead compensates for his smaller mana pool for a very amount high of health.\n Starts with 2 strength pies."
 
 }

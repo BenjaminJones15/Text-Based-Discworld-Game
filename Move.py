@@ -103,6 +103,26 @@ def execute_talk(command, location):
     command = " ".join(command)
     if command == "dibbler":
         store()
+    elif location.items["arms"] == 5 and location == Lady_Sybil_Free_Hospital:
+        if location.sidequest:
+            print("Thank you for bringing me these arms")
+            print("Here is some money for your troubles")
+            inventory["money"] += 50
+            location.sidequest = False
+        else:
+            print("You've already helped me")
+    elif location == Dragon_Sanctuary and inventory["swamp dragons"] > 0:
+        print("I can take those dragons of your hands for 10 AM$ each: yes/no")
+        choice = " ".join(normalise_input(input("> ")))
+        if choice == "yes":
+            num = 0
+            while inventory["swamp dragon"]>0:
+                inventory["swamp dragon"] -=1
+                num +=1
+            print("here is " + str(num*10) + " AM$")
+            inventory["money"] += num*10
+        else:
+            print("Are you sure you won't reconsider?")
     else:
         if command in location.POI:
             print(location.POI[command])

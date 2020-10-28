@@ -28,6 +28,7 @@ def store():
     )
     t.start()
     while openStore:
+        print("you have " + inventory["money"] + " AM$")
         optioncmot = input(">")
         t.cancel()
 

@@ -36,49 +36,50 @@ def main():
 
 def RndEncounter(location):    
     global CurEnemy
+    NewEnemy = CurEnemy
     global CurrentLocation
     global MyPlayer
     EnChance = random.randint(0,1)
 
     if location == Library:
-        CurEnemy = ShadowingLemma
+        NewEnemy = ShadowingLemma
         if EnChance == 0:
             return()
         else:
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
+            CurrentLocation = start_battle(location, NewEnemy, MyPlayer)        
     elif location == The_Shades:
-        CurEnemy = Mugger
+        NewEnemy = Mugger
         if EnChance == 0:
             return()
         else:
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer)
+            CurrentLocation = start_battle(location, NewEnemy, MyPlayer)
     elif location == Gimlets_Restaurant:
         if location.boss == True:
-            CurEnemy = Johnathan        
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
+            NewEnemy = Johnathan        
+            CurrentLocation = start_battle(location, NewEnemy, MyPlayer)        
     elif location == Library_Roof:
         if location.boss == True:
-            CurEnemy = CarcerDun
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
+            NewEnemy = CarcerDun
+            CurrentLocation = start_battle(location, NewEnemy, MyPlayer)        
     elif location == Palace:
         if location.boss == True:
-            CurEnemy = Kirill
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
+            NewEnemy = Kirill
+            CurrentLocation = start_battle(location, NewEnemy, MyPlayer)        
     elif location == Post_Office_Basement:
         if location.boss == True:
-            CurEnemy = MrGryle
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
+            NewEnemy = MrGryle
+            CurrentLocation = start_battle(location, NewEnemy, MyPlayer)        
     elif location == Temple_of_Anoia_Inner:
         if location.boss == True:
-            CurEnemy = Gitlab
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
+            NewEnemy = Gitlab
+            CurrentLocation = start_battle(location, NewEnemy, MyPlayer)        
     else:            
         if EnChance == 0 or location.sprite == False:            
             return()
         else:
-            CurEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
-            CurrentLocation = start_battle(location, CurEnemy, MyPlayer) 
-            if CurEnemy == SwampDragon:
+            NewEnemy = EnemyList[random.randint(0,len(EnemyList)-1)]    #selects an enemy from the list of sprites
+            CurrentLocation = start_battle(location, NewEnemy, MyPlayer) 
+            if NewEnemy == SwampDragon:
                    inventory["swamp dragons"] += 1
             
 if __name__ == "__main__":  # Sets the main to StartMenu()

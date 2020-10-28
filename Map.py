@@ -68,7 +68,7 @@ Sator_Square = Location()
 Sator_Square.name = "Sator Square"
 Sator_Square.description = "Walking through the rowdy marketplace, you see a wide-open public space with four fountains – each displaying a hippopotamus, the patron animal of Ankh-Morpork – spurting water. The entire scene is overlooked by the clock-tower, and all around, you see pop-up stores selling anything and everything that could be desired." 
 Sator_Square.exits = {"library":"Library", "palace":"Palace"}
-Sator_Square.POI = {"dibbler": '''insert dialogue here? maybe'''}
+Sator_Square.POI = {"dibbler": "Oi officer, I've got everything you want and more. Come are buy some of my products. My pies are the cheapest in the market!"}
 Sator_Square.Items = {}
 Sator_Square.boss = False
 Sator_Square.sprite = True
@@ -78,7 +78,7 @@ Palace_Entrance.name = "Palace Entrance"
 Palace_Entrance.description = "Standing in front of the palace entrance, you feel dwarf-like. Its architecture is like no other in the city – having been extended by multiple patricians and kings throughout the centuries. This all combines to present a building which is both staggeringly beautiful, while also providing an aura of impregnability which seems to dare you to assault it. "
 Palace_Entrance.exits = {"square":"Square", "outside":"Outside", "post":"Post Office", "palace":"Palace"}
 Palace_Entrance.POI = {"Enter the throne room to battle Kirill": '''insert dialogue here'''}
-Palace_Entrance.Items = {"dibbler": "Oi officer, I've got everything you want and more. Come are buy some of my products. My pies are the cheapest in the market!"}
+Palace_Entrance.Items = {}
 Palace_Entrance.boss = False
 Palace_Entrance.sprite = False
 

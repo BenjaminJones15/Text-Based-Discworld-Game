@@ -38,11 +38,8 @@ def print_menu(exits, location_items, inv_items, location):
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
 
-    if location == Lady_Sybil_Free_Hospital or location == Dragon_Sanctuary:
-        None
-    else:
-        for i in location_items:
-            print("TAKE " + i.upper() + " to take " + i + ".")
+    if location == Mended_Drum:
+        print("TAKE ARMS to pick up the arms.")
 
     if location == Lady_Sybil_Free_Hospital:
         print("DROP arms")
@@ -103,7 +100,7 @@ def execute_talk(command, location):
     command = " ".join(command)
     if command == "dibbler":
         store()
-    elif location.items["arms"] == 5 and location == Lady_Sybil_Free_Hospital:
+    elif location.Items["arms"] == 5 and location == Lady_Sybil_Free_Hospital:
         if location.sidequest:
             print("Thank you for bringing me these arms")
             print("Here is some money for your troubles")

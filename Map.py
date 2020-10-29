@@ -132,15 +132,15 @@ Mended_Drum.boss = False
 Mended_Drum.sprite = True
 Mended_Drum.sidequest = False
 
-Lady_Sybil_Free_Hospital = Location()
-Lady_Sybil_Free_Hospital.name = "Lady Sybil Free Hospital"
-Lady_Sybil_Free_Hospital.description = "Upon entering the reception of the hospital you are greeted by a maze of rambling hallways, with multiple signs pointing to assorted wings. The faint background of noise is provided by the sound of coughing, mixed in with the occasional scream. In one corner of the room, an Igor stands, slowly and carefully sewing his hand back onto his wrist."
-Lady_Sybil_Free_Hospital.exits = {"mended":"Mended Drum", "temple":"Temple"}
-Lady_Sybil_Free_Hospital.POI = {"igor": "Hello thur, today we’ve encountered a mysterious shortage of limbs here in the re-attachments department. If you find any spare arms on your patrol around the city, please return them to me so I can pass them on to their original owners."}    
-Lady_Sybil_Free_Hospital.Items = {"arms":0}
-Lady_Sybil_Free_Hospital.boss = False
-Lady_Sybil_Free_Hospital.sprite = True
-Lady_Sybil_Free_Hospital.sidequest = True
+Lady_Ramkin_Free_Hospital = Location()
+Lady_Ramkin_Free_Hospital.name = "Lady Ramkin Free Hospital"
+Lady_Ramkin_Free_Hospital.description = "Upon entering the reception of the hospital you are greeted by a maze of rambling hallways, with multiple signs pointing to assorted wings. The faint background of noise is provided by the sound of coughing, mixed in with the occasional scream. In one corner of the room, an Igor stands, slowly and carefully sewing his hand back onto his wrist."
+Lady_Ramkin_Free_Hospital.exits = {"mended":"Mended Drum", "temple":"Temple"}
+Lady_Ramkin_Free_Hospital.POI = {"igor": "Hello thur, today we’ve encountered a mysterious shortage of limbs here in the re-attachments department. If you find any spare arms on your patrol around the city, please return them to me so I can pass them on to their original owners."}    
+Lady_Ramkin_Free_Hospital.Items = {"arms":0}
+Lady_Ramkin_Free_Hospital.boss = False
+Lady_Ramkin_Free_Hospital.sprite = True
+Lady_Ramkin_Free_Hospital.sidequest = True
 
 Temple_of_Anoia = Location()
 Temple_of_Anoia.name = "Temple of Anoia"
@@ -166,7 +166,7 @@ Temple_of_Anoia_Inner.sidequest = False
 Gimlets_Restaurant = Location()
 Gimlets_Restaurant.name = "Gimlet the Dwarf's Delicatessen"
 Gimlets_Restaurant.description = 'Stooping your head to enter, a brightly lit scene greets your eyes, and every few seconds a shout breaks through the general clatter of pans: "Order up!"'
-Gimlets_Restaurant.exits = {"temple":"Temple", "shades":"Shades"}
+Gimlets_Restaurant.exits = {"temple":"Temple", "shades":"Shades", "sanctuary":"Sanctuary"}
 Gimlets_Restaurant.POI = {"gimlet":"Welcome to the best dwarf restaurant in Ankh-Morpork. We've found a use for every part of a rat!"}    
 Gimlets_Restaurant.Items = {"arms":0}
 Gimlets_Restaurant.boss = True
@@ -195,9 +195,9 @@ The_Pink_Pussycat_Club.sidequest = False
 
 Dragon_Sanctuary = Location()
 Dragon_Sanctuary.name = "The Sanctuary for Lost Dragons"
-Dragon_Sanctuary.description = "A building with similar design principles to that of a firework factory – mainly thick walls and a light roof – it houses abandoned and mistreated swamp dragons that have been rescued from across the city. A large lady, clad in slightly charred leather armour, approaches, in one hand holding a small swamp dragon, and in the other a lump of coal which she is currently feeding to the animal. #talk to sybil. "
-Dragon_Sanctuary.exits = {"outside":"Outside", "club":"Club"} 
-Dragon_Sanctuary.POI = {"lady sybil ramikin": "After defeating any poor dragons you find across the city, I would be extremely grateful if you would be kind enough to return them here, so they can be re-homed and properly cared for."}
+Dragon_Sanctuary.description = "A building with similar design principles to that of a firework factory – mainly thick walls and a light roof – it houses abandoned and mistreated swamp dragons that have been rescued from across the city. A large lady, clad in slightly charred leather armour, approaches, in one hand holding a small swamp dragon, and in the other a lump of coal which she is currently feeding to the animal."
+Dragon_Sanctuary.exits = {"restaurant":"Restaurant", "club":"Club"} 
+Dragon_Sanctuary.POI = {"sybil": "After defeating any poor dragons you find across the city, I would be extremely grateful if you would be kind enough to return them here, so they can be re-homed and properly cared for."}
 Dragon_Sanctuary.Items = {"arms":0}
 Dragon_Sanctuary.boss = False
 Dragon_Sanctuary.sprite = True
@@ -215,7 +215,7 @@ ListLocations = {"Reception":Pseudopolis_Yard_Reception,             #dictionary
 "Post Office":Post_Office, 
 "Basement":Post_Office_Basement, 
 "Mended Drum":Mended_Drum,
-"Hospital":Lady_Sybil_Free_Hospital, 
+"Hospital":Lady_Ramkin_Free_Hospital, 
 "Temple":Temple_of_Anoia, 
 "Inner":Temple_of_Anoia_Inner,
 "Restaurant":Gimlets_Restaurant, 

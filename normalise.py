@@ -10,7 +10,7 @@ skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
               'that', 'the', 'then', 'this', 'those', 'through', 'till', 'to',
               'towards', 'until', 'us', 'want', 'we', 'what', 'when', 'why',
               'wish', 'with', 'would', 'art', 'use', 'enemy', 'watch',
-              'pseudopolis', 'yard', 'house', 'sator', 'lady', 'sybil', 'free',
+              'pseudopolis', 'yard', 'house', 'sator', 'lady', 'ramkin', 'free',
               'shrine', 'dwarfs', 'delicatessen', 'pink',
               'pussycat', 'lost', 'office', 'drum']
 

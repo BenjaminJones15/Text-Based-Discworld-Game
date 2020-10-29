@@ -105,7 +105,7 @@ def execute_talk(command, location):        #used to interact with POI's in each
         print("Thank you for getting rid of him - he was grating on everyone's nerves. Truly the most irritating customer I've ever met, and that's saying something. Have a free rat pie on me!")
         inventory["health pie"] += 1
         location.sidequest = False         #sets to false, so dialogue won't repeat.
-    elif location.Items["arms"] == 5 and location == Lady_Sybil_Free_Hospital:      #dialogue used for sidequest. 
+    elif location.Items["arms"] == 5 and location == Lady_Ramkin_Free_Hospital:      #dialogue used for sidequest. 
         if location.sidequest:
             print("Thank you for bringing me these arms")
             print("Here is some money for your troubles")

@@ -110,5 +110,5 @@ Kirill = enemy()
 Kirill.name = "Kirill"
 Kirill.health = 400
 Kirill.strength = 30
-Kirill.magic = 49
+Kirill.magic = 35
 Kirill.description = ("Biggest badass in Ankh-Morpork")

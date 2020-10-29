@@ -74,13 +74,11 @@ def RndEncounter(location):           #Used to control random encounters around 
         if location.boss == True:
             CurEnemy = copy.deepcopy(Gitlab)
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
-    else:   
-        EnChance = 1
+    else:        
         if EnChance == 0 or location.sprite == False:            #catches either condition, so certain locations, e.g. boss battles or safe spaces won't have a chance of sprites spawning.
             return()
-        else:
-            CurEnemy = copy.deepcopy(SwampDragon)        
-            #CurEnemy = copy.deepcopy(EnemyList[random.randint(0,len(EnemyList)-1)])    #selects an enemy from the list of sprites, and puts it into the var. CurEnemy.
+        else:                   
+            CurEnemy = copy.deepcopy(EnemyList[random.randint(0,len(EnemyList)-1)])    #selects an enemy from the list of sprites, and puts it into the var. CurEnemy.
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer) 
             if CurEnemy.name == SwampDragon.name:                    #after beating the specific enemy, it is added to your inventory to facilitate a sidequest.
                    inventory["swamp dragons"] += 1

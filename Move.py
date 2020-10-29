@@ -131,7 +131,7 @@ def execute_talk(command, location):        #used to interact with POI's in each
             print(location.POI[command])
         else:
             print("you can't talk to that")     #catch statement if user enters an incorrect input.
-    time.sleep(15)
+    time.sleep(7)
 
 def execute_command(command, location):         #used by the user to interact with the game via text commands.
     if 0 == len(command):       #prevents an empty command from being entered. 

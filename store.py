@@ -28,7 +28,7 @@ def store():
     )
     t.start()
     while openStore:  # loop for continuing to buy things
-        print("you have " + inventory["money"] + " AM$")  # prints how much money you have left each loop
+        print("you have " + str(inventory["money"]) + " AM$")  # prints how much money you have left each loop
         optioncmot = input(">")
         t.cancel()
 

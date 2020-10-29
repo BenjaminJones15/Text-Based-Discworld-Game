@@ -1,3 +1,5 @@
+import copy
+
 from normalise import *
 from Map import *
 from Player import *
@@ -277,7 +279,7 @@ def save_checkpoint(CurrentLocation, player):  # saves all the players stats aft
     saveHealth = player.health
     saveMana = player.mana
     saveExp = player.exp
-    saveInventory = player.inventory
+    saveInventory = copy.deepcopy(player.inventory)
     saveLocation = CurrentLocation
 
 def load_checkpoint(player):  # loads last saved checkpoint after losing a game

@@ -37,7 +37,7 @@ def print_menu(exits, location, player):     #displays the options available to 
     if location == Mended_Drum:                     #specific condition for sidequest.
         print("TAKE ARMS to pick up the arms.")
 
-    if location == Lady_Sybil_Free_Hospital:        #specific condition for sidequest.
+    if location == Lady_Ramkin_Free_Hospital:        #specific condition for sidequest.
         print("DROP arms")                          
 
     if player.class_chosen == "computer" and location == Pseudopolis_Yard_Upstairs:    #easter egg included, for use with a secret character class.

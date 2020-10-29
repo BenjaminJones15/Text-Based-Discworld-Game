@@ -35,7 +35,7 @@ Pseudopolis_Yard_Outside.name = "The outside of Pseudopolis Yard Watch house"
 Pseudopolis_Yard_Outside.description = "Following a cobbled path leads you to the headquarters of the Ankh-Morpork City Watch. The Watch primarily deal with crimes committed in front of a watch officer or otherwise reported. Hulking over you is Captain Carrot with his bulging muscles in his glistening bronze armour – you can see your own warped image peering back at you." 
 Pseudopolis_Yard_Outside.exits = {"reception":"Reception", "tower": "Tower","entrance": "Entrance",
 "restaurant": "Restaurant"}
-Pseudopolis_Yard_Outside.POI = {"carrot":"Ah. Right on time. Sergeant Colon has informed me of a spike in reports of crime across the city, and we're shorthanded. Usually you would have a week of basic training with Detritus, our troll instructor, but it looks like you'll be learning on the job. \n \nI've just been informed there's a particularly unsociable dwarf causing a scene at Gimlet the Dwarf's Delitcatessen. You must apprehend the dwarf. \n \nOnce battle begins, select one of the options – both attack and mana will deal damage, while eating a pie will respectively regenerate part of your health, increase your strength for your next attack or refill part of your mana bar. Inspecting the enemy will allow you to judge what steps you need to take next in the battle. The last tool of the watchman is the most important – knowing when to cut your losses and live to fight another day. Running might not be glamourous, but if it saves your life, it’ll do.  "}
+Pseudopolis_Yard_Outside.POI = {"carrot":"Ah. Right on time. Sergeant Colon has informed me of a spike in reports of crime across the city, and we're shorthanded. Usually you would have a week of basic training with Detritus, our troll instructor, but it looks like you'll be learning on the job. \n \nI've just been informed there's a particularly unsociable dwarf causing a scene at Gimlet the Dwarf's Delitcatessen. You must apprehend the dwarf. \n \nOnce battle begins, select one of the options – both attack and mana will deal damage, while eating a pie will respectively regenerate part of your health, increase your strength for your next attack or refill part of your mana bar. Inspecting the enemy will allow you to judge what steps you need to take next in the battle. The last tool of the watchman is the most important – knowing when to cut your losses and live to fight another day. Running might not be glamourous, but if it saves your life, it’ll do."}
 Pseudopolis_Yard_Outside.Items = {"arms":0}
 Pseudopolis_Yard_Outside.boss = False
 Pseudopolis_Yard_Outside.sprite = False
@@ -53,9 +53,9 @@ Tower_of_Art.sidequest = False
 
 Library = Location()
 Library.name = "The Library"
-Library.description = "The endless shelves stretch into the darkness, and above, a clear glass dome provides illumination. The ancient stone building houses far more rooms and corridors than it’s outer dimensions should have allowed. You see the Librarian, once a human, and now – through an unfortunate magical accident – an orangutan, tending to his duties and a young man called Ponder Stibbons in a pointed hat and round glasses, engrossed in a dusty old tome.  *ask ponder what he’s reading?"
+Library.description = "The endless shelves stretch into the darkness, and above, a clear glass dome provides illumination. The ancient stone building houses far more rooms and corridors than it’s outer dimensions should have allowed. You see the Librarian, once a human, and now – through an unfortunate magical accident – an orangutan, tending to his duties and a young man called Ponder Stibbons in a pointed hat and round glasses, engrossed in a dusty old tome."
 Library.exits = {"tower":"Tower", "roof":"Roof", "square":"Square"}
-Library.POI = {"librarian":"Ook, Ook. - Translation - 𝘌𝘹𝘤𝘦𝘭𝘭𝘦𝘯𝘵, 𝘢𝘯𝘰𝘵𝘩𝘦𝘳 𝘸𝘢𝘵𝘤𝘩 𝘰𝘧𝘧𝘪𝘤𝘦𝘳. 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦𝘳 𝘝𝘪𝘮𝘦𝘴 𝘪𝘴 𝘤𝘶𝘳𝘳𝘦𝘯𝘵𝘭𝘺 𝘰𝘯 𝘵𝘩𝘦 𝘳𝘰𝘰𝘧 𝘧𝘢𝘤𝘪𝘯𝘨 𝘵𝘩𝘦 𝘤𝘳𝘪𝘮𝘪𝘯𝘢𝘭, 𝘢𝘯𝘥 𝘸𝘪𝘭𝘭 𝘣𝘦 𝘨𝘳𝘢𝘵𝘦𝘧𝘶𝘭 𝘧𝘰𝘳 𝘣𝘢𝘤𝘬𝘶𝘱.", "ponder":"Hello officer, do you know that there are approximately two mammals which enjoy spicy foods - humans and tree shrew."}
+Library.POI = {"librarian":"Ook, Ook. - Translation - 𝘌𝘹𝘤𝘦𝘭𝘭𝘦𝘯𝘵, 𝘢𝘯𝘰𝘵𝘩𝘦𝘳 𝘸𝘢𝘵𝘤𝘩 𝘰𝘧𝘧𝘪𝘤𝘦𝘳. 𝘊𝘰𝘮𝘮𝘢𝘯𝘥𝘦𝘳 𝘝𝘪𝘮𝘦𝘴 𝘪𝘴 𝘤𝘶𝘳𝘳𝘦𝘯𝘵𝘭𝘺 𝘰𝘯 𝘵𝘩𝘦 𝘳𝘰𝘰𝘧 𝘧𝘢𝘤𝘪𝘯𝘨 𝘵𝘩𝘦 𝘤𝘳𝘪𝘮𝘪𝘯𝘢𝘭, 𝘢𝘯𝘥 𝘸𝘪𝘭𝘭 𝘣𝘦 𝘨𝘳𝘢𝘵𝘦𝘧𝘶𝘭 𝘧𝘰𝘳 𝘣𝘢𝘤𝘬𝘶𝘱.", "ponder":"Hello officer, do you know that there are approximately two mammals which enjoy spicy foods - humans and tree shrews."}
 Library.Items = {"arms":0}
 Library.boss = False
 Library.sprite = True
@@ -113,7 +113,7 @@ Post_Office.sidequest = False
 
 Post_Office_Basement = Location()
 Post_Office_Basement.name = "Post Office Basement"
-Post_Office_Basement.description = "The basement contains a rather notorious machine, which sorts mail. It is a creation of BS (Bloody Stupid) Johnson, the man who disapproved of pi, instead setting it equal to 3. This has led to the machine producing letters not only from the future, but indeed from alternate realities as well. A small grimy window produces the only source of illumination – spotlighting a hunched figure, the banshee Mr Gryle, who is tightly wrapped in a thick, leathery cape. "
+Post_Office_Basement.description = "The basement contains a rather notorious machine, which sorts mail. It is a creation of BS (Bloody Stupid) Johnson, the man who disapproved of pi, instead setting it equal to 3. This has led to the machine producing letters not only from the future, but indeed from alternate realities as well. A small grimy window produces the only source of illumination – spotlighting a hunched figure, the banshee Mr Gryle, who is tightly wrapped in a thick, leathery cape."
 Post_Office_Basement.exits = {"post":"Post Office"}
 Post_Office_Basement.POI = {"moist": "The sorting engine - a perfect metaphor for the old post office. Now it stands here. Fairly useless, but it's a lot safer than even attempting to move it."}
 Post_Office_Basement.Items = {"arms":0}
@@ -123,7 +123,7 @@ Post_Office_Basement.sidequest = True
 
 Mended_Drum = Location()
 Mended_Drum.name = "The Mended Drum"
-Mended_Drum.description = "Entering the bar, you pass a lichen covered troll acting as a bouncer, and walk almost immediately into an on-going bar fight, between a wiry old man and various other patrons of the bar. After observing the carnage for a few minutes, you notice a distinct decrease in the amount of combat, mainly due to the old man’s canny ability to convince the other participants it is best to stay down rather than face him again.     #talk to cohen the barbarian, npc."
+Mended_Drum.description = "Entering the bar, you pass a lichen covered troll acting as a bouncer, and walk almost immediately into an on-going bar fight, between a wiry old man and various other patrons of the bar. After observing the carnage for a few minutes, you notice a distinct decrease in the amount of combat, mainly due to the old man’s canny ability to convince the other participants it is best to stay down rather than face him again."
 Mended_Drum.exits = {"post":"Post Office", "hospital":"Hospital",
 "temple":"Temple"}
 Mended_Drum.POI = {"conan":"Come share a beer with me if you ever want to hear how I returned fire to the gods"}
@@ -144,10 +144,10 @@ Lady_Ramkin_Free_Hospital.sidequest = True
 
 Temple_of_Anoia = Location()
 Temple_of_Anoia.name = "Temple of Anoia"
-Temple_of_Anoia.description = "Once just a table covered with a linen tablecloth, the fortunes of Anoia, and her priestess, have increased dramatically, and now in place of the table stands an altar, hung with ladles. The goddess of stuck cutlery is invoked through the rattle of drawers, combined with a frustrated cry.	 A small collection plate to one side holds a few coins, along with a corkscrew – which Anoia is said to eat. *possibly drop money into collection plate?"
+Temple_of_Anoia.description = "Once just a table covered with a linen tablecloth, the fortunes of Anoia, and her priestess, have increased dramatically, and now in place of the table stands an altar, hung with ladles. The goddess of stuck cutlery is invoked through the rattle of drawers, combined with a frustrated cry. A small collection plate to one side holds a few coins, along with a corkscrew – which Anoia is said to eat."
 Temple_of_Anoia.exits = {"mended":"Mended Drum", "hospital":"Hospital","restaurant":"Restaurant",
 "inner":"Inner"}
-Temple_of_Anoia.POI = {}    
+Temple_of_Anoia.POI = {"priestess":"May Anoia rattle your drawers, and bless your ladles!"}    
 Temple_of_Anoia.Items = {"arms":0}
 Temple_of_Anoia.boss = False
 Temple_of_Anoia.sprite = False
@@ -185,7 +185,7 @@ The_Shades.sidequest = False
 
 The_Pink_Pussycat_Club = Location()
 The_Pink_Pussycat_Club.name = "The Pink Pussycat Club"
-The_Pink_Pussycat_Club.description = "Located at the edge of the Shades, the Pink Pussycat Club caters to all tastes, with a multitude of talented performers – including Broccoli, the girl who can the back of her head with her foot. Originally named Candi, she recently heard that Broccoli is better for you – hence the name change. Seat 7 in the front row is currently occupied by the ghost of Professor Flead, a long-dead professor from Unseen University.     #talk to flead?"
+The_Pink_Pussycat_Club.description = "Located at the edge of the Shades, the Pink Pussycat Club caters to all tastes, with a multitude of talented performers – including Broccoli, the girl who can the back of her head with her foot. Originally named Candi, she recently heard that Broccoli is better for you – hence the name change. Seat 7 in the front row is currently occupied by the ghost of Professor Flead, a long-dead professor from Unseen University."
 The_Pink_Pussycat_Club.exits = {"shades":"Shades", "sanctuary":"Sanctuary"}
 The_Pink_Pussycat_Club.POI = {"flead":"Hello young man. D’you know what the girls here can do? Hemlines have really risen since my day. It’s amazing how 300 years can go by in the blink of an eye. And being dead really isn’t as much of an inconvenience when you get used to it."}        
 The_Pink_Pussycat_Club.Items = {"arms":0}

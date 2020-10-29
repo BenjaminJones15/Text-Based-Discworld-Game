@@ -158,52 +158,6 @@ def enemy_health_check(CurrentLocation, CurEnemy, player):  # checks the enemy's
     print()
 
 
-def you_win(player):
-    if player.class_chosen == "computer":
-        print(""" 
-▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  
-█       █  █ █  █       █  █       █  █  █ █      █ 
-█▄     ▄█  █▄█  █    ▄▄▄█  █    ▄▄▄█   █▄█ █  ▄    █
-  █   █ █       █   █▄▄▄   █   █▄▄▄█       █ █ █   █
-  █   █ █   ▄   █    ▄▄▄█  █    ▄▄▄█  ▄    █ █▄█   █
-  █   █ █  █ █  █   █▄▄▄   █   █▄▄▄█ █ █   █       █
-  █▄▄▄█ █▄▄█ █▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄█ 
-
-Made By:
-----------------
-Benjamin Jones
-Cameron Bethell
-Jamie Groom
-Roshan Roy
-Will Simkins
-Will Shepherd 
-
-You have earned your masters in this degree 
-        """)
-    else:
-        print("""
-▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  
-█       █  █ █  █       █  █       █  █  █ █      █ 
-█▄     ▄█  █▄█  █    ▄▄▄█  █    ▄▄▄█   █▄█ █  ▄    █
-  █   █ █       █   █▄▄▄   █   █▄▄▄█       █ █ █   █
-  █   █ █   ▄   █    ▄▄▄█  █    ▄▄▄█  ▄    █ █▄█   █
-  █   █ █  █ █  █   █▄▄▄   █   █▄▄▄█ █ █   █       █
-  █▄▄▄█ █▄▄█ █▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄█ 
-
-Made By:
-----------------
-Benjamin Jones
-Cameron Bethell
-Jamie Groom
-Roshan Roy
-Will Simkins
-Will Shepherd
-
-if you think your good enough enter the class 'computer' for a real challenge
-        """)
-    time.sleep(20)
-    quit()
-
 def enemy_attack(CurEnemy, player):
     attack = random.randint(1, 3)   # randomly decides what attack enemies should use
     if attack == 3:
@@ -290,3 +244,50 @@ def load_checkpoint(player):  # loads last saved checkpoint after losing a game
     player.inventory = saveInventory   
     global NewLocation
     NewLocation = saveLocation
+
+
+def you_win(player):
+    if player.class_chosen == "computer":
+        print(""" 
+▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  
+█       █  █ █  █       █  █       █  █  █ █      █ 
+█▄     ▄█  █▄█  █    ▄▄▄█  █    ▄▄▄█   █▄█ █  ▄    █
+  █   █ █       █   █▄▄▄   █   █▄▄▄█       █ █ █   █
+  █   █ █   ▄   █    ▄▄▄█  █    ▄▄▄█  ▄    █ █▄█   █
+  █   █ █  █ █  █   █▄▄▄   █   █▄▄▄█ █ █   █       █
+  █▄▄▄█ █▄▄█ █▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄█ 
+
+Made By:
+----------------
+Benjamin Jones
+Cameron Bethell
+Jamie Groom
+Roshan Roy
+Will Simkins
+Will Shepherd 
+
+You have earned your masters in this degree 
+        """)
+    else:
+        print("""
+▄▄▄▄▄▄▄ ▄▄   ▄▄ ▄▄▄▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄    ▄ ▄▄▄▄▄▄  
+█       █  █ █  █       █  █       █  █  █ █      █ 
+█▄     ▄█  █▄█  █    ▄▄▄█  █    ▄▄▄█   █▄█ █  ▄    █
+  █   █ █       █   █▄▄▄   █   █▄▄▄█       █ █ █   █
+  █   █ █   ▄   █    ▄▄▄█  █    ▄▄▄█  ▄    █ █▄█   █
+  █   █ █  █ █  █   █▄▄▄   █   █▄▄▄█ █ █   █       █
+  █▄▄▄█ █▄▄█ █▄▄█▄▄▄▄▄▄▄█  █▄▄▄▄▄▄▄█▄█  █▄▄█▄▄▄▄▄▄█ 
+
+Made By:
+----------------
+Benjamin Jones
+Cameron Bethell
+Jamie Groom
+Roshan Roy
+Will Simkins
+Will Shepherd
+
+If you think you're good enough, next time around, enter the class 'computer' for a real challenge
+        """)
+    time.sleep(20)
+    quit()

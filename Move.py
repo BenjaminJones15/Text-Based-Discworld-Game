@@ -121,10 +121,10 @@ def execute_talk(command, location):        #used to interact with POI's in each
             while inventory["swamp dragons"]>0:
                 inventory["swamp dragons"] -=1
                 num +=1
-            print("here is " + str(num*10) + " AM$")
+            print("Thank you ever so much. Here is your money, " + str(num*10) + " AM$")
             inventory["money"] += num*10
         else:
-            print("Are you sure you won't reconsider?")
+            print("Ok. Goodbye. Please come back if you reconsider though!")
 
     else:                   #reacts normally to the POI, using the value specified by the command
         if command in location.POI:         #checks the command is in the POI dictionary.

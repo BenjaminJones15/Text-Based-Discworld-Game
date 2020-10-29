@@ -11,7 +11,7 @@ skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',
               'towards', 'until', 'us', 'want', 'we', 'what', 'when', 'why',
               'wish', 'with', 'would', 'art', 'use', 'enemy', 'watch',
               'pseudopolis', 'yard', 'house', 'sator', 'lady', 'sybil', 'free',
-              'shrine', 'anoia', 'gimlet', 'dwarfs', 'delicatessen', 'pink',
+              'shrine', 'anoia', 'dwarfs', 'delicatessen', 'pink',
               'pussycat', 'lost', 'office', 'drum']
 
 

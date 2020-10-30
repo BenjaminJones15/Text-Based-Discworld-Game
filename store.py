@@ -21,7 +21,7 @@ def store():
         timeframe,
         print, # custom print message appears
         [
-            "\n CMOT Dibbler: '… when you sell sausages you don’t just hang around waiting for people to want sausage,"
+            "\n CMOT Dibbler: '… when you sell sausages you don’t just hang around waiting for people to want sausages,"
             "\n you go out there and make them hungry. And you put mustard on ‘em.' \n \n Please choose an option..."
             "\n>"
         ],

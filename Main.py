@@ -59,19 +59,19 @@ def RndEncounter(location):           #Used to control random encounters around 
             CurEnemy = copy.deepcopy(Johnathan)        
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
     elif location == Library_Roof:
-        if location.boss == True:
+        if location.boss == True:                   #same as above
             CurEnemy = copy.deepcopy(CarcerDun)
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
     elif location == Palace:
-        if location.boss == True:
+        if location.boss == True:                   #same as above
             CurEnemy = copy.deepcopy(Kirill)
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
     elif location == Post_Office_Basement:
-        if location.boss == True:
+        if location.boss == True:                   #same as above
             CurEnemy = copy.deepcopy(MrGryle)
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
     elif location == Temple_of_Anoia_Inner:
-        if location.boss == True:
+        if location.boss == True:                   #same as above
             CurEnemy = copy.deepcopy(Gitlab)
             CurrentLocation = start_battle(location, CurEnemy, MyPlayer)        
     else:        

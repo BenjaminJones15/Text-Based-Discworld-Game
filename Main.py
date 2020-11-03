@@ -10,7 +10,7 @@ CurrentLocation = Pseudopolis_Yard_Reception   #creates the variable, using the 
 MyPlayer = Player        #creates the variable, using the same principle as above.
 
 def main(): 
-    global MyPlayer           #imports the global variable, to allow it to be changed inside the function.
+    global MyPlayer           #import the global variable, to allow it to be changed inside the function.
     global CurrentLocation    #same principle as above.
     MyPlayer = StartMenu()    
     save_checkpoint(CurrentLocation, MyPlayer)
